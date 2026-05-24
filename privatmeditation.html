@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private Meditation – Praxis für bewusste Veränderung</title>
+  <meta name="description" content="Private Meditation mit Verena Johanna Polzhofer – geführte esoterische Meditation und Schweigemeditation in Pöllau, Steiermark.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Lexend:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-weight: 300; color: #2c2b3f; background: #ffffff; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    :root {
+      --ink:       #2c2b3f;
+      --ink-mid:   rgba(44,43,63,0.65);
+      --accent:    #a85f35;
+      --olive:     #4a5040;
+      --olive-mid: #5e6653;
+      --olive-lt:  #8a9478;
+      --bg-warm:   #f7f4ef;
+      --bg-green:  #f2f4ec;
+      --font-h:    'Cormorant Garamond', Georgia, serif;
+      --font-b:    'DM Sans', sans-serif;
+      --font-ui:   'Lexend', sans-serif;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-h); font-weight: 300; line-height: 1.15; color: var(--ink); }
+
+    .eyebrow {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1rem;
+    }
+    .sdiv { width: 36px; height: 1px; background: var(--accent); border: none; margin: 0 0 24px; }
+    .sdiv.c { margin: 0 auto 24px; }
+
+    .btn-primary {
+      display: inline-block; background: var(--olive); color: #ffffff !important;
+      font-family: var(--font-ui); font-size: 0.8rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 14px 36px; border-radius: 4px;
+      transition: background 0.2s, transform 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--olive-mid); transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-block; background: transparent; color: var(--olive) !important;
+      font-family: var(--font-ui); font-size: 0.8rem; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 13px 32px; border-radius: 4px;
+      border: 1px solid var(--olive); transition: background 0.2s;
+    }
+    .btn-outline:hover { background: var(--bg-green); }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.97); box-shadow: 0 1px 20px rgba(44,43,63,0.07); }
+    .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 36px; height: 36px; object-fit: contain; border-radius: 50%; }
+    .nav-logo-text { font-family: var(--font-h); font-size: 1.1rem; color: var(--ink); line-height: 1.2; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-family: var(--font-ui); font-size: 1rem; font-weight: 400; color: var(--ink); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .nav-cta { font-family: var(--font-ui); font-size: 0.8rem; padding: 0.6rem 1.5rem; border-radius: 4px; background: var(--olive); color: #ffffff !important; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--olive-mid); }
+    .nav-burger { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 6px; background: none; border: none; }
+    .nav-burger span { display: block; width: 28px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
+    .nav-burger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-mobile { display: none; flex-direction: column; background: #ffffff; padding: 1.5rem 2rem 2rem; box-shadow: 0 8px 24px rgba(44,43,63,0.1); }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-family: var(--font-ui); font-size: 1rem; font-weight: 300; color: var(--ink); padding: 0.75rem 0; border-bottom: 1px solid rgba(44,43,63,0.08); }
+    .nav-mobile a:last-child { border-bottom: none; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 88vh; display: flex; align-items: center;
+      background: var(--bg-warm); overflow: hidden; padding-top: 64px;
+    }
+    .hero-plant-left {
+      position: absolute; top: 0; left: -40px;
+      width: clamp(200px, 25vw, 380px); opacity: 0.55;
+      pointer-events: none; z-index: 1;
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1240px; margin: 0 auto; width: 100%;
+      padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 80px);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-content { display: flex; flex-direction: column; align-items: flex-start; }
+    .hero h1 { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.08; color: var(--ink); margin-bottom: 1.25rem; }
+    .hero-sub { font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.8; color: var(--ink-mid); max-width: 420px; margin-bottom: 2.5rem; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-img-wrap { display: flex; justify-content: center; align-items: center; }
+    .hero-img-circle {
+      width: clamp(280px, 38vw, 500px); height: clamp(280px, 38vw, 500px);
+      border-radius: 50%; overflow: hidden;
+      border: 6px solid rgba(255,255,255,0.9);
+      box-shadow: 0 16px 60px rgba(44,43,63,0.1);
+    }
+    .hero-img-circle img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+    /* INTRO */
+    .intro { padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 72px); background: #ffffff; }
+    .intro-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .intro-left h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 24px; }
+    .intro-left p { font-size: 1.05rem; line-height: 1.85; color: var(--ink-mid); margin-bottom: 1rem; }
+    .intro-left p strong { color: var(--ink); font-weight: 400; }
+    .intro-card { background: var(--bg-warm); border-radius: 16px; padding: 40px 36px; border-left: 4px solid var(--olive-lt); }
+    .intro-card h3 { font-size: 1.6rem; margin-bottom: 16px; }
+    .intro-card p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); }
+
+    /* ANGEBOTE */
+    .angebote {
+      padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 72px);
+      background: var(--bg-green); position: relative; overflow: hidden;
+    }
+    .angebote-plant-right {
+      position: absolute; bottom: -30px; right: -50px;
+      width: clamp(180px, 22vw, 340px); opacity: 0.35;
+      pointer-events: none; transform: scaleX(-1);
+    }
+    .angebote-inner { max-width: 1120px; margin: 0 auto; position: relative; z-index: 2; }
+    .angebote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .angebote-block h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 8px; }
+    .angebote-block > p { font-size: 1rem; color: var(--ink-mid); line-height: 1.75; margin-bottom: 24px; }
+    .check-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+    .check-item { display: flex; align-items: flex-start; gap: 12px; }
+    .check-icon { width: 22px; height: 22px; min-width: 22px; border-radius: 50%; background: rgba(138,148,120,0.2); display: flex; align-items: center; justify-content: center; margin-top: 3px; }
+    .check-icon svg { width: 11px; height: 11px; fill: var(--olive); }
+    .check-item p { font-size: 1rem; line-height: 1.7; color: var(--ink); margin: 0; }
+    .schweige-note { font-size: 0.95rem; line-height: 1.75; color: var(--ink-mid); background: rgba(255,255,255,0.75); border-radius: 8px; padding: 18px 20px; border-left: 3px solid var(--olive-lt); }
+    .schweige-note p { margin-bottom: 0.75rem; }
+    .schweige-note p:last-child { margin-bottom: 0; }
+
+    /* DETAILS */
+    .details { padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 72px); background: #ffffff; }
+    .details-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .details-left h2 { font-size: clamp(1.6rem, 2.5vw, 2.4rem); margin-bottom: 20px; }
+    .details-photo { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 28px; box-shadow: 0 8px 32px rgba(44,43,63,0.07); }
+    .details-photo img { width: 100%; height: 260px; object-fit: cover; }
+    .info-rows { display: flex; flex-direction: column; }
+    .info-row { display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(44,43,63,0.08); }
+    .info-row:first-child { border-top: 1px solid rgba(44,43,63,0.08); }
+    .info-icon { width: 36px; height: 36px; min-width: 36px; border-radius: 50%; background: var(--bg-warm); display: flex; align-items: center; justify-content: center; }
+    .info-icon svg { width: 15px; height: 15px; fill: var(--olive); }
+    .info-text { font-size: 1rem; color: var(--ink); line-height: 1.5; }
+    .schloss-wrap { border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(44,43,63,0.07); margin-top: 80px; }
+    .schloss-wrap img { width: 100%; height: auto; }
+
+    /* CTA */
+    .cta-banner { padding: clamp(60px, 8vw, 80px) clamp(20px, 5vw, 72px); background: var(--bg-warm); text-align: center; }
+    .cta-banner h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); margin-bottom: 16px; }
+    .cta-banner p { font-size: 1.05rem; color: var(--ink-mid); line-height: 1.75; max-width: 560px; margin: 0 auto 36px; }
+
+    /* KONTAKT */
+    .kontakt { padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 72px); background: #ffffff; scroll-margin-top: 70px; }
+    .kontakt-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .kontakt-info h2 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 14px; }
+    .kontakt-info > p { font-size: 1.05rem; color: #5a4a65; line-height: 1.75; margin-bottom: 28px; }
+    .phone-link { display: flex; align-items: center; gap: 14px; background: var(--bg-warm); border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; transition: box-shadow 0.2s; }
+    .phone-link:hover { box-shadow: 0 4px 16px rgba(44,43,63,0.08); }
+    .phone-icon { width: 42px; height: 42px; border-radius: 50%; background: var(--olive); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .phone-icon svg { width: 16px; height: 16px; fill: #ffffff; }
+    .phone-num { font-family: var(--font-h); font-size: 1.3rem; color: var(--olive); display: block; line-height: 1.2; }
+    .phone-sub { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a7a90; display: block; margin-top: 3px; }
+    .socials { display: flex; flex-wrap: wrap; gap: 8px; }
+    .social-pill { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 300; color: var(--ink-mid) !important; background: var(--bg-warm); border: 1px solid rgba(44,43,63,0.12); border-radius: 32px; padding: 0.4rem 0.9rem; transition: all 0.2s; }
+    .social-pill:hover { border-color: var(--olive-lt); color: var(--olive) !important; }
+    .kontakt-form { background: var(--bg-warm); border-radius: 14px; padding: 2.5rem; }
+    .form-note { font-family: var(--font-h); font-size: 1.4rem; color: var(--olive); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label { display: block; font-family: var(--font-ui); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mid); margin-bottom: 0.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 1.25rem; }
+    .form-group input, .form-group textarea { width: 100%; padding: 12px 14px; border: 1px solid rgba(44,43,63,0.18); border-radius: 7px; font-family: var(--font-b); font-size: 0.95rem; color: var(--ink); background: #ffffff; outline: none; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--olive-lt); }
+    .form-group textarea { min-height: 130px; resize: vertical; }
+    .form-submit { width: 100%; padding: 14px; background: var(--olive); color: #ffffff; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 7px; cursor: pointer; transition: background 0.2s; }
+    .form-submit:hover { background: var(--olive-mid); }
+    .form-success { display: none; text-align: center; padding: 1.5rem; background: rgba(74,80,64,0.08); border-radius: 8px; font-family: var(--font-h); font-size: 1.2rem; color: var(--olive); margin-top: 1rem; }
+
+    /* FOOTER */
+    .footer { background: #2c2b3f; padding: 4rem 0 0; }
+    .footer-inner { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2.5rem; }
+    .footer-name { font-family: var(--font-h); font-size: 1.375rem; color: #ffffff; margin-bottom: 4px; }
+    .footer-sub { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 200; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; display: block; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .footer-col-title { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; display: block; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-link { font-size: 0.875rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-link:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 20px 0; }
+    .footer-copy { font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.35); }
+
+    /* COOKIE */
+    .cookie-banner { position: fixed; bottom: 24px; left: 24px; max-width: 400px; background: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 40px rgba(44,43,63,0.12); z-index: 9999; border: 1px solid rgba(44,43,63,0.1); display: none; }
+    .cookie-banner.show { display: block; }
+    .cookie-title { font-family: var(--font-h); font-size: 1.1rem; color: var(--olive); margin-bottom: 0.7rem; }
+    .cookie-text { font-size: 0.875rem; color: var(--ink-mid); line-height: 1.6; margin-bottom: 1.25rem; }
+    .cookie-text a { color: var(--accent); text-decoration: underline; }
+    .cookie-buttons { display: flex; gap: 10px; }
+    .cookie-accept { flex: 1; padding: 10px; background: var(--olive); color: #ffffff; border: none; border-radius: 6px; font-family: var(--font-ui); font-size: 0.8rem; cursor: pointer; }
+    .cookie-decline { flex: 1; padding: 10px; background: transparent; color: var(--ink-mid); border: 1px solid rgba(44,43,63,0.2); border-radius: 6px; font-family: var(--font-ui); font-size: 0.8rem; cursor: pointer; }
+
+    /* SCROLL TOP */
+    .scroll-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--olive); color: #ffffff; border: none; border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 4px 16px rgba(44,43,63,0.2); transition: background 0.2s; }
+    .scroll-top.show { display: flex; }
+    .scroll-top:hover { background: var(--olive-mid); }
+    .scroll-top svg { width: 18px; height: 18px; fill: #ffffff; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-img-wrap { order: -1; }
+      .hero-img-circle { width: 260px; height: 260px; }
+      .intro-inner { grid-template-columns: 1fr; gap: 40px; }
+      .angebote-grid { grid-template-columns: 1fr; }
+      .details-inner { grid-template-columns: 1fr; }
+      .schloss-wrap { margin-top: 0; }
+      .kontakt-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-name { grid-column: 1 / -1; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-inner { padding: 0 1.25rem; }
+      .hero-img-circle { width: 220px; height: 220px; }
+      .cookie-banner { left: 12px; right: 12px; max-width: 100%; bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Image/website-icon.jpg" alt="Logo">
+        <span class="nav-logo-text">Verena Johanna Polzhofer</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="8-wochen-kurs.html">8-Wochen-Kurs</a>
+        <a href="seelenlicht.html">Seelenlicht</a>
+        <a href="privatmeditation.html" class="active">Private Meditation</a>
+        <a href="webshop.html">Webshop</a>
+        <a href="#kontakt" class="nav-cta">Kontakt</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="8-wochen-kurs.html">8-Wochen-Kurs</a>
+      <a href="seelenlicht.html">Seelenlicht</a>
+      <a href="privatmeditation.html">Private Meditation</a>
+      <a href="webshop.html">Webshop</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Private Meditation Hero">
+    <img src="Image/privatmeditation-pflanze-hintergrund.webp" alt="" aria-hidden="true" class="hero-plant-left" loading="eager">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">Raum für innere Sammlung</span>
+        <h1>Private<br>Meditation</h1>
+        <p class="hero-sub">Ein geschützter Raum nur für dich – für Ruhe, Klarheit und neue Energie. In einer privaten Sitzung begleite ich dich achtsam auf deinem individuellen Weg zu mehr innerem Gleichgewicht.</p>
+        <div class="hero-btns">
+          <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
+          <a href="#angebote" class="btn-outline">Mehr erfahren</a>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <div class="hero-img-circle">
+          <img fetchpriority="high" decoding="async" src="Image/Private-Meditation-Verena.webp" alt="Verena Johanna Polzhofer – Private Meditation" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FÜR WEN -->
+  <section class="intro reveal">
+    <div class="intro-inner">
+      <div class="intro-left">
+        <span class="eyebrow">Für wen</span>
+        <h2>Für wen ist eine private Meditation geeignet?</h2>
+        <hr class="sdiv">
+        <p>Wenn du Interesse an geführten Meditationen oder an der Schweigemeditation hast, aber entweder keine Meditationsgruppe in deiner Nähe kennst oder nur sporadisch meditieren kannst, ist dieses Angebot für dich geeignet.</p>
+        <p>Es ist auch passend, wenn du eine <strong>kurze Auszeit</strong> brauchst – eine Stunde, um deine Batterien wieder aufzuladen.</p>
+        <p>Da ich seit vielen Jahren Schweigemeditation unterrichte, kannst du dich auch mit <strong>Fragen</strong> oder Schwierigkeiten rund um diese Praxis an mich wenden.</p>
+        <p>Und schließlich aus reiner <strong>Neugier</strong>: In geführten esoterischen Meditationen kannst du innere Ebenen erforschen – etwa die Seelenebene, dein Energiefeld oder die Sternen- und Planetenenergien der aktuellen Zeit.</p>
+      </div>
+      <div class="intro-card">
+        <span class="eyebrow">Privatmeditation</span>
+        <h3>Raum für innere Sammlung</h3>
+        <hr class="sdiv">
+        <p>Manche Prozesse brauchen keinen Kurs.<br>Sie brauchen einen geschützten Raum.</p>
+        <br>
+        <p>In der Privatmeditation begleite ich dich in eine bewusste innere Ausrichtung – individuell abgestimmt auf dein aktuelles Thema.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANGEBOTE -->
+  <section class="angebote reveal" id="angebote">
+    <img src="Image/privatmeditation-pflanze-hintergrund.webp" alt="" aria-hidden="true" class="angebote-plant-right" loading="lazy">
+    <div class="angebote-inner">
+      <div class="angebote-grid">
+        <div class="angebote-block">
+          <span class="eyebrow">Angebot 1</span>
+          <h2>Geführte esoterische Meditation</h2>
+          <hr class="sdiv">
+          <p>Wobei kann dir eine geführte esoterische Meditation helfen?</p>
+          <div class="check-list">
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Dich selbst als Energie wahrnehmen und dadurch energetische Blockaden erkennen.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Direkt mit deiner Seele arbeiten – dich mit ihr verbinden, ihr Fragen stellen, deine Verbindung stärken.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Kleinere Energieblockaden lösen.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Deinen Energiekörper – Chakren, Energiefeld – wahrnehmen und mit ihm arbeiten.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Dich energetisch mit anderen Menschen verbinden.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Mit den kraftvollen Energien der Jetztzeit arbeiten.</p></div>
+          </div>
+        </div>
+        <div class="angebote-block">
+          <span class="eyebrow">Angebot 2</span>
+          <h2>Schweigemeditation</h2>
+          <hr class="sdiv">
+          <p>Eine Schweigemeditation hat unterschiedliche Auswirkungen:</p>
+          <div class="check-list">
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Stärke deine Achtsamkeit.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Verankere dich in deinem Körper.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Halte deine Konzentration.</p></div>
+            <div class="check-item"><span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span><p>Übe dich in der Anwesenheit.</p></div>
+          </div>
+          <div class="schweige-note">
+            <p>Wenn du ein Neuling bist, kannst du gerne eine Einheit bei mir buchen, um dich mit der Schweigemeditation vertraut zu machen.</p>
+            <p>Wenn du schon länger meditierst, kannst du mit Fragen und Problemen zu mir kommen. In der Privateinheit kann ich auf mögliche Probleme eingehen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="details reveal">
+    <div class="details-inner">
+      <div class="details-left">
+        <span class="eyebrow">Meditation in Pöllau</span>
+        <h2>Alle Details</h2>
+        <hr class="sdiv">
+        <div class="details-photo">
+          <img decoding="async" src="Image/portrait-Klangschale-Verena.webp" alt="Verena Johanna Polzhofer mit Klangschale" loading="lazy">
+        </div>
+        <div class="info-rows">
+          <div class="info-row">
+            <span class="info-icon"><svg viewBox="0 0 320 512"><path d="M204.3 32H96C43.1 32 0 75.1 0 128c0 17.7 14.3 32 32 32s32-14.3 32-32c0-17.6 14.3-32 32-32h108.3c28.5 0 51.7 23.2 51.7 51.8 0 19.7-11 37.5-30.5 47.3l-98.2 52.6C117.1 253.3 112 263.8 112 275.1V315c0 17.7 14.3 32 32 32s32-14.3 32-32v-21.7l80-47c39.5-19.7 64-59.4 64-103.5C320 80 268.1 32 204.3 32zm-60.3 368c-22.1 0-40 17.9-40 40s17.9 40 40 40 40-17.9 40-40-17.9-40-40-40z"/></svg></span>
+            <span class="info-text">Nach Absprache</span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon"><svg viewBox="0 0 512 512"><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 464c-114.7 0-208-93.3-208-208S141.3 48 256 48s208 93.3 208 208-93.3 208-208 208zm32-120V256c0-8.8-7.2-16-16-16s-16 7.2-16 16v96l-64-38.4c-7.6-4.6-17.5-2.2-22.1 5.5-4.6 7.6-2.2 17.5 5.5 22.1l80 48c2.7 1.6 5.7 2.5 8.7 2.5.8 0 1.5-.1 2.3-.2C271.8 390.5 288 375 288 344z"/></svg></span>
+            <span class="info-text">Dauer: Etwa 1 Stunde mit Vorgespräch</span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon"><svg viewBox="0 0 384 512"><path d="M64 240c-17.7 0-32-14.3-32-32s14.3-32 32-32h28.3C121.9 92.1 201.1 32 296 32h24c17.7 0 32 14.3 32 32s-14.3 32-32 32h-24c-57.9 0-108.2 32.4-133.9 80H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H144.2c-.1 2.6-.2 5.3-.2 8v16c0 2.7.1 5.4.2 8H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H162.1C187.8 383.6 238.1 416 296 416h24c17.7 0 32 14.3 32 32s-14.3 32-32 32h-24c-94.9 0-174.1-60.1-203.7-144H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h16.2c-.1-2.6-.2-5.3-.2-8v-16c0-2.7.1-5.4.2-8H64z"/></svg></span>
+            <span class="info-text">Kosten: 40 Euro / Einheit</span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon"><svg viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span>
+            <span class="info-text">0677 6477 1171</span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon"><svg viewBox="0 0 384 512"><path d="M192 0C85.97 0 0 85.97 0 192c0 77.41 26.97 99.03 172.3 309.7a24 24 0 0039.41 0C357 291 384 269.4 384 192 384 85.97 298 0 192 0zm0 272c-44.18 0-80-35.82-80-80s35.82-80 80-80 80 35.82 80 80-35.82 80-80 80z"/></svg></span>
+            <span class="info-text">Schloss 1, 8225 Pöllau</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Der Ort</span>
+        <h2>Schloss Pöllau</h2>
+        <hr class="sdiv">
+        <div class="schloss-wrap">
+          <img decoding="async" src="Image/Schloss-Vorderansicht-klein.webp" alt="Schloss Pöllau – Vorderansicht" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner reveal">
+    <span class="eyebrow" style="display:block; text-align:center;">Bereit für deine Auszeit?</span>
+    <h2>Gönn dir eine Stunde nur für dich</h2>
+    <p>Für innere Ruhe, Klarheit und neue Energie.<br>Ich begleite dich achtsam.</p>
+    <a href="#kontakt" class="btn-primary">Jetzt Termin anfragen</a>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="kontakt" id="kontakt">
+    <div class="kontakt-inner">
+      <div class="kontakt-info reveal">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Kontaktiere mich</h2>
+        <hr class="sdiv">
+        <p>Du kannst mir gerne ein Mail schreiben oder mich direkt anrufen, wenn du weitere Fragen hast.</p>
+        <a href="tel:004367764771171" class="phone-link">
+          <div class="phone-icon"><svg viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></div>
+          <div>
+            <span class="phone-num">0677 6477 1171</span>
+            <span class="phone-sub">Anrufen oder WhatsApp</span>
+          </div>
+        </a>
+        <div class="socials">
+          <a href="https://www.instagram.com/verenajohannapolzhofer/" class="social-pill" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61578514234077" class="social-pill" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://t.me/verenajp" class="social-pill" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://www.youtube.com/@verenajp" class="social-pill" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="kontakt-form reveal">
+        <p class="form-note">Ich melde mich innerhalb von 48 Stunden.</p>
+        <form action="https://formspree.io/f/xeedzbwa" method="POST" id="kontaktForm">
+          <div class="form-row">
+            <div class="form-group"><label for="vorname">Vorname *</label><input type="text" id="vorname" name="vorname" placeholder="Dein Vorname" required></div>
+            <div class="form-group"><label for="nachname">Nachname *</label><input type="text" id="nachname" name="nachname" placeholder="Dein Nachname" required></div>
+          </div>
+          <div class="form-group"><label for="email">E-Mail *</label><input type="email" id="email" name="email" placeholder="deine@email.com" required></div>
+          <div class="form-group"><label for="nachricht">Nachricht *</label><textarea id="nachricht" name="nachricht" placeholder="Deine Nachricht an mich" required></textarea></div>
+          <input type="hidden" name="_subject" value="Anfrage Private Meditation">
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="form-submit">Senden</button>
+        </form>
+        <div class="form-success" id="formSuccess">✓ Deine Nachricht wurde erfolgreich gesendet!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-name">Verena Johanna Polzhofer</div>
+          <span class="footer-sub">Praxis für bewusste Veränderung</span>
+          <p class="footer-tagline">Meditation · Seelenlicht · Selbstregulierung.<br>Pöllau, Steiermark.</p>
+        </div>
+        <div>
+          <span class="footer-col-title">Seiten</span>
+          <div class="footer-links">
+            <a href="index.html" class="footer-link">Homepage</a>
+            <a href="8-wochen-kurs.html" class="footer-link">8-Wochen-Kurs</a>
+            <a href="seelenlicht.html" class="footer-link">Seelenlicht</a>
+            <a href="privatmeditation.html" class="footer-link">Private Meditation</a>
+            <a href="webshop.html" class="footer-link">Webshop</a>
+          </div>
+        </div>
+        <div>
+          <span class="footer-col-title">Kontakt</span>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/verenajohannapolzhofer/" class="footer-link" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61578514234077" class="footer-link" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://t.me/verenajp" class="footer-link" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://www.youtube.com/@verenajp" class="footer-link" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+        <div>
+          <span class="footer-col-title">Rechtliches</span>
+          <div class="footer-links">
+            <a href="impressum.html" class="footer-link">Impressum</a>
+            <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+            <a href="agb.html" class="footer-link">AGB</a>
+            <a href="widerrufsrecht.html" class="footer-link">Widerrufsrecht</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">Copyright © 2026 Praxis für bewusste Veränderung · Verena Johanna Polzhofer</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p class="cookie-title">Cookie-Einstellungen</p>
+    <p class="cookie-text">Diese Website verwendet nur technisch notwendige Cookies. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-buttons">
+      <button class="cookie-accept" id="cookieAccept">Verstanden</button>
+      <button class="cookie-decline" id="cookieDecline">Ablehnen</button>
+    </div>
+  </div>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Nach oben">
+    <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+  </button>
+
+  <script>
+    const burger = document.getElementById('navBurger');
+    const mobileMenu = document.getElementById('navMobile');
+    burger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      burger.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open'); burger.classList.remove('open');
+    }));
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) { e.preventDefault(); window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 70, behavior: 'smooth' }); }
+      });
+    });
+    window.addEventListener('scroll', () => {
+      document.getElementById('scrollTop').classList.toggle('show', scrollY > 400);
+    }, { passive: true });
+    document.getElementById('scrollTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    } else { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); }
+    const form = document.getElementById('kontaktForm');
+    const success = document.getElementById('formSuccess');
+    if (form) {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = form.querySelector('.form-submit');
+        btn.textContent = 'Wird gesendet...'; btn.disabled = true;
+        try {
+          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+          if (res.ok) { form.style.display = 'none'; success.style.display = 'block'; }
+          else { btn.textContent = 'Fehler – bitte erneut'; btn.disabled = false; }
+        } catch { btn.textContent = 'Fehler – bitte erneut'; btn.disabled = false; }
+      });
+    }
+    if (!localStorage.getItem('vjp_cookie_consent')) setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 800);
+    document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem('vjp_cookie_consent', 'accepted'); document.getElementById('cookieBanner').classList.remove('show'); });
+    document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem('vjp_cookie_consent', 'declined'); document.getElementById('cookieBanner').classList.remove('show'); });
+  </script>
+</body>
+</html>
