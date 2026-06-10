@@ -579,7 +579,7 @@ h1, h2, h3, h4, h5 {
   position: fixed;
   bottom: 30px; right: 30px;
   width: 44px; height: 44px;
-  background: var(--purple-dark);
+  background: var(--rose);
   color: #ffffff;
   border: none;
   border-radius: 50%;
@@ -592,7 +592,7 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 4px 16px rgba(61,43,78,0.2);
 }
 .scroll-top.show { display: flex; }
-.scroll-top:hover { background: var(--purple-mid); transform: translateY(-2px); }
+.scroll-top:hover { background: var(--rose); transform: translateY(-2px); }
 .scroll-top svg { width: 18px; height: 18px; fill: #ffffff; }
 
 /* ── REVEAL-ANIMATIONEN ── */
