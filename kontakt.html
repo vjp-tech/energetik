@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – Verena Johanna Polzhofer</title>
+  <meta name="description" content="Kontakt aufnehmen mit Verena Johanna Polzhofer – Praxis für bewusste Veränderung, Pöllau, Steiermark.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Lexend:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style>
+
+    /* ── SEITEN-HEADER ── */
+    .page-header {
+      background: var(--purple-dark);
+      padding: 120px 24px 72px;
+      text-align: center;
+    }
+    .page-header .eyebrow-k {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-size: clamp(38px, 5vw, 60px);
+      font-weight: 300;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ── HAUPTBEREICH ── */
+    .kontakt-page {
+      background: var(--rose-bg);
+      padding: 80px 24px 96px;
+    }
+    .kontakt-page-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* ── LINKE SPALTE: INFO ── */
+    .k-info-label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .k-info h2 {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 300;
+      color: var(--purple-dark);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .k-info-text {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #5a4a6a;
+      margin-bottom: 40px;
+    }
+
+    /* Telefon */
+    .k-phone-block {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .k-phone-block a.k-tel {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+    .k-phone-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--purple-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .k-phone-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+    }
+    .k-tel-text { display: flex; flex-direction: column; }
+    .k-tel-num {
+      font-family: var(--font-ui);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--purple-dark);
+      letter-spacing: 0.02em;
+    }
+    .k-tel-sub {
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+    .k-hours {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--bg-warm);
+      border-radius: 6px;
+      padding: 12px 16px;
+    }
+    .k-hours svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .k-hours p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #5a4a6a;
+      margin: 0;
+    }
+    .k-hours strong {
+      color: var(--ink);
+    }
+
+    /* E-Mail */
+    .k-email-block {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .k-email-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .k-email-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+    }
+    .k-email-text { display: flex; flex-direction: column; }
+    .k-email-label {
+      font-size: 12px;
+      color: var(--ink-muted);
+      font-family: var(--font-ui);
+      letter-spacing: 0.06em;
+    }
+    .k-email-addr {
+      font-size: 16px;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .k-email-addr:hover { color: var(--purple-dark); }
+
+    /* Adresse */
+    .k-address-block {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .k-address-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--rose);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .k-address-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+    }
+    .k-address-text { display: flex; flex-direction: column; }
+    .k-address-label {
+      font-size: 12px;
+      color: var(--ink-muted);
+      font-family: var(--font-ui);
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .k-address-text p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    /* Social */
+    .k-social-title {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .k-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .k-social-pill {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--purple-dark);
+      border: 1px solid var(--purple-dark);
+      border-radius: 20px;
+      padding: 8px 18px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .k-social-pill:hover {
+      background: var(--purple-dark);
+      color: #ffffff;
+    }
+
+    /* ── RECHTE SPALTE: FORMULAR ── */
+    .k-form-wrap {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(61,43,78,0.08);
+    }
+    .k-form-title {
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 400;
+      color: var(--purple-dark);
+      margin-bottom: 8px;
+    }
+    .k-form-subtitle {
+      font-size: 15px;
+      color: #7a6a8a;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .k-form-group {
+      margin-bottom: 20px;
+    }
+    .k-form-group label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 7px;
+    }
+    .k-form-group input,
+    .k-form-group textarea,
+    .k-form-group select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--ink-border);
+      border-radius: 7px;
+      font-family: var(--font-b);
+      font-size: 15px;
+      color: var(--ink);
+      background: #faf9f7;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+    }
+    .k-form-group input:focus,
+    .k-form-group textarea:focus,
+    .k-form-group select:focus {
+      outline: none;
+      border-color: var(--purple-mid);
+      box-shadow: 0 0 0 3px rgba(92,61,114,0.10);
+      background: #ffffff;
+    }
+    .k-form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+    .k-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .k-form-honeypot {
+      display: none;
+    }
+    .k-form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--purple-dark);
+      color: #ffffff;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .k-form-submit:hover {
+      background: var(--purple-mid);
+      transform: translateY(-1px);
+    }
+    .k-form-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .k-form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .k-form-success .success-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .k-form-success h3 {
+      font-size: 24px;
+      color: var(--purple-dark);
+      margin-bottom: 10px;
+    }
+    .k-form-success p {
+      font-size: 16px;
+      color: #7a6a8a;
+      line-height: 1.7;
+    }
+    .k-form-note {
+      font-size: 12px;
+      color: var(--ink-muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .kontakt-page-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+    @media (max-width: 600px) {
+      .page-header { padding: 100px 20px 56px; }
+      .kontakt-page { padding: 56px 20px 72px; }
+      .k-form-wrap { padding: 28px 20px; }
+      .k-form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <div id="nav-placeholder" data-component="nav" data-page="" data-solid="true"></div>
+
+  <!-- ── SEITEN-HEADER ── -->
+  <header class="page-header">
+    <span class="eyebrow-k">Praxis für bewusste Veränderung</span>
+    <h1>Kontakt</h1>
+    <p>Ich freue mich über deine Nachricht – melde dich gerne per Formular, Telefon oder über die sozialen Medien.</p>
+  </header>
+
+  <!-- ── HAUPTBEREICH ── -->
+  <main class="kontakt-page">
+    <div class="kontakt-page-inner">
+
+      <!-- LINKE SPALTE -->
+      <div class="k-info reveal">
+        <span class="k-info-label">So erreichst du mich</span>
+        <h2>Lass uns in Kontakt treten</h2>
+        <p class="k-info-text">Hast du Fragen zu meinen Angeboten oder möchtest du ein kostenloses Erstgespräch vereinbaren? Ich bin gerne für dich da.</p>
+
+        <!-- Telefon -->
+        <div class="k-phone-block">
+          <a href="tel:004367764771171" class="k-tel">
+            <div class="k-phone-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1C9.61 21 3 14.39 3 6.5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.03l-2.2 2.2z"/></svg>
+            </div>
+            <div class="k-tel-text">
+              <span class="k-tel-num">0677 6477 1171</span>
+              <span class="k-tel-sub">Anrufen · WhatsApp · Signal</span>
+            </div>
+          </a>
+          <div class="k-hours">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm.5 10.41V7a.5.5 0 00-1 0v5.59l3.95 3.95a.5.5 0 00.71-.71L12.5 12.41z"/></svg>
+            <p>Telefonisch erreichbar: <strong>Mo – Fr, 9:00 – 12:00 Uhr</strong><br>Außerhalb dieser Zeiten gerne per WhatsApp oder Formular.</p>
+          </div>
+        </div>
+
+        <!-- E-Mail -->
+        <div class="k-email-block">
+          <div class="k-email-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="k-email-text">
+            <span class="k-email-label">E-Mail</span>
+            <a href="mailto:hallo@verena-johanna-polzhofer.at" class="k-email-addr">hallo@verena-johanna-polzhofer.at</a>
+          </div>
+        </div>
+
+        <!-- Adresse -->
+        <div class="k-address-block">
+          <div class="k-address-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          </div>
+          <div class="k-address-text">
+            <span class="k-address-label">Adresse</span>
+            <p>Verena Johanna Polzhofer<br>Schloss 1<br>8225 Pöllau, Österreich</p>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <span class="k-social-title">Auch auf Social Media</span>
+        <div class="k-socials">
+          <a href="https://www.instagram.com/verenajohannapolzhofer/" class="k-social-pill" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61578514234077" class="k-social-pill" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://t.me/verenajp" class="k-social-pill" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://www.youtube.com/@verenajp" class="k-social-pill" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+
+      <!-- RECHTE SPALTE: FORMULAR -->
+      <div class="k-form-wrap reveal">
+        <h2 class="k-form-title">Nachricht schreiben</h2>
+        <p class="k-form-subtitle">Füll das Formular aus und ich melde mich so bald wie möglich bei dir.</p>
+
+        <form action="https://formspree.io/f/xeedzbwa" method="POST" id="kontaktForm">
+
+          <!-- Honeypot Spam-Schutz -->
+          <div class="k-form-honeypot">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="k-form-row">
+            <div class="k-form-group">
+              <label for="vorname">Vorname</label>
+              <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname" required>
+            </div>
+            <div class="k-form-group">
+              <label for="nachname">Nachname</label>
+              <input type="text" id="nachname" name="nachname" placeholder="Dein Nachname">
+            </div>
+          </div>
+
+          <div class="k-form-group">
+            <label for="email">E-Mail-Adresse</label>
+            <input type="email" id="email" name="email" placeholder="deine@email.at" required>
+          </div>
+
+          <div class="k-form-group">
+            <label for="betreff">Betreff</label>
+            <select id="betreff" name="betreff">
+              <option value="">Bitte wählen …</option>
+              <option value="Erstgespräch">Kostenloses Erstgespräch</option>
+              <option value="8-Wochen-Kurs">Frage zum 8-Wochen-Kurs</option>
+              <option value="Seelenlicht">Frage zur Seelenlicht-Behandlung</option>
+              <option value="Privatmeditation">Frage zur Privatmeditation</option>
+              <option value="Webshop">Frage zu Büchern / Produkten</option>
+              <option value="Sonstiges">Sonstiges</option>
+            </select>
+          </div>
+
+          <div class="k-form-group">
+            <label for="nachricht">Deine Nachricht</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Was liegt dir auf dem Herzen?" required></textarea>
+          </div>
+
+          <button type="submit" class="k-form-submit" id="formSubmitBtn">Nachricht absenden</button>
+        </form>
+
+        <div class="k-form-success" id="formSuccess">
+          <div class="success-icon">🌿</div>
+          <h3>Danke für deine Nachricht!</h3>
+          <p>Ich habe deine Nachricht erhalten und melde mich so bald wie möglich bei dir.</p>
+        </div>
+
+        <p class="k-form-note">Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.<br>
+        Weitere Informationen findest du in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <div id="footer-placeholder" data-component="footer"></div>
+
+  <script src="global.js"></script>
+  <script>
+    // Kontaktformular für diese Seite (überschreibt global.js da andere CSS-Klassen)
+    const form = document.getElementById('kontaktForm');
+    const success = document.getElementById('formSuccess');
+    const btn = document.getElementById('formSubmitBtn');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        btn.textContent = 'Wird gesendet …';
+        btn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          } else {
+            btn.textContent = 'Fehler – bitte erneut versuchen';
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = 'Fehler – bitte erneut versuchen';
+          btn.disabled = false;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
