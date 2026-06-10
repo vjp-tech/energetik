@@ -283,15 +283,22 @@
     }
     @media (max-width: 600px) {
       html { font-size: 17px; }
-      .hero { min-height: 90svh; background-position: center 20%; align-items: flex-end; }
-      .hero-inner { padding: 0 20px 60px 20px; align-items: flex-end; }
-      .hero-box { padding: 28px 22px 32px; max-width: 100%; }
+      /* Hero: Box nach unten schieben damit das Bild sichtbar bleibt */
+      .hero { min-height: 100svh; background-position: center 15%; align-items: flex-end; }
+      .hero-inner { padding: 0 20px 36px 20px; align-items: flex-end; }
+      .hero-box { padding: 24px 20px 28px; max-width: 100%; }
       .hero-title { font-size: clamp(32px, 8vw, 44px); }
-      .hero-text { font-size: 17px; }
+      .hero-text { font-size: 16px; margin-bottom: 24px; }
       .ist-inner { text-align: left; }
       .ist-quote { padding: 24px 20px; }
       .ist-quote-text { font-size: 19px; }
       .preis-box { padding: 28px 20px 32px; }
+      /* Seitlicher Abstand für alle section-inner Blöcke */
+      .section-inner { padding-left: 20px; padding-right: 20px; }
+      /* Testimonials */
+      .t-card { padding: 22px 18px; }
+      /* Karten */
+      .vj-card { padding: 22px 18px; }
     }
     @media (max-width: 480px) {
       .combo { background-image: none !important; background-color: #ffffff !important; }
