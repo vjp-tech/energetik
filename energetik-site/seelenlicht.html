@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seelenlicht Körperarbeit – Praxis für bewusste Veränderung</title>
+  <meta name="description" content="Seelenlicht-Körperarbeit mit Verena Johanna Polzhofer – wieder in Verbindung mit deiner Seele kommen. Pöllau, Steiermark.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Lexend:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style>
+    /* ── HERO (animierte Gradient-Blobs) ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      overflow: hidden;
+      padding-top: 64px;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 180px;
+      background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+    @keyframes sfloat1 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(18px,-22px) scale(1.04)} 66%{transform:translate(-12px,14px) scale(0.97)} }
+    @keyframes sfloat2 { 0%,100%{transform:translate(0,0) scale(1)} 40%{transform:translate(-20px,16px) scale(1.05)} 70%{transform:translate(14px,-10px) scale(0.96)} }
+    @keyframes sfloat3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(22px,18px)} }
+    @keyframes sfloat4 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-16px,-20px)} }
+    @keyframes srot    { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1120px; margin: 0 auto; width: 100%;
+      padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 72px);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .hero-content { display: flex; flex-direction: column; align-items: flex-start; }
+    .hero h1 { font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 300; color: var(--ink); line-height: 1.08; margin-bottom: 1.5rem; }
+    .hero h1 em { font-style: italic; color: var(--rose); }
+    .hero-sub { font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.8; color: var(--ink-mid); max-width: 420px; margin-bottom: 2.5rem; }
+    .hero-img-wrap { display: flex; align-items: center; justify-content: center; }
+    .hero-img-wrap img { width: 100%; max-width: 560px; height: auto; object-fit: contain; }
+    .hero-scroll {
+      position: absolute; bottom: 60px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 3;
+    }
+    .hero-scroll span { font-family: var(--font-ui); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+    .hero-scroll-line { width: 1px; height: 36px; background: linear-gradient(to bottom, var(--rose), transparent); animation: sfloat1 2.2s ease-in-out infinite; }
+
+    /* Seiten-Button */
+    .sbtn {
+      display: inline-block;
+      background: var(--purple-dark); color: #ffffff !important;
+      font-family: var(--font-ui); font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 14px 36px; border-radius: 32px;
+      transition: background 0.2s, transform 0.2s; border: none; cursor: pointer;
+    }
+    .sbtn:hover { background: var(--purple-mid); transform: translateY(-2px); }
+
+    /* ── INTRO ── */
+    .intro {
+      padding: 0 clamp(20px, 5vw, 72px) clamp(60px, 8vw, 100px);
+      background: #ffffff;
+      margin-top: -80px;
+      position: relative; z-index: 2;
+    }
+    .intro-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; padding-top: clamp(40px, 5vw, 60px); }
+    .intro-left h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 24px; }
+    .intro-left p { font-size: 1.05rem; line-height: 1.85; color: var(--ink-mid); margin-bottom: 1rem; }
+    .why-items { display: flex; flex-direction: column; gap: 24px; }
+    .why-item { padding: 28px; background: var(--rose-bg); border-left: 3px solid var(--rose); border-radius: 0 12px 12px 0; }
+    .why-item h3 { font-size: 1.15rem; font-weight: 400; margin-bottom: 10px; }
+    .why-item p { font-size: 1rem; line-height: 1.8; color: var(--ink-mid); margin: 0; }
+
+    /* ── FÜR WEN / ABLAUF ── */
+    .combined {
+      padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 72px);
+      background: #F7FAED;
+      width: 100%;
+    }
+    .combined-inner { max-width: 100%; padding: 0 clamp(20px, 4vw, 80px); display: grid; grid-template-columns: 1fr auto 1fr; gap: 64px; align-items: center; }
+    .combined h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 24px; }
+    .combined p { font-size: 1.05rem; line-height: 1.85; color: var(--ink-mid); margin-bottom: 1rem; }
+    .combined-highlight { color: var(--purple-dark) !important; font-style: italic; border-left: 3px solid var(--rose); padding-left: 16px; }
+    .check-items { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .check-item { display: flex; align-items: flex-start; gap: 12px; }
+    .check-dot { width: 8px; height: 8px; min-width: 8px; border-radius: 50%; background: var(--rose); margin-top: 8px; }
+    .check-item p { font-size: 1.05rem; line-height: 1.75; color: var(--ink); margin: 0; }
+
+    /* Portrait */
+    .portrait-col { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .portrait-wrap { position: relative; width: 320px; height: 320px; flex-shrink: 0; }
+    .portrait-wrap img { position: relative; z-index: 2; width: 300px; height: 300px; border-radius: 50%; object-fit: cover; object-position: center top; border: 4px solid #ffffff; box-shadow: 0 10px 40px rgba(44,43,63,0.1); margin: 10px 0 0 10px; }
+    .portrait-wrap::before { content: ''; position: absolute; top: -8px; left: -4px; width: 320px; height: 330px; border-radius: 55% 45% 50% 50% / 48% 52% 48% 52%; border: 1.5px solid rgba(176,130,147,0.45); z-index: 1; transform: rotate(-6deg); }
+    .portrait-wrap::after { content: ''; position: absolute; top: 4px; left: 8px; width: 308px; height: 316px; border-radius: 48% 52% 55% 45% / 52% 48% 52% 48%; border: 1px solid rgba(176,130,147,0.25); z-index: 1; transform: rotate(9deg); }
+    .portrait-tag { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); text-align: center; }
+
+    /* ── WIRKUNG ── */
+    .wirkung { position: relative; padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 72px); background: #ffffff; overflow: hidden; }
+    .wirkung-bg { position: absolute; inset: 0; background: url('Image/Wasserfarben-Hintergrund-Seelenlicht.webp') center center / cover no-repeat; opacity: 0.45; pointer-events: none; }
+    .wirkung-inner { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; }
+    .wirkung-sep { height: 1px; background: rgba(176,130,147,0.2); margin: clamp(48px, 6vw, 72px) 0; }
+    .wirkung-intro { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); max-width: 600px; margin-bottom: 32px; }
+    .wirkung h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 0; }
+    .wirkung h2 em { font-style: italic; color: var(--rose); }
+    .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .cards-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .wcard { background: rgba(255,255,255,0.88); border: 1px solid rgba(176,130,147,0.18); border-radius: 12px; padding: 28px 24px; }
+    .wcard--top { border-top: 3px solid var(--rose); border-radius: 0 0 12px 12px; }
+    .wcard-num { display: block; font-family: var(--font-h); font-size: 2.2rem; font-weight: 300; color: var(--rose); line-height: 1; margin-bottom: 10px; }
+    .wcard h3 { font-size: 1.1rem; font-weight: 400; margin-bottom: 8px; }
+    .wcard p { font-size: 0.95rem; line-height: 1.75; color: var(--ink-mid); margin: 0; }
+    .after-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .after-item { background: rgba(255,255,255,0.88); border-radius: 12px; border: 1px solid rgba(176,130,147,0.18); padding: 24px 22px; }
+    .after-item p { font-size: 1rem; line-height: 1.8; color: var(--ink); font-style: italic; margin: 0; }
+
+    /* ── PREIS ── */
+    .preis { padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 72px); background: var(--rose-bg); }
+    .preis-inner { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .preis h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 0; }
+    .preis-intro { font-size: 1.05rem; line-height: 1.8; color: var(--ink-mid); max-width: 480px; margin: 0 auto 40px; }
+    .preis-box { background: #ffffff; border: 1px solid rgba(176,130,147,0.25); border-radius: 20px; padding: clamp(36px, 5vw, 56px) clamp(28px, 5vw, 64px); max-width: 480px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .preis-amt { font-family: var(--font-h); font-size: clamp(3.5rem, 7vw, 5rem); font-weight: 300; color: var(--purple-dark); line-height: 1; margin-bottom: 10px; }
+    .preis-dur { display: block; font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rose); margin-bottom: 32px; }
+    .preis-list { list-style: none; padding: 0; margin: 0 0 36px; width: 100%; border-top: 1px solid rgba(176,130,147,0.15); padding-top: 24px; text-align: left; }
+    .preis-list li { font-size: 1rem; line-height: 1.75; color: var(--ink-mid); padding: 7px 0 7px 22px; border-bottom: 1px solid rgba(176,130,147,0.08); position: relative; }
+    .preis-list li:last-child { border-bottom: none; }
+    .preis-list li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; border-radius: 50%; background: var(--rose); }
+
+    /* ── KONTAKT ── */
+    .kontakt { background: #ffffff; padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 72px); }
+    .kontakt-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .kontakt-info h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 14px; }
+    .kontakt-info > p { font-size: 1.05rem; color: #5a4a65; line-height: 1.75; margin-bottom: 32px; }
+    .phone-link { display: flex; align-items: center; gap: 16px; background: #ffffff; border: 1px solid rgba(176,130,147,0.2); border-radius: 12px; padding: 18px 24px; margin-bottom: 28px; transition: box-shadow 0.2s; }
+    .phone-link:hover { box-shadow: 0 4px 16px rgba(61,43,78,0.08); }
+    .phone-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--purple-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .phone-icon svg { width: 18px; height: 18px; fill: #ffffff; }
+    .phone-num { display: block; font-family: var(--font-h); font-size: 1.375rem; color: var(--purple-dark); line-height: 1.2; }
+    .phone-sub { display: block; font-family: var(--font-ui); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a7a90; margin-top: 3px; }
+    .socials { display: flex; flex-wrap: wrap; gap: 10px; }
+    .social-pill { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 300; letter-spacing: 0.08em; color: #5a4a65 !important; background: #ffffff; border: 1px solid rgba(176,130,147,0.2); border-radius: 32px; padding: 0.4rem 0.9rem; transition: all 0.2s; }
+    .social-pill:hover { border-color: var(--rose); color: var(--purple-dark) !important; background: var(--rose-bg); }
+    .kontakt-form { background: #ffffff; border: 1px solid rgba(176,130,147,0.15); border-radius: 16px; padding: 2.5rem; box-shadow: 0 8px 32px rgba(44,43,63,0.05); }
+    .form-note { font-family: var(--font-h); font-size: 1.4rem; color: var(--purple-dark); margin-bottom: 1.5rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .combined-inner { grid-template-columns: 1fr; gap: 40px; }
+      .portrait-col { order: -1; }
+      .portrait-wrap { width: 260px; height: 260px; }
+      .portrait-wrap img { width: 240px; height: 240px; margin: 10px 0 0 10px; }
+      .portrait-wrap::before { width: 260px; height: 268px; }
+      .portrait-wrap::after { width: 250px; height: 256px; }
+    }
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-img-wrap img { max-width: 360px; margin: 0 auto; }
+      .hero-scroll { display: none; }
+      .intro-inner { grid-template-columns: 1fr; gap: 40px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .cards-grid--3 { grid-template-columns: 1fr; }
+      .after-grid { grid-template-columns: 1fr; }
+      .kontakt-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 600px) {
+      .hero { min-height: auto; padding-bottom: 60px; }
+      .hero h1 { font-size: 2.6rem; }
+      .combined h2, .wirkung h2 { font-size: 1.8rem; }
+      .preis h2 { font-size: 1.8rem; }
+      .preis-box { padding: 28px 20px 32px; }
+      .kontakt-form { padding: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION (gemeinsam) ══ -->
+  <div id="nav-placeholder" data-component="nav" data-page="seelenlicht" data-solid="true"></div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home" aria-label="Seelenlicht Körperarbeit">
+    <svg class="hero-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#f3e4de" stop-opacity="1"/><stop offset="100%" stop-color="#f3e4de" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ccddd4" stop-opacity=".85"/><stop offset="100%" stop-color="#ccddd4" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g3" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#e8d5e0" stop-opacity=".75"/><stop offset="100%" stop-color="#e8d5e0" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g4" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ede3d8" stop-opacity=".8"/><stop offset="100%" stop-color="#ede3d8" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g style="transform-origin:260px 160px;animation:sfloat2 22s ease-in-out infinite"><circle cx="260" cy="160" r="280" fill="url(#g1)"/></g>
+      <g style="transform-origin:160px 700px;animation:sfloat3 26s ease-in-out 3s infinite"><circle cx="160" cy="700" r="220" fill="url(#g2)"/></g>
+      <g style="transform-origin:700px 100px;animation:sfloat4 20s ease-in-out 1s infinite"><circle cx="700" cy="100" r="180" fill="url(#g3)"/></g>
+      <g style="transform-origin:1350px 780px;animation:sfloat1 24s ease-in-out 5s infinite"><circle cx="1350" cy="780" r="200" fill="url(#g4)"/></g>
+      <g style="transform-origin:120px 220px;animation:srot 100s linear infinite">
+        <circle cx="120" cy="220" r="90" fill="none" stroke="#ab7d95" stroke-width=".5" opacity=".15"/>
+        <circle cx="120" cy="220" r="60" fill="none" stroke="#ab7d95" stroke-width=".35" opacity=".1"/>
+      </g>
+      <circle cx="380" cy="70" r="3.5" fill="#ab7d95" opacity=".22" style="animation:sfloat4 11s ease-in-out infinite"/>
+      <circle cx="920" cy="55" r="3" fill="#c9a0b8" opacity=".28" style="animation:sfloat1 9s ease-in-out 1s infinite"/>
+    </svg>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="slbl">Verena Johanna Polzhofer</span>
+        <h1>Seelenlicht<br><em>Körperarbeit</em></h1>
+        <p class="hero-sub">Wieder in Verbindung mit deiner Seele kommen – sanft, geführt und klar strukturiert.</p>
+        <a href="#kontakt" class="sbtn">Termin anfragen</a>
+      </div>
+      <div class="hero-img-wrap">
+        <img fetchpriority="high" decoding="async"
+          src="Image/Wasserfarben-seelenlicht-hero.webp"
+          alt="Seelenlicht Wasserfarben Illustration"
+          loading="eager" width="560" height="560">
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Mehr</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── WAS IST SEELENLICHT ── -->
+  <section class="intro reveal">
+    <div class="intro-inner">
+      <div class="intro-left">
+        <span class="slbl">Die Grundlage</span>
+        <h2>Was ist Seelenlicht?</h2>
+        <hr class="sdiv">
+        <p>Seelenlicht ist die Quelle von Klarheit, Ruhe und innerer Führung. Es ist das lebendige Licht einer höheren Ebene.</p>
+        <p>In der Seelenlicht-Körperarbeit richte ich meine Aufmerksamkeit auf dieses Licht und unterstütze dich dabei, wieder in eine tiefere Verbindung mit deiner eigenen Seele zu kommen.</p>
+      </div>
+      <div class="why-items">
+        <div class="why-item">
+          <h3>Warum Seelenlicht und nicht „nur" Energie?</h3>
+          <p>Deine eigene Energie – auch Prana oder Chi genannt – ist stark mit deinen Gedanken und Gefühlen verbunden. Um Gedanken und Gefühlen zu helfen, sich zu verändern, braucht es eine äußere Kraft. Seelenlicht ist diese Kraft.</p>
+        </div>
+        <div class="why-item">
+          <h3>Warum Verbundenheit zur Seele?</h3>
+          <p>Je stärker du im Leben feststeckst, desto schwächer deine Verbindung zur Seele. Du denkst immer dieselben Gedanken, fühlst immer dieselben Gefühle – nichts verändert sich. Deine Seele ist die helfende Hand, die Bewegung in dein Leben bringt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FÜR WEN / ABLAUF ── -->
+  <section class="combined reveal">
+    <div class="combined-inner">
+      <div>
+        <span class="slbl">Für wen</span>
+        <h2>Bist du bei mir richtig?</h2>
+        <hr class="sdiv">
+        <div class="check-items">
+          <div class="check-item">
+            <span class="check-dot" aria-hidden="true"></span>
+            <p>Du möchtest die Beziehung zu deiner Seele stärken.</p>
+          </div>
+          <div class="check-item">
+            <span class="check-dot" aria-hidden="true"></span>
+            <p>Du hast keine Angst mehr davor, dich selbst zu sehen und anzunehmen.</p>
+          </div>
+          <div class="check-item">
+            <span class="check-dot" aria-hidden="true"></span>
+            <p>Du bist bereit, die nächsten Schritte auf deiner Reise zu gehen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="portrait-col">
+        <div class="portrait-wrap">
+          <img decoding="async"
+            src="Image/Portrait-hoch-gruen-kl.jpg"
+            alt="Verena Johanna Polzhofer"
+            loading="lazy" width="300" height="300">
+        </div>
+        <span class="portrait-tag">Verena · Energetik &amp; Selbstregulierung</span>
+      </div>
+
+      <div>
+        <span class="slbl">Der Ablauf</span>
+        <h2>Was erwartet dich?</h2>
+        <hr class="sdiv">
+        <p>Meine Körperarbeit ist geführt und klar strukturiert. Unsere gemeinsame Arbeit beginnt mit einem Gespräch.</p>
+        <p>Während der Behandlung liegst du bequem und darfst einfach loslassen. Durch sanftes Handauflegen entsteht ein stiller Raum, in dem sich dein Seelenlicht entfalten kann.</p>
+        <p class="combined-highlight">Viele Menschen erleben dabei eine tiefe Entspannung, ein Gefühl von innerer Weite und neue Klarheit für ihren Weg.</p>
+        <p>Die Verbindung zu deiner Seele hilft dir, eine Sicherheit in dir aufzubauen, die rein gar nichts mit äußeren Ereignissen zu tun hat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WIRKUNG / NICHT GEEIGNET / NACH EINER SITZUNG ── -->
+  <section class="wirkung">
+    <div class="wirkung-bg" aria-hidden="true"></div>
+    <div class="wirkung-inner">
+
+      <div class="reveal">
+        <span class="slbl">Die Wirkung</span>
+        <h2>Seelenlicht-Behandlung</h2>
+        <hr class="sdiv">
+        <p class="wirkung-intro">Seelenlicht ist ein lebendiges, intelligentes Licht. Es arbeitet intuitiv – dort, wo es gebraucht wird.</p>
+        <div class="cards-grid">
+          <div class="wcard">
+            <span class="wcard-num">01</span>
+            <h3>Ruhe &amp; Klarheit</h3>
+            <p>Eine Behandlung hilft dir, wieder mehr Ruhe und Klarheit in deinem Inneren zu finden – Schicht für Schicht.</p>
+          </div>
+          <div class="wcard">
+            <span class="wcard-num">02</span>
+            <h3>Tiefere Seelenverbindung</h3>
+            <p>Sie stärkt deine bereits bestehende Beziehung zur Seele und öffnet den Raum für inneres Wachstum.</p>
+          </div>
+          <div class="wcard">
+            <span class="wcard-num">03</span>
+            <h3>Harmonisierung</h3>
+            <p>Seelenlicht hilft dabei, kleinere Energieblockaden aufzulösen und mehr Harmonie im Energiekörper zu erzeugen.</p>
+          </div>
+          <div class="wcard">
+            <span class="wcard-num">04</span>
+            <h3>Innere Stille</h3>
+            <p>Viele Klienten berichten von einem tiefen Gefühl der Stille und Verbundenheit nach der Behandlung.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wirkung-sep"></div>
+
+      <div class="reveal">
+        <span class="slbl">Wichtig zu wissen</span>
+        <h2>Was Seelenlicht <em>nicht</em> ist</h2>
+        <hr class="sdiv">
+        <div class="cards-grid--3 cards-grid">
+          <div class="wcard wcard--top">
+            <h3>Kein Ersatz für Therapie</h3>
+            <p>Seelenlicht-Körperarbeit ersetzt keine psychotherapeutische oder medizinische Behandlung.</p>
+          </div>
+          <div class="wcard wcard--top">
+            <h3>Keine dauerhafte Abhängigkeit</h3>
+            <p>Mein Ziel ist deine Freiheit. Eine dauerhafte Begleitung ist eine dauerhafte Abhängigkeit – das genaue Gegenteil von Freiheit.</p>
+          </div>
+          <div class="wcard wcard--top">
+            <h3>Keine Geistheilung</h3>
+            <p>Ich arbeite nur mit meiner energetischen Wahrnehmung. Kein Channeln, keine Engel, keine fremden Wesen – nur du und dein Körper.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wirkung-sep"></div>
+
+      <div class="reveal">
+        <span class="slbl">Was bleibt</span>
+        <h2>Nach einer Sitzung…</h2>
+        <hr class="sdiv">
+        <div class="after-grid">
+          <div class="after-item"><p>…spürst du mehr Klarheit darüber, wer du bist und was dir wirklich wichtig ist.</p></div>
+          <div class="after-item"><p>…fühlt sich Stille vertrauter an – nicht leer, sondern getragen.</p></div>
+          <div class="after-item"><p>…haben viele Menschen das Gefühl, dass etwas in ihnen zur Ruhe gekommen ist, was lange gesucht hatte.</p></div>
+          <div class="after-item"><p>…beginnt manchmal ein Prozess. Dinge ordnen sich. Entscheidungen werden klarer.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PREIS ── -->
+  <section class="preis reveal">
+    <div class="preis-inner">
+      <div>
+        <span class="slbl">Investition</span>
+        <h2>Seelenlicht-Einzelsitzung</h2>
+        <hr class="sdiv c">
+        <p class="preis-intro">Eine Sitzung dauert ca. 60–75 Minuten und findet in meiner Praxis in Pöllau statt.</p>
+      </div>
+      <div class="preis-box">
+        <div class="preis-amt">€ 80</div>
+        <span class="preis-dur">pro Sitzung · ca. 60–75 Minuten · Pöllau, Steiermark</span>
+        <ul class="preis-list">
+          <li>Einführungsgespräch inklusive</li>
+          <li>Sanfte Handauflege-Behandlung</li>
+          <li>Persönliches Nachgespräch</li>
+          <li>Individuelle Empfehlungen für danach</li>
+        </ul>
+        <a href="#kontakt" class="sbtn">Termin anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KONTAKT ── -->
+  <section class="kontakt" id="kontakt">
+    <div class="kontakt-inner">
+      <div class="kontakt-info reveal">
+        <span class="slbl">Kontakt</span>
+        <h2>Kostenloses Erstgespräch</h2>
+        <hr class="sdiv">
+        <p>Du kannst mich auch auf WhatsApp, Signal oder Telegram erreichen. Schicke mir eine kurze Nachricht und einen guten Zeitpunkt, um dich zurückzurufen.</p>
+        <a href="tel:004367764771171" class="phone-link">
+          <div class="phone-icon">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72c0 11.2-6.1 21.6-16 27L439.9 165c-9.9 5.4-22 5.3-31.8-.1l-60.1-34.3c-8.3-4.7-18.9-3.4-25.8 3.1L288 166.2c-9.9 9-23.4 12.5-36.1 9.2L208 166.1c-13-3.4-26.7-.4-36.9 7.9L131.2 205c-6.9 6.5-17.5 7.8-25.8 3.1L45.3 174c-9.9-5.4-16-15.8-16-27V75c0-10.1 4.8-19.7 12.9-25.7l64-48C115.9.5 126.3-1.5 136 2.2L213.9 34c15.3 6.1 28.5 16.2 38.5 29.1L320 48l52-13c9.7-2.4 19.9-.6 28.3 4.8l96 64z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="phone-num">0677 6477 1171</span>
+            <span class="phone-sub">Anrufen oder WhatsApp</span>
+          </div>
+        </a>
+        <div class="socials">
+          <a href="https://www.instagram.com/verenajohannapolzhofer/" class="social-pill" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61578514234077" class="social-pill" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://t.me/verenajp" class="social-pill" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://www.youtube.com/@verenajp" class="social-pill" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.whatsapp.com/channel/0029VaJsfjt6buMB2hWeBb3M" class="social-pill" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="kontakt-form reveal">
+        <p class="form-note">Ich melde mich innerhalb von 48 Stunden.</p>
+        <form action="https://formspree.io/f/xeedzbwa" method="POST" id="kontaktForm">
+          <div class="form-group">
+            <label for="vorname">Vorname *</label>
+            <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="deine@email.com">
+          </div>
+          <div class="form-group">
+            <label for="nachricht">Nachricht *</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Deine Nachricht an mich" required></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="Anfrage Seelenlicht-Behandlung">
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="form-submit">Senden</button>
+        </form>
+        <div class="form-success" id="formSuccess">✓ Deine Nachricht wurde erfolgreich gesendet!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER (gemeinsam) ══ -->
+  <div id="footer-placeholder" data-component="footer"></div>
+
+  <script src="global.js"></script>
+</body>
+</html>
