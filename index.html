@@ -1213,6 +1213,18 @@
           #faf7f2 62%, #faf7f2 100%
         );
       }
+
+      /* Nav auf Mobile: Burger und Logo-Text weiß (vor dem Scrollen) */
+@media (max-width: 768px) {
+  .nav:not(.scrolled) .nav-burger span {
+    background: #ffffff;
+  }
+  .nav:not(.scrolled) .nav-logo-text {
+    color: #ffffff;
+  }
+}
+
+
       .hero-inner {
         padding: 44svh 20px 48px 20px;
         align-items: flex-start;
