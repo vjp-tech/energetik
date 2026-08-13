@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="icon" type="image/jpeg" href="Image/flavicon.webp">
+  <link rel="apple-touch-icon" href="Image/flavicon.webp">
+  <meta name="theme-color" content="#3d2b4e">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dein Download – Verena Johanna Polzhofer</title>
+  <meta name="description" content="Dein Meditations-Download nach erfolgreichem Kauf.">
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Lexend:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style>
+
+    /* ── SEITEN-HEADER ── */
+    .page-header {
+      background: var(--purple-dark);
+      padding: 120px 24px 72px;
+      text-align: center;
+    }
+    .page-header .eyebrow-k {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: 300;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── HAUPTBEREICH ── */
+    .dl-page {
+      background: var(--rose-bg);
+      padding: 64px 24px 96px;
+      min-height: 40vh;
+    }
+    .dl-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 44px 40px;
+      box-shadow: 0 4px 24px rgba(61,43,78,0.08);
+    }
+    .dl-label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .dl-title {
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 400;
+      color: var(--purple-dark);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .dl-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #5a4a6a;
+      margin-bottom: 28px;
+    }
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--purple-dark);
+      color: #ffffff !important;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 15px 28px;
+      border-radius: 30px;
+      transition: background 0.2s, transform 0.2s;
+      margin-bottom: 36px;
+    }
+    .dl-btn:hover { background: var(--purple-mid); transform: translateY(-1px); }
+    .dl-btn svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+
+    .dl-tracks-title {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+    }
+    .dl-tracks {
+      list-style: none;
+      margin: 0 0 32px;
+      padding: 0;
+      border-top: 1px solid var(--ink-border);
+    }
+    .dl-tracks li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--ink-border);
+      display: flex;
+      gap: 12px;
+    }
+    .dl-tracks li span.n {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+      width: 18px;
+    }
+
+    .dl-note {
+      display: flex;
+      gap: 10px;
+      background: var(--bg-warm);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 8px;
+    }
+    .dl-note p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: #5a4a6a;
+      margin: 0;
+    }
+
+    .dl-contact {
+      font-size: 13px;
+      color: var(--ink-muted);
+      margin-top: 24px;
+      text-align: center;
+    }
+    .dl-contact a {
+      color: var(--purple-mid);
+      text-decoration: underline;
+    }
+
+    /* Fallback, falls keine gültige Meditation übergeben wurde */
+    .dl-empty { text-align: center; }
+    .dl-empty .dl-title { margin-bottom: 14px; }
+
+    @media (max-width: 600px) {
+      .page-header { padding: 100px 20px 56px; }
+      .dl-page { padding: 48px 16px 72px; }
+      .dl-card { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <div id="nav-placeholder" data-component="nav" data-page="" data-solid="true"></div>
+
+  <!-- ── SEITEN-HEADER ── -->
+  <header class="page-header">
+    <span class="eyebrow-k">Praxis für bewusste Veränderung</span>
+    <h1>Vielen Dank für deinen Kauf</h1>
+    <p>Hier findest du deinen Download.</p>
+  </header>
+
+  <!-- ── HAUPTBEREICH ── -->
+  <main class="dl-page">
+    <div class="dl-card reveal" id="dlCard">
+      <!-- Wird per JavaScript befüllt, siehe MEDITATIONEN-Objekt weiter unten -->
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <div id="footer-placeholder" data-component="footer"></div>
+
+  <script src="global.js"></script>
+  <script>
+    /* ══════════════════════════════════════════════════════════════
+       MEDITATIONEN-DATEN
+       Für jede neue Meditation hier einen neuen Eintrag hinzufügen.
+       "id" muss exakt zur Mollie-Weiterleitungs-URL passen:
+       downloads.html?m=DEIN-ID-HIER
+    ══════════════════════════════════════════════════════════════ */
+    const MEDITATIONEN = {
+      'anwesenheit': {
+        titel: 'Anwesenheitsmeditation',
+        text: 'Diese Meditation führt dich Schritt für Schritt zurück in deine Anwesenheit – dorthin, wo deine Aufmerksamkeit wieder bei dir selbst ankommt. Bewusst ohne Hintergrundmusik, damit du ganz bei deiner eigenen Wahrnehmung bleiben kannst.',
+        zip: 'https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Anwesenheit.zip',
+        tracks: [
+          'Erste Beruhigungsmeditation',
+          'Anwesenheit – Konzentration auf das Kraftzentrum',
+          'Konzentration durch die Atmung',
+          'Komme zur Ruhe',
+          'Anwesenheit – Aufmerksamkeit',
+          'Dritte Beruhigungsmeditation – mithilfe von Anwesenheit und Energiefeld'
+        ]
+      },
+      'begierdekraft': {
+        titel: 'Begierdekraft stärken',
+        text: 'Begierden fühlen sich oft stärker an als wir selbst, bis wir verstehen, welche Energie eigentlich dahintersteckt. Bewusst ganz ohne Hintergrundmusik, damit du ungestört bei dir und deiner Stimme bleiben kannst.',
+        zip: 'https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Begierdekraft.zip',
+        tracks: [
+          'Zwanzig Minuten mit mir zusammen sitzen',
+          'Begierde-Körpermeditation',
+          'Mentalbild-Meditation',
+          'Begierdekraft'
+        ]
+      },
+      'energie-verschoenern': {
+        titel: 'Energie verschönern',
+        text: 'Energie ist nicht nur da, sie hat auch eine Qualität, und genau die kannst du aktiv gestalten.',
+        zip: 'https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Energie%20versch%C3%B6nern.zip',
+        tracks: [
+          'Energie verschönern – Chakren',
+          'Verschönere die Energie deines Energiefelds',
+          'Verschönere die Energie deines physischen Körpers'
+        ]
+      },
+      'wut': {
+        titel: 'Wut',
+        text: 'Wut gilt oft als etwas, das wir unterdrücken sollten, dabei schützt sie in Wahrheit deine Grenzen. Bewusst ohne Hintergrundmusik, damit du ganz bei dir und deiner Wut bleiben kannst.',
+        zip: 'https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Wut.zip',
+        tracks: [
+          'Wut wahrnehmen',
+          'Dehne deine Wut aus',
+          'Wut und Atmung',
+          'Wut und Seelenlicht',
+          'Das Wutobjekt loslassen'
+        ]
+      },
+      'hyperaktivitaet': {
+        titel: 'Hyperaktivität',
+        text: 'Ist dein Kopf ständig in Bewegung, noch bevor der Tag richtig begonnen hat? Bewusst ohne Hintergrundmusik, denn manche Arbeitsmeditationen wirken ohne Musik im Hintergrund einfach klarer.',
+        zip: 'https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Hyperaktivit%C3%A4t.zip',
+        tracks: [
+          'Hyperaktivität und Corezentrum',
+          'Hyperaktivität und Seelenlicht',
+          'Hyperaktivität und der Aufmerksamkeitsball',
+          'Hyperaktivität und Konzentration halten'
+        ]
+      },
+      'koerperakzeptanz': {
+        titel: 'Körperakzeptanz',
+        text: 'Dein Körper trägt dich durch jeden Tag, auch wenn du gerade nicht liebevoll mit ihm umgehst. Diese Meditation lädt dich ein, deinen Körper wieder anzunehmen, so wie er jetzt ist, ganz ohne Bewertung.',
+        zip: 'https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/K%C3%B6rperakzeptanz.zip',
+        tracks: [
+          'Körperakzeptanz – Seelenlicht physischer Körper',
+          'Arbeite mit einem Körperbereich',
+          'Ganzkörperheilung',
+          'Verbinde dich mit deinem Ideal',
+          'Energetische Ganzkörperverschönerung'
+        ]
+      }
+    };
+
+    /* ══════════════════════════════════════════════════════════════
+       SEITE BEFÜLLEN – anhand von downloads.html?m=ID
+    ══════════════════════════════════════════════════════════════ */
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('m');
+      const daten = id ? MEDITATIONEN[id] : null;
+      const card = document.getElementById('dlCard');
+
+      if (!daten) {
+        card.className = 'dl-card dl-empty reveal';
+        card.innerHTML =
+          '<h2 class="dl-title">Meditation nicht gefunden</h2>' +
+          '<p class="dl-text">Der Link scheint nicht korrekt zu sein. Melde dich gerne bei mir, dann kümmere ich mich sofort darum.</p>' +
+          '<p class="dl-contact"><a href="kontakt.html">Zum Kontaktformular</a></p>';
+        return;
+      }
+
+      const trackItems = daten.tracks
+        .map((t, i) => '<li><span class="n">' + String(i + 1).padStart(2, '0') + '</span>' + t + '</li>')
+        .join('');
+
+      card.innerHTML =
+        '<span class="dl-label">Dein Kauf</span>' +
+        '<h2 class="dl-title">' + daten.titel + '</h2>' +
+        '<p class="dl-text">' + daten.text + '</p>' +
+        '<a class="dl-btn" href="' + daten.zip + '" download>' +
+          '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v10.59l3.3-3.3a1 1 0 011.4 1.42l-5 5a1 1 0 01-1.4 0l-5-5a1 1 0 011.4-1.42l3.3 3.3V3a1 1 0 012 0zM5 19a1 1 0 011-1h12a1 1 0 010 2H6a1 1 0 01-1-1z"/></svg>' +
+          'Meditationspaket herunterladen (ZIP)' +
+        '</a>' +
+        '<span class="dl-tracks-title">Enthaltene Meditationen</span>' +
+        '<ul class="dl-tracks">' + trackItems + '</ul>' +
+        '<div class="dl-note"><p>Denk daran: Setz dich zum Meditieren hin, statt dich hinzulegen – so bleibst du wach und aktiv bei der Sache.</p></div>' +
+        '<p class="dl-contact">Fragen oder Probleme beim Download? <a href="kontakt.html">Schreib mir</a>.</p>';
+    })();
+  </script>
+
+</body>
+</html>
