@@ -1320,7 +1320,7 @@
 
 
       .hero-inner {
-        padding: 44svh 20px 48px 20px;
+        padding: 110px 20px 48px 20px;
         align-items: flex-start;
         justify-content: flex-start;
       }
@@ -1342,10 +1342,25 @@
       .footer-inner { padding: 0 1.25rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .cookie-banner { left: 12px; right: 12px; max-width: 100%; bottom: 12px; }
+
+      /* Fliesstext auf Mobile groesser */
+      .book-text { font-size: 16px; }
+      .med-text { font-size: 15px; }
+      .med-tracklist li { font-size: 14px; }
+      .buecher-head p { font-size: 1.0625rem; }
+      .udemy-note { font-size: 15px; }
+
+      /* Auf Mobile alles linksbuendig */
+      .buecher-head { text-align: left; }
+      .buecher-head p { text-align: left; margin: 12px 0 0; }
+      .udemy-note { text-align: left; }
+      .angebote-head { text-align: left; margin: 0 0 60px; }
+      .book-card { text-align: left; }
+      .book-content { align-items: flex-start; }
     }
 
     @media (max-width: 380px) {
-      .hero-inner { padding-top: 42svh; }
+      .hero-inner { padding-top: 100px; }
       .hero-title { font-size: 2.1rem; }
     }
   </style>
