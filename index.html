@@ -10,7 +10,7 @@
   <meta name="description" content="Verena Johanna Polzhofer – Energetikerin aus Pöllau. Meditation, Seelenlicht-Körperbehandlung und energetische Selbstregulierung.">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Lexend:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Lexend:wght@200;300;400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* ── RESET & BASE ── */
@@ -41,8 +41,8 @@
       --rose-light:   #d4b0bc;
       --rose-bg:      #f5ecee;
       --accent:       #a85f35;
-      --bg-warm:      #f5ede3;
-      --font-h:       'Cormorant Garamond', Georgia, serif;
+      --bg-warm:      #eeeaf1;
+      --font-h:       'DM Sans', sans-serif;
       --font-b:       'DM Sans', sans-serif;
       --font-ui:      'Lexend', sans-serif;
     }
@@ -89,13 +89,14 @@
       border-radius: 50%;
     }
     .nav-logo-text {
-      font-family: var(--font-h);
-      font-size: 1.2rem;
-      color: var(--purple-dark);
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--ink-mid);
       line-height: 1.2;
       transition: color 0.3s;
     }
-    .nav.scrolled .nav-logo-text { color: var(--purple-dark); }
+    .nav.scrolled .nav-logo-text { color: var(--ink-mid); }
 
     .nav-links {
       display: flex;
@@ -170,50 +171,27 @@
     .hero {
       width: 100%;
       min-height: 100svh;
-      background: url('Image/Meditieren-Wald-quer-Verena.webp') center center / cover no-repeat;
+      background: var(--bg-warm);
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        105deg,
-        #ffffff 0%,
-        #ffffff 22%,
-        rgba(255,255,255,0.92) 36%,
-        rgba(255,255,255,0.55) 50%,
-        rgba(255,255,255,0.08) 65%,
-        transparent 100%
-      );
-      z-index: 0;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 180px;
-      background: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
-      z-index: 0;
-      pointer-events: none;
-    }
-
     .hero-inner {
       position: relative;
       z-index: 1;
       width: 100%;
-      padding: 96px 40px 96px clamp(40px, 10vw, 200px);
+      padding: 96px 40px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
 
     .hero-card {
-      max-width: 420px;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
       animation: fadeUp 1s cubic-bezier(0.25,1,0.5,1) both;
     }
 
@@ -225,6 +203,7 @@
     .hero-eyebrow {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 16px;
       margin-bottom: 24px;
     }
@@ -243,8 +222,9 @@
     }
 
     .hero-title {
+      font-family: 'Times New Roman', Times, serif;
       font-size: clamp(2.5rem, 5.5vw, 4.25rem);
-      font-weight: 400;
+      font-weight: 700;
       color: var(--purple-dark);
       margin-bottom: 24px;
     }
@@ -257,7 +237,7 @@
       width: 48px; height: 1px;
       background: var(--rose-light);
       border: none;
-      margin: 24px 0;
+      margin: 24px auto;
     }
 
     .hero-text {
@@ -270,6 +250,7 @@
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 16px;
     }
 
@@ -311,196 +292,10 @@
       cursor: pointer;
     }
     .btn-outline:hover {
-      background: var(--rose-bg);
-      border-color: var(--rose);
-      color: var(--rose) !important;
-      transform: translateY(-2px);
-    }
-
-    /* ── SECTION: ÜBER & SÄULEN ── */
-    .about-section {
       background: #ffffff;
-      padding: 0 0 8rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .about-topbar {
-      text-align: center;
-      padding-top: 4rem;
-      margin-bottom: 5rem;
-    }
-    .about-subtitle {
-      font-family: var(--font-ui);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--rose);
-      font-weight: 400;
-    }
-
-    /* Pillars head: 2 columns */
-    .pillars-head {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-      margin-bottom: 8rem;
-    }
-
-    .pillars-label {
-      font-family: var(--font-ui);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-
-    .pillars-head-title {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      color: var(--ink);
-      margin-bottom: 1.5rem;
-    }
-
-    .pillars-image {
-      margin-top: 2.5rem;
-      border-radius: 16px;
-      width: 100%;
-      max-width: 480px;
-    }
-
-    .pillars-head-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      padding-top: 8rem;
-    }
-
-    .section-intro {
-      font-size: 1.05rem;
-      color: var(--ink-mid);
-      line-height: 1.85;
-    }
-
-    /* About hero: 2 columns */
-    .about-hero {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      margin-bottom: 10rem;
-    }
-
-    .about-title {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      margin-bottom: 1.5rem;
-    }
-    .about-title em { font-style: italic; color: var(--rose); }
-
-    .about-text {
-      font-size: 1.05rem;
-      color: var(--ink-mid);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
-
-    .about-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 480px;
-    }
-
-    .image-circle {
-      width: 380px; height: 380px;
-      border-radius: 50%;
-      overflow: hidden;
-      z-index: 2;
-      box-shadow: 0 15px 40px rgba(44,43,63,0.08);
-      position: relative;
-    }
-    .image-circle img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
-    .image-circle::after {
-      content: '';
-      position: absolute;
-      top: -12px; left: -12px; right: -12px; bottom: -12px;
-      border: 1px solid var(--ink-border);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    /* Drei Säulen */
-    .pillars-section-head {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    .pillars-main-title {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      margin-bottom: 1.25rem;
-    }
-    .pillars-intro {
-      font-size: 1.05rem;
-      color: var(--ink-mid);
-      line-height: 1.8;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-    }
-
-    .pillar-card {
-      background: #f4ece5;
-      border: 1px solid var(--ink-border);
-      border-radius: 16px;
-      padding: 3.5rem 2.5rem;
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-      box-shadow: 0 4px 20px rgba(44,43,63,0.03);
-    }
-    .pillar-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 45px rgba(44,43,63,0.09);
-      border-color: rgba(44,43,63,0.28);
-    }
-
-    .pillar-num {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--ink-border);
-      background: rgba(44,43,63,0.04);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-ui);
-      font-size: 0.75rem; font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 2rem;
-    }
-
-    .pillar-title {
-      font-size: 1.4rem;
-      margin-bottom: 1.25rem;
-    }
-    .pillar-text {
-      font-size: 0.95rem;
-      color: var(--ink-mid);
-      line-height: 1.75;
+      border-color: #A62662;
+      color: #A62662 !important;
+      transform: translateY(-2px);
     }
 
     /* ── WEBSHOP ── */
@@ -510,6 +305,7 @@
     .books-bg { background: var(--bg-warm); }
     .udemy-bg { background: var(--rose-bg); }
     .meditations-bg { background: #ffffff; }
+    .ueber-bg { background: var(--rose-bg); }
     .buecher-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -529,13 +325,36 @@
       color: var(--accent);
       margin-bottom: 0.75rem;
     }
-    .buecher-head h2 { margin-top: 8px; }
+    .buecher-head h2 { margin-top: 8px; font-family: 'Times New Roman', Times, serif; font-weight: 700; }
     .buecher-head p {
       max-width: 560px;
       margin: 12px auto 0;
       font-size: 1rem;
       color: var(--ink-mid);
       line-height: 1.75;
+    }
+
+    .kern-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .kern-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 700;
+      color: var(--purple-dark);
+      margin-bottom: 2rem;
+    }
+    .kern-text {
+      font-size: 1.05rem;
+      color: var(--ink-mid);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .kern-image {
+      width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0 2.5rem;
     }
 
     .books-grid {
@@ -690,7 +509,7 @@
 
     .med-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 28px;
     }
     .med-card {
@@ -709,7 +528,7 @@
     }
     .med-card-img {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
     }
     .med-card-img img {
@@ -737,12 +556,30 @@
       line-height: 1.25;
     }
     .med-price {
-      font-family: var(--font-ui);
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--accent);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--purple-dark);
       white-space: nowrap;
       flex-shrink: 0;
+    }
+    .med-price-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      background: var(--rose-bg);
+      border-radius: 10px;
+      padding: 10px 0 12px;
+    }
+    .med-price-note {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--ink-muted);
+      text-align: center;
+      padding: 0 10px;
     }
     .med-text {
       font-size: 14px;
@@ -808,6 +645,9 @@
       margin-top: 4px;
     }
     .med-buy:hover { background: var(--purple-mid); transform: translateY(-1px); }
+    @media (max-width: 900px) {
+      .med-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 700px) {
       .med-grid { grid-template-columns: 1fr; }
       .med-intro { padding: 22px 20px; }
@@ -983,7 +823,7 @@
 
     /* ── KONTAKT ── */
     .kontakt {
-      background: var(--rose-bg);
+      background: #ffffff;
       padding: 100px 20px;
     }
 
@@ -994,6 +834,26 @@
       grid-template-columns: 1fr 1fr;
       gap: 6rem;
       align-items: start;
+    }
+
+    .kontakt-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .kontakt-photo {
+      width: 120px;
+      height: 150px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .kontakt-name {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--purple-dark);
     }
 
     .kontakt-label {
@@ -1159,6 +1019,77 @@
       color: var(--purple-dark);
       margin-top: 1rem;
     }
+
+    /* ── CHECKOUT-MODAL ── */
+    .checkout-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(44,43,63,0.55);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .checkout-modal.open { display: flex; }
+    .checkout-modal-box {
+      background: #ffffff;
+      border-radius: 16px;
+      max-width: 480px;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(44,43,63,0.25);
+    }
+    .checkout-modal-box h3 {
+      font-size: 1.3rem;
+      color: var(--purple-dark);
+      margin-bottom: 1rem;
+    }
+    .checkout-modal-box p {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .checkout-modal-box a { color: var(--purple-mid); text-decoration: underline; }
+    .checkout-consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 1.75rem;
+    }
+    .checkout-consent-row input { margin-top: 4px; flex-shrink: 0; width: 16px; height: 16px; }
+    .checkout-consent-row label {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .checkout-modal-actions { display: flex; gap: 12px; justify-content: flex-end; }
+    .checkout-cancel {
+      background: transparent;
+      border: 1px solid var(--ink-border);
+      color: var(--ink);
+      padding: 0.7rem 1.4rem;
+      border-radius: 32px;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .checkout-confirm {
+      background: var(--purple-dark);
+      color: #ffffff;
+      border: none;
+      padding: 0.7rem 1.6rem;
+      border-radius: 32px;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    .checkout-confirm:disabled { opacity: 0.4; cursor: not-allowed; }
+    .checkout-confirm:not(:disabled):hover { background: var(--purple-mid); }
 
     /* ── FOOTER ── */
     .footer {
@@ -1380,35 +1311,23 @@
     @media (max-width: 600px) {
       .hero {
         min-height: 100svh;
-        background-position: center 15%;
         align-items: flex-start;
-      }
-      .hero::before {
-        background: linear-gradient(
-          to bottom,
-          transparent 0%, transparent 25%,
-          rgba(250,247,242,0.5) 38%,
-          rgba(250,247,242,0.88) 50%,
-          #faf7f2 62%, #faf7f2 100%
-        );
       }
 
       /* Nav auf Mobile: Burger und Logo-Text weiß (vor dem Scrollen) */
 @media (max-width: 768px) {
-  .nav:not(.scrolled) .nav-burger span {
-    background: #ffffff;
-  }
-  .nav:not(.scrolled) .nav-logo-text {
-    color: #ffffff;
-  }
 }
 
 
       .hero-inner {
         padding: 44svh 20px 48px 20px;
         align-items: flex-start;
+        justify-content: flex-start;
       }
-      .hero-card { max-width: 100%; }
+      .hero-card { max-width: 100%; margin: 0; text-align: left; }
+      .hero-eyebrow { justify-content: flex-start; }
+      .hero-divider { margin: 24px 0; }
+      .hero-buttons { justify-content: flex-start; }
       .hero-title { font-size: 2.4rem; }
       .hero-buttons { flex-direction: column; align-items: flex-start; }
       .btn-primary, .btn-outline { width: auto; min-width: 200px; justify-content: center; }
@@ -1437,7 +1356,7 @@
   <nav class="nav" id="nav" role="navigation" aria-label="Hauptnavigation">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">
-        <img src="Image/icon-vjp.webp" alt="Verena Johanna Polzhofer Logo">
+        <img src="Image/vjp-logo.webp" alt="Verena Johanna Polzhofer Logo">
         <span class="nav-logo-text">Verena Johanna Polzhofer</span>
       </a>
       <div class="nav-links">
@@ -1445,8 +1364,8 @@
         <a href="#buecher">Bücher</a>
         <a href="#kurse">Kurse</a>
         <a href="#meditationen">Arbeitsmeditationen</a>
-        <a href="https://sinnfunk.live/" target="_blank" rel="noopener">Sinnfunk</a>
-        <a href="#kontakt" class="nav-cta">Kontakt</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="https://sinnfunk.live/" target="_blank" rel="noopener" class="nav-cta">Sinnfunk</a>
       </div>
       <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -1457,8 +1376,8 @@
       <a href="#buecher">Bücher</a>
       <a href="#kurse">Kurse</a>
       <a href="#meditationen">Arbeitsmeditationen</a>
-      <a href="https://sinnfunk.live/" target="_blank" rel="noopener">Sinnfunk</a>
       <a href="#kontakt">Kontakt</a>
+      <a href="https://sinnfunk.live/" target="_blank" rel="noopener">Sinnfunk</a>
     </div>
   </nav>
 
@@ -1471,66 +1390,16 @@
           <span class="hero-eyebrow-text">Einzigartiger Weg zu dir selbst</span>
         </div>
         <h1 class="hero-title">
-          Sind <em>deine Gedanken lauter</em> als du selbst?
+          Pragmatische Esoterik und Alltagsenergetik
         </h1>
         <hr class="hero-divider">
         <p class="hero-text">
-          Du weißt, dass sich etwas verändern muss. Du spürst es schon lange. Aber zwischen diesem Wissen und dem echten Wandel liegt eine Lücke — und genau dort setze ich an.
+          Erkenntnis allein ist wertvoll – doch sie verändert noch nichts. Erst wenn aus Erkenntnis konkrete Schritte entstehen, kann sie auch im Alltag wirksam werden. In meinen Büchern und Kursen vermittle ich Wissen, in meinen geführten Meditationen zeige ich dir, wie du dieses Wissen praktisch anwenden kannst – damit aus deiner Erkenntnis echte Veränderung wird.
         </p>
         <div class="hero-buttons">
           <a href="#ueber" class="btn-outline">Der Kern meiner Arbeit</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ── ÜBER & SÄULEN ── -->
-  <section class="about-section" id="ueber">
-    <div class="about-inner">
-
-      <div class="about-topbar">
-        <span class="about-subtitle">Seelenlichtarbeit · Energetische Selbstregulierung · Geführte esoterische Meditationen</span>
-      </div>
-
-      <!-- Pillars Head -->
-      <div class="pillars-head reveal">
-        <div>
-          <span class="pillars-label">Fehlt es dir an Selbstregulierung?</span>
-          <h2 class="pillars-head-title">Führen deine Gefühle und Gedanken <em>Regie in deinem Alltag?</em></h2>
-          <img src="Image/Gedanken-Gefuehle-Energien.webp" alt="Gedanken, Gefühle und Energie – drei verbundene Bereiche" class="pillars-image">
-        </div>
-        <div class="pillars-head-right">
-          <p class="section-intro">Morgens aufwachen und sofort denken. Abends ins Bett gehen und nicht aufhören können.</p>
-          <p class="section-intro">Eigentlich ist alles in Ordnung. Und trotzdem stimmt etwas nicht. Ein Satz, der dich stundenlang beschäftigt. Eine Reaktion, die du dir hinterher nicht erklären kannst. Ein Gefühl, das einfach bleibt — egal was du tust.</p>
-          <p class="section-intro">Du kannst bereits erkennen, dass deine Gedanken dir nicht guttun. Dass es Zeit ist, alte Gefühle loszulassen. Aber du weißt nicht wie.</p>
-        </div>
-      </div>
-
-      <!-- Drei Säulen -->
-      <div class="pillars-section-wrap reveal">
-        <div class="pillars-section-head">
-          <h2 class="pillars-main-title">Die drei Säulen meiner Arbeit</h2>
-          <p class="pillars-intro">Alle drei Bereiche sind untrennbar miteinander verbunden. Der Weg ist nicht alle drei gemeinsam zu regulieren – sondern getrennt.</p>
-        </div>
-        <div class="pillars-grid">
-          <div class="pillar-card">
-            <div class="pillar-num">01</div>
-            <h3 class="pillar-title">Gefühle regulieren</h3>
-            <p class="pillar-text">Verändere deine Gefühle, indem du sie verstehst. Deine Gefühle lösen sich auf, wenn du ihre Botschaft hörst.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="pillar-num">02</div>
-            <h3 class="pillar-title">Gedanken lenken</h3>
-            <p class="pillar-text">Deine Gedanken bestimmen, wie du über dich denkst und fühlst. Sie beeinflussen dein Handeln in der Welt. Deshalb ist es wichtig, aktiv mit ihnen zu arbeiten.</p>
-          </div>
-          <div class="pillar-card">
-            <div class="pillar-num">03</div>
-            <h3 class="pillar-title">Energie bewegen</h3>
-            <p class="pillar-text">Energien sind Teil des Lebens – der äußeren Welt und deiner inneren. Als Energetikerin arbeite ich direkt mit der Energie hinter deinen Gedanken und Gefühlen.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -1612,7 +1481,7 @@
     <div class="buecher-inner">
       <div class="buecher-head reveal">
         <span class="eyebrow">Digitale Downloads</span>
-        <h2>Geführte Meditationen</h2>
+        <h2>Geführte esoterische Arbeitsmeditationen</h2>
       </div>
 
       <p class="med-intro reveal">Die Meditationen, die du hier findest, sind keine Wohlfühlmeditationen zum Entspannen und Abschalten. Es sind <strong>Arbeitsmeditationen</strong> – das heißt, du gehst darin aktiv mit einem bestimmten Thema in Kontakt, zum Beispiel mit deiner Wut, deiner Begierde oder deiner Energie. Genau deshalb verzichten manche dieser Meditationen bewusst auf Hintergrundmusik: Sie würde dich eher ablenken, als dich in der Arbeit mit dir selbst zu unterstützen. Aus demselben Grund empfehle ich dir, beim Meditieren zu sitzen statt dich hinzulegen. Im Sitzen bleibst du wach und aktiv bei der Sache, während du im Liegen schnell in einen passiveren, schläfrigeren Zustand rutschst.</p>
@@ -1627,7 +1496,6 @@
           <div class="med-card-body">
             <div class="med-card-top">
               <h3 class="med-title">Anwesenheitsmeditation</h3>
-              <span class="med-price">30 €</span>
             </div>
             <p class="med-text">Diese Meditation führt dich Schritt für Schritt zurück in deine Anwesenheit – dorthin, wo deine Aufmerksamkeit wieder bei dir selbst ankommt. Eine ruhige Übung für alle, die spüren, dass ihre Konzentration und Energie gerade woanders verweilen. Bewusst ohne Hintergrundmusik, damit du ganz bei deiner eigenen Wahrnehmung bleiben kannst.</p>
             <span class="med-tracklist-label">Enthält 6 Meditationen</span>
@@ -1642,7 +1510,11 @@
             <span class="med-audio-label">Hineinschnuppern</span>
             <audio class="med-audio" controls preload="none" src="https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Anwesenheitsmeditation%20Hineinschnuppern.mp3"></audio>
             <!-- MOLLIE-LINK HIER EINFÜGEN: href="#" durch deinen Mollie-Zahlungslink für Anwesenheitsmeditation ersetzen -->
-            <a href="https://payment-links.mollie.com/payment/drbHocfyFu59JoA6GxNxY" class="med-buy">Jetzt kaufen</a>
+            <div class="med-price-box">
+              <span class="med-price">30 €</span>
+              <span class="med-price-note">Enthält keine Mehrwertsteuer (Kleinunternehmerregelung gem. § 6 UStG)</span>
+            </div>
+            <a href="https://payment-links.mollie.com/payment/jMM68mXGqDwtL89cmtwGH" class="med-buy">Jetzt kaufen</a>
           </div>
         </article>
 
@@ -1654,7 +1526,6 @@
           <div class="med-card-body">
             <div class="med-card-top">
               <h3 class="med-title">Begierdekraft stärken</h3>
-              <span class="med-price">20 €</span>
             </div>
             <p class="med-text">Begierden fühlen sich oft stärker an als wir selbst, bis wir verstehen, welche Energie eigentlich dahintersteckt. Diese Meditation hilft dir, das Ziehen der Begierde zu erkennen und behutsam aufzulösen, statt dagegen anzukämpfen. Bewusst ganz ohne Hintergrundmusik, damit du ungestört bei dir und deiner Stimme bleiben kannst.</p>
             <span class="med-tracklist-label">Enthält 4 Meditationen</span>
@@ -1667,7 +1538,11 @@
             <span class="med-audio-label">Hineinschnuppern</span>
             <audio class="med-audio" controls preload="none" src="https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Begierdekraft%20Hineinschnuppern.mp3"></audio>
             <!-- MOLLIE-LINK HIER EINFÜGEN: href="#" durch deinen Mollie-Zahlungslink für Begierdekraft stärken ersetzen -->
-            <a href="https://payment-links.mollie.com/payment/ShwENgJrnXV4jg8DxUzUm" class="med-buy">Jetzt kaufen</a>
+            <div class="med-price-box">
+              <span class="med-price">20 €</span>
+              <span class="med-price-note">Enthält keine Mehrwertsteuer (Kleinunternehmerregelung gem. § 6 UStG)</span>
+            </div>
+            <a href="https://payment-links.mollie.com/payment/M25SxjVfbd4JAE8o6puYc" class="med-buy">Jetzt kaufen</a>
           </div>
         </article>
 
@@ -1679,7 +1554,6 @@
           <div class="med-card-body">
             <div class="med-card-top">
               <h3 class="med-title">Hyperaktivität</h3>
-              <span class="med-price">20 €</span>
             </div>
             <p class="med-text">Ist dein Kopf ständig in Bewegung, noch bevor der Tag richtig begonnen hat? Diese Meditation besänftigt deine innere Unruhe und schafft einen Raum, in dem dein Nervensystem endlich zur Ruhe kommen darf. Bewusst ohne Hintergrundmusik, denn manche Arbeitsmeditationen wie diese wirken ohne Musik im Hintergrund einfach klarer.</p>
             <span class="med-tracklist-label">Enthält 4 Meditationen</span>
@@ -1692,7 +1566,11 @@
             <span class="med-audio-label">Hineinschnuppern</span>
             <audio class="med-audio" controls preload="none" src="https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Hyperaktivit%C3%A4t%20Hineinschnuppern.mp3"></audio>
             <!-- MOLLIE-LINK HIER EINFÜGEN: href="#" durch deinen Mollie-Zahlungslink für Hyperaktivität ersetzen -->
-            <a href="https://payment-links.mollie.com/payment/TJUFdNjYmtVxu24qShsQx" class="med-buy">Jetzt kaufen</a>
+            <div class="med-price-box">
+              <span class="med-price">20 €</span>
+              <span class="med-price-note">Enthält keine Mehrwertsteuer (Kleinunternehmerregelung gem. § 6 UStG)</span>
+            </div>
+            <a href="https://payment-links.mollie.com/payment/93DNM3ipioAiKK2XyJmeS" class="med-buy">Jetzt kaufen</a>
           </div>
         </article>
 
@@ -1704,7 +1582,6 @@
           <div class="med-card-body">
             <div class="med-card-top">
               <h3 class="med-title">Körperakzeptanz</h3>
-              <span class="med-price">25 €</span>
             </div>
             <p class="med-text">Dein Körper trägt dich durch jeden Tag, auch wenn du gerade nicht liebevoll mit ihm umgehst. Diese Meditation lädt dich ein, deinen Körper wieder anzunehmen, so wie er jetzt ist, ganz ohne Bewertung.</p>
             <span class="med-tracklist-label">Enthält 5 Meditationen</span>
@@ -1718,7 +1595,11 @@
             <span class="med-audio-label">Hineinschnuppern</span>
             <audio class="med-audio" controls preload="none" src="https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/K%C3%B6rperakzeptanz%20Hineinschnuppern.mp3"></audio>
             <!-- MOLLIE-LINK HIER EINFÜGEN: href="#" durch deinen Mollie-Zahlungslink für Körperakzeptanz ersetzen -->
-            <a href="https://payment-links.mollie.com/payment/iP9t2dp3NEYov2mfEwtHG" class="med-buy">Jetzt kaufen</a>
+            <div class="med-price-box">
+              <span class="med-price">25 €</span>
+              <span class="med-price-note">Enthält keine Mehrwertsteuer (Kleinunternehmerregelung gem. § 6 UStG)</span>
+            </div>
+            <a href="https://payment-links.mollie.com/payment/3hnzFTkuYHKFVG5ANryYY" class="med-buy">Jetzt kaufen</a>
           </div>
         </article>
 
@@ -1730,7 +1611,6 @@
           <div class="med-card-body">
             <div class="med-card-top">
               <h3 class="med-title">Energie verschönern</h3>
-              <span class="med-price">15 €</span>
             </div>
             <p class="med-text">Energie ist nicht nur da, sie hat auch eine Qualität, und genau die kannst du aktiv gestalten. Diese Meditation zeigt dir, wie du deine Energie verschönerst und ihr wieder mehr Leichtigkeit, Klarheit und Schönheit schenkst.</p>
             <span class="med-tracklist-label">Enthält 3 Meditationen</span>
@@ -1742,7 +1622,11 @@
             <span class="med-audio-label">Hineinschnuppern</span>
             <audio class="med-audio" controls preload="none" src="https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Energie%20versch%C3%B6nern%20Hineinschnuppern.mp3"></audio>
             <!-- MOLLIE-LINK HIER EINFÜGEN: href="#" durch deinen Mollie-Zahlungslink für Energie verschönern ersetzen -->
-            <a href="https://payment-links.mollie.com/payment/8m8vyfi7mNUFEARhu7K4q" class="med-buy">Jetzt kaufen</a>
+            <div class="med-price-box">
+              <span class="med-price">15 €</span>
+              <span class="med-price-note">Enthält keine Mehrwertsteuer (Kleinunternehmerregelung gem. § 6 UStG)</span>
+            </div>
+            <a href="https://payment-links.mollie.com/payment/ih7gCgqRBHqJPHmDeMJpQ" class="med-buy">Jetzt kaufen</a>
           </div>
         </article>
 
@@ -1754,7 +1638,6 @@
           <div class="med-card-body">
             <div class="med-card-top">
               <h3 class="med-title">Wut</h3>
-              <span class="med-price">25 €</span>
             </div>
             <p class="med-text">Wut gilt oft als etwas, das wir unterdrücken sollten, dabei schützt sie in Wahrheit deine Grenzen. Diese Meditation begleitet dich dabei, die Kraft deiner Wut energetisch zu verstehen und bewusst zu nutzen, statt sie wegzudrücken. Bewusst ohne Hintergrundmusik, damit du ganz bei dir und deiner Wut bleiben kannst.</p>
             <span class="med-tracklist-label">Enthält 5 Meditationen</span>
@@ -1768,11 +1651,37 @@
             <span class="med-audio-label">Hineinschnuppern</span>
             <audio class="med-audio" controls preload="none" src="https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Wut%20Hineinschnuppern.mp3"></audio>
             <!-- MOLLIE-LINK HIER EINFÜGEN: href="#" durch deinen Mollie-Zahlungslink für Wut ersetzen -->
-            <a href="https://payment-links.mollie.com/payment/oKmsMTyTavS3hDQp8GUeo" class="med-buy">Jetzt kaufen</a>
+            <div class="med-price-box">
+              <span class="med-price">25 €</span>
+              <span class="med-price-note">Enthält keine Mehrwertsteuer (Kleinunternehmerregelung gem. § 6 UStG)</span>
+            </div>
+            <a href="https://payment-links.mollie.com/payment/pyqRj33wh2tMA6R8reSwK" class="med-buy">Jetzt kaufen</a>
           </div>
         </article>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ── UEBER MICH ── -->
+  <section class="webshop-section ueber-bg" id="ueber">
+    <div class="kern-inner">
+      <h2 class="kern-title">Der Kern meiner Arbeit</h2>
+
+      <p class="kern-text">Ich glaube nicht an schnelle Erfolge oder daran, dass sich alle Probleme allein durch die Kraft von Affirmationen und Manifestation lösen lassen. Esoterik beschäftigt sich für mich mit Wissen über die Welt, während die Energetik eine sehr spezielle Form der Arbeit mit den Energien ist, die in unserer Welt existieren. Doch beide sind fehlbar und haben ihre natürlichen Grenzen.</p>
+      <p class="kern-text">Ein kleines Beispiel aus meiner Arbeit mit der Wut: Du kannst direkt mit der energetischen Form der Wut arbeiten. Meine geführten Meditationen zur Wut zeigen dir, wie das möglich ist. Doch wenn jemand ständig deine Grenzen verletzt, dann ist deine Wut berechtigt. In diesem Fall geht es vielleicht weniger darum, an dir selbst zu arbeiten, sondern darum, den Mut zu finden, deine Grenzen zu verteidigen – durch eine klare und geerdete Kommunikation mit dem Menschen, der sie verletzt.</p>
+      <p class="kern-text">Doch die Wirklichkeit ist komplexer. Wir sind von Menschen umgeben, die anders denken als wir, ihre eigenen Ziele verfolgen und denen unsere Grenzen manchmal gleichgültig sind. Auch hier zeigt sich die Bedeutung der Wut: Sie kann dir helfen, deine Grenzen zu erkennen und sie zu verteidigen. Doch sie kann die Welt und andere Menschen nicht nach deinen Vorstellungen verändern.</p>
+
+      <img src="Image/relax.webp" alt="" class="kern-image">
+
+      <p class="kern-text">Hier beginnt für mich der eigentliche spirituelle Weg – ein Weg, der in den letzten Jahren durch die Kommerzialisierung der Spiritualität zunehmend in den Hintergrund geraten ist. Der spirituelle Weg bestand für mich nie darin, alle Ziele zu erreichen oder gar den Tod zu überwinden. Es ging immer auch darum, sich dem eigenen Schatten zu stellen, ehrlich mit sich selbst zu sein und Mut zu entwickeln. Mut, wenn nötig für sich einzustehen – etwa in einem schwierigen Gespräch über Grenzverletzungen. Aber auch den Mut, anzuerkennen, dass es im Leben Situationen gibt, in denen wir machtlos sind. Dass wir andere Menschen und die Welt nicht einfach verändern können.</p>
+      <p class="kern-text">Meine gesamte Arbeit orientiert sich an dieser Idee: sich mit der eigenen Macht und ebenso mit der eigenen Machtlosigkeit auseinanderzusetzen. Sich ehrlich zu fragen: Was kann ich an mir und in meinem Leben verändern? Und wo beginnt der Bereich, den ich nicht kontrollieren kann?</p>
+
+      <img src="Image/nurdieruhe.webp" alt="" class="kern-image">
+
+      <p class="kern-text">Dazu gehört auch, Mitgefühl mit sich selbst zu entwickeln, wenn eine mögliche Veränderung trotz aller Bemühungen ausbleibt, und eine kluge Form der Akzeptanz zu üben.</p>
+      <p class="kern-text">Kluge Akzeptanz bedeutet nicht, alles hinzunehmen oder einem Menschen weiterhin zu erlauben, die eigenen Grenzen zu verletzen. Sie kann bedeuten, eine Beziehung zu verlassen, eine Arbeit zu kündigen oder einen Umzug in Kauf zu nehmen. Sie verweigert sich nicht der Wirklichkeit, sondern stellt eine nüchterne Frage: Mit den Mitteln, die mir zur Verfügung stehen – was ist der beste Umgang mit dieser Situation?</p>
+      <p class="kern-text">Kluge Akzeptanz beginnt dort, wo die eigenen Möglichkeiten ausgeschöpft sind. Vielleicht nachdem das Gespräch stattgefunden hat, nachdem man versucht hat, eine Grenze zu setzen und für sich einzustehen. Sie ist nicht schwach und verschließt nicht die Augen – ganz im Gegenteil. Sie sieht klar hin. Sie erkennt das menschliche Dasein als das, was es ist: ein feiner Balanceakt zwischen der Möglichkeit zur Veränderung und der Erfahrung von Machtlosigkeit.</p>
     </div>
   </section>
 
@@ -1781,6 +1690,11 @@
     <div class="kontakt-inner">
 
       <div class="reveal">
+        <div class="kontakt-profile">
+          <img src="Image/verenapolzhofer.webp" alt="Verena Johanna Polzhofer" class="kontakt-photo">
+          <p class="kontakt-name">Verena Johanna Polzhofer</p>
+        </div>
+
         <span class="kontakt-label">Kontakt</span>
         <p class="kontakt-intro">Du kannst mich auch auf WhatsApp, Signal oder Telegram erreichen. Schicke mir eine kurze Nachricht und einen guten Zeitpunkt, um dich zurückzurufen.</p>
 
@@ -1805,7 +1719,7 @@
       </div>
 
       <div class="kontakt-form-wrap reveal">
-        <p class="form-note">Ich melde mich innerhalb von 48 Stunden.</p>
+        <p class="form-note">Schreib mir eine Nachricht</p>
         <form action="https://formspree.io/f/xeedzbwa" method="POST" id="kontaktForm">
           <div class="form-group">
             <label for="vorname">Vorname *</label>
@@ -1853,7 +1767,6 @@
             <li><a href="https://www.instagram.com/verenajohannapolzhofer/" class="footer-link" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://www.facebook.com/profile.php?id=61578514234077" class="footer-link" target="_blank" rel="noopener">Facebook</a></li>
             <li><a href="https://t.me/verenajp" class="footer-link" target="_blank" rel="noopener">Telegram</a></li>
-            <li><a href="https://www.youtube.com/@verenajp" class="footer-link" target="_blank" rel="noopener">YouTube</a></li>
           </ul>
         </div>
         <div>
@@ -1871,6 +1784,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- ── CHECKOUT-MODAL ── -->
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-labelledby="checkoutModalTitle" aria-modal="true">
+    <div class="checkout-modal-box">
+      <h3 id="checkoutModalTitle">Bevor es weitergeht</h3>
+      <p>Bitte lies dir vor dem Kauf kurz unsere <a href="agb.html" target="_blank" rel="noopener">AGB</a> und die Hinweise zum <a href="widerrufsrecht.html" target="_blank" rel="noopener">Widerrufsrecht</a> durch.</p>
+      <div class="checkout-consent-row">
+        <input type="checkbox" id="checkoutConsent">
+        <label for="checkoutConsent">Ich akzeptiere die AGB und stimme zu, dass mir der digitale Inhalt sofort nach Zahlungseingang zur Verfügung gestellt wird. Mir ist bewusst, dass ich dadurch mein 14-tägiges Widerrufsrecht verliere.</label>
+      </div>
+      <div class="checkout-modal-actions">
+        <button type="button" class="checkout-cancel" id="checkoutCancel">Abbrechen</button>
+        <button type="button" class="checkout-confirm" id="checkoutConfirm" disabled>Weiter zur Zahlung</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ── COOKIE BANNER ── -->
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-modal="true">
@@ -1916,6 +1845,38 @@
         burger.classList.remove('open');
         burger.setAttribute('aria-expanded', false);
       });
+    });
+
+
+    // ── CHECKOUT: Zustimmung vor Weiterleitung zu Mollie ──
+    const checkoutModal = document.getElementById('checkoutModal');
+    const checkoutConsent = document.getElementById('checkoutConsent');
+    const checkoutConfirm = document.getElementById('checkoutConfirm');
+    const checkoutCancel = document.getElementById('checkoutCancel');
+    let pendingCheckoutUrl = null;
+
+    document.querySelectorAll('.med-buy').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        pendingCheckoutUrl = link.getAttribute('href');
+        checkoutConsent.checked = false;
+        checkoutConfirm.disabled = true;
+        checkoutModal.classList.add('open');
+      });
+    });
+
+    checkoutConsent.addEventListener('change', () => {
+      checkoutConfirm.disabled = !checkoutConsent.checked;
+    });
+
+    checkoutConfirm.addEventListener('click', () => {
+      if (pendingCheckoutUrl) window.location.href = pendingCheckoutUrl;
+    });
+
+    function closeCheckoutModal() { checkoutModal.classList.remove('open'); }
+    checkoutCancel.addEventListener('click', closeCheckoutModal);
+    checkoutModal.addEventListener('click', e => {
+      if (e.target === checkoutModal) closeCheckoutModal();
     });
 
     // ── SMOOTH SCROLL ──

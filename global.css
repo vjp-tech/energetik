@@ -30,10 +30,10 @@ ul { list-style: none; }
   --rose-light:   #d4b0bc;
   --rose-bg:      #f5ecee;
   --accent:       #a85f35;
-  --bg-warm:      #f5ede3;
+  --bg-warm:      #eeeaf1;
 
   /* Typografie */
-  --font-h:   'Cormorant Garamond', Georgia, serif;
+  --font-h:   'DM Sans', sans-serif;
   --font-b:   'DM Sans', sans-serif;
   --font-ui:  'Lexend', sans-serif;
 }
