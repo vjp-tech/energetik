@@ -171,7 +171,7 @@
     .hero {
       width: 100%;
       min-height: 100svh;
-      background: var(--bg-warm);
+      background: linear-gradient(to bottom, #eeeaf1, #f0ebf0);
       display: flex;
       align-items: center;
       position: relative;
@@ -302,8 +302,8 @@
     .webshop-section {
       padding: 80px 0;
     }
-    .books-bg { background: var(--bg-warm); }
-    .udemy-bg { background: var(--rose-bg); }
+    .books-bg { background: linear-gradient(to bottom, #f0ebf0, #f3ebef); }
+    .udemy-bg { background: linear-gradient(to bottom, #f3ebef, #f5ecee); }
     .meditations-bg { background: #ffffff; }
     .ueber-bg { background: var(--rose-bg); }
     .buecher-inner {
@@ -1342,6 +1342,16 @@
       .footer-inner { padding: 0 1.25rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .cookie-banner { left: 12px; right: 12px; max-width: 100%; bottom: 12px; }
+
+      /* Hero-Text auf Mobile in weichem Container, Button bleibt aussen */
+      .hero-text {
+        background: #ffffff;
+        border: 1px solid var(--ink-border);
+        border-radius: 16px;
+        padding: 20px 22px;
+        box-shadow: 0 4px 20px rgba(44,43,63,0.06);
+        margin-bottom: 28px;
+      }
 
       /* Fliesstext auf Mobile groesser und kraeftiger */
       .book-title { font-size: 1.3rem; }
