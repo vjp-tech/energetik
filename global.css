@@ -38,10 +38,10 @@ ul { list-style: none; }
   --font-ui:  'Lexend', sans-serif;
 }
 
-/* ── TYPOGRAFIE ── */
+/* ── TYPOGRAFIE (wie Startseite) ── */
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-h);
-  font-weight: 300;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--ink);
 }
@@ -85,17 +85,18 @@ h1, h2, h3, h4, h5 {
   border-radius: 50%;
 }
 .nav-logo-text {
-  font-family: var(--font-h);
-  font-size: 1.2rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 400;
   color: #ffffff;
   line-height: 1.2;
   transition: color 0.3s;
 }
 /* Auf transparenter Nav (Hero mit dunklem Bild): Logo weiß */
-/* Auf solider Nav oder nach Scroll: Logo dunkel */
+/* Auf solider Nav oder nach Scroll: Logo dunkel (wie Startseite) */
 .nav.scrolled .nav-logo-text,
 .nav.nav-solid .nav-logo-text {
-  color: var(--purple-dark);
+  color: var(--ink-mid);
 }
 
 .nav-links {
