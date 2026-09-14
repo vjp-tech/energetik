@@ -16,6 +16,7 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
+strong, b { font-weight: 500; color: var(--ink); }
 
 /* ── DESIGN TOKENS ── */
 :root {

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="icon" type="image/jpeg" href="Image/flavicon.webp">
+  <link rel="apple-touch-icon" href="Image/flavicon.webp">
+  <meta name="theme-color" content="#3d2b4e">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bewegen – Verena Johanna Polzhofer</title>
+  <meta name="description" content="Geführte esoterische Meditation als private Einheit: Energie bewusst wahrnehmen und verändern – bei Wut, Anwesenheit, Hyperaktivität, Körperakzeptanz und mehr.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Lexend:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style>
+
+    /* ── SEITEN-HERO ── */
+    .page-header {
+      background: linear-gradient(rgba(61,43,78,0.85), rgba(61,43,78,0.90)), url('Image/bewegung.webp') center center / cover no-repeat;
+      padding: 150px 24px 96px;
+      text-align: center;
+    }
+    .page-header .eyebrow-k {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 18px;
+    }
+    .page-header h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 700;
+      color: #ffffff;
+      max-width: 780px;
+      margin: 0 auto 20px;
+      line-height: 1.25;
+    }
+    .page-header p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.75;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* ── MEINE BEREICHE ── */
+    .bew-intro {
+      background: var(--rose-bg);
+      padding: 88px 24px;
+    }
+    .bew-intro-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .bew-intro-inner .eyebrow { text-align: center; }
+    .bew-intro-inner h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 400;
+      color: var(--purple-dark);
+      margin-bottom: 28px;
+    }
+    .bew-intro-text {
+      font-size: 1.05rem;
+      color: #5a4a65;
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+    .bew-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .bew-tag {
+      display: inline-flex;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 10px 22px;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--purple-dark);
+    }
+
+    /* ── HAUPTBEREICH (Was kannst du erreichen?) ── */
+    .bew-page { background: #ffffff; padding: 96px 0; }
+    .buecher-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .buecher-head { text-align: center; margin-bottom: 56px; }
+    .buecher-head h2 {
+      margin-top: 8px;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 700;
+      color: var(--purple-dark);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+    }
+
+    .priv-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .kern-text { font-size: 1.05rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 1.5rem; }
+
+    .priv-infobox { background: var(--rose-bg); border-radius: 12px; padding: 32px 36px 36px; margin: 2.5rem 0; }
+    .priv-infobox-row { display: flex; flex-direction: column; gap: 28px; }
+    @media (min-width: 768px) {
+      .priv-infobox-row { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 48px; }
+      .priv-infobox-row .priv-steps { flex: 1; }
+      .priv-infobox-cta { flex: 0 0 260px; }
+    }
+    .priv-subtitle { font-family: var(--font-h); font-size: 1.2rem; color: var(--purple-dark); margin: 0 0 14px; }
+    .priv-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .priv-steps li { position: relative; padding-left: 26px; font-size: 1.05rem; color: var(--ink-mid); line-height: 1.6; }
+    .priv-steps li::before {
+      content: ""; position: absolute; left: 0; top: 9px;
+      width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+    }
+    .priv-price-box {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; background: #ffffff; border-radius: 10px; padding: 18px 22px; margin-bottom: 24px;
+    }
+    .priv-price { font-family: var(--font-h); font-size: 1.8rem; font-weight: 500; color: var(--purple-dark); }
+    .priv-price-unit { font-family: var(--font-ui); font-size: 0.85rem; color: var(--ink-muted); }
+    .priv-cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--purple-dark); color: #ffffff !important;
+      font-family: var(--font-ui); font-size: 13px; font-weight: 500; letter-spacing: 0.05em;
+      padding: 13px 22px; border-radius: 30px; transition: background 0.2s, transform 0.2s; margin-top: 4px;
+    }
+    .priv-cta:hover { background: var(--purple-mid); transform: translateY(-1px); }
+
+    /* ── ARTIKEL-TEXT ── */
+    .bew-article { max-width: 700px; margin: 0 auto; }
+
+    .bew-photo {
+      width: 100%;
+      max-width: 460px;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 3rem auto;
+    }
+    .bew-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .bew-highlight {
+      background: var(--bg-warm);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 26px 30px;
+      margin: 2.5rem 0;
+    }
+    .bew-highlight-label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .bew-highlight p { font-size: 1rem; color: var(--ink); line-height: 1.75; margin: 0; }
+    .bew-highlight ul {
+      list-style: none; margin: 14px 0 0; padding: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .bew-highlight ul li {
+      position: relative; padding-left: 22px;
+      font-size: 1rem; color: var(--ink); line-height: 1.7;
+    }
+    .bew-highlight ul li::before {
+      content: ""; position: absolute; left: 0; top: 9px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+    }
+
+    .bew-highlight-alt {
+      background: rgba(61,43,78,0.05);
+      border-left: none;
+      border-radius: 8px;
+      padding: 26px 30px;
+      margin: 2.5rem 0;
+    }
+    .bew-highlight-alt .bew-highlight-label { color: var(--purple-mid); }
+
+    .bew-praxis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 16px;
+    }
+    @media (min-width: 640px) {
+      .bew-praxis-grid { grid-template-columns: 1fr 1fr; gap: 22px 32px; }
+    }
+    .bew-praxis-item .bew-praxis-heading {
+      font-family: var(--font-h);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--purple-dark);
+      margin: 0 0 10px;
+    }
+    .bew-praxis-item ul { margin-top: 0 !important; }
+
+    /* ── KONTAKT (gleicher Block wie auf index.html) ── */
+    .kontakt-section { background: #ffffff; }
+    .kontakt-profile { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
+    .kontakt-photo { width: 120px; height: 150px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+    .kontakt-name { font-family: var(--font-ui); font-size: 1rem; font-weight: 500; color: var(--purple-dark); }
+
+    @media (max-width: 600px) {
+      .page-header { padding: 110px 20px 64px; }
+      .bew-intro { padding: 64px 20px; }
+      .bew-page { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <div id="nav-placeholder" data-component="nav" data-page="bewegen" data-solid="true"></div>
+
+  <!-- ── HERO ── -->
+  <header class="page-header">
+    <span class="eyebrow-k">Private Sitzung</span>
+    <h1>Energie in einem meditativen Zustand bewegen</h1>
+    <p>Alle meine geführten Meditationen kannst du auch in einer privaten Einheit mit mir genießen.</p>
+  </header>
+
+  <!-- ── MEINE BEREICHE ── -->
+  <section class="bew-intro">
+    <div class="bew-intro-inner reveal">
+      <span class="eyebrow">Fokus</span>
+      <h2>Meine Aufgabe</h2>
+
+      <p class="bew-intro-text">Ich helfe dir, Energie zu bewegen, die mit einem bestimmten Lebensthema verbunden ist.</p>
+
+      <div class="bew-tags">
+        <span class="bew-tag">Wut</span>
+        <span class="bew-tag">Anwesenheit</span>
+        <span class="bew-tag">Hyperaktivität</span>
+        <span class="bew-tag">Energie verschönern</span>
+        <span class="bew-tag">Körperakzeptanz</span>
+        <span class="bew-tag">Begierden schwächen</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WAS KANNST DU ERREICHEN? ── -->
+  <section class="bew-page">
+    <div class="buecher-inner">
+      <div class="buecher-head reveal">
+        <span class="eyebrow">Energiearbeit</span>
+        <h2>Was kannst du erreichen?</h2>
+      </div>
+
+      <div class="priv-inner">
+        <div class="bew-article reveal">
+          <div class="bew-highlight">
+            <span class="bew-highlight-label">Wichtig</span>
+            <p>Energiearbeit wird gerne als Allheilmittel angepriesen. Das stimmt so nicht.</p>
+          </div>
+
+          <p class="kern-text">Die Energie der Wut sorgt zum Beispiel dafür, dass dich das Gefühl auf ein Wutobjekt fokussiert – doch die energetische Arbeit mit der Wut <strong>verändert nichts daran, wenn jemand deine Grenzen überschreitet</strong>. Ähnlich verhält es sich mit der Begierdekraft hinter einer Gewohnheit: Die energetische Arbeit mit ihr hilft dir, diesen einen Bestandteil deiner Sucht oder Gewohnheit klarer wahrzunehmen und bewusst mit ihm zu arbeiten. Doch sie <strong>verändert weder deine körperliche Anwesenheit noch die vielen äußeren und inneren Gründe, die dich abhängig gemacht haben</strong>.</p>
+
+          <div class="bew-photo">
+            <img src="Image/energie-bewegen.webp" alt="Verena bei einer geführten Meditation">
+          </div>
+
+          <p class="kern-text">Die meisten Lebensbereiche sind vielschichtig – deshalb lassen sie sich nur schwer auflösen. Es braucht oft <strong>mehrere Ansatzpunkte gleichzeitig</strong>. Energetisches Arbeiten ist meiner Erfahrung nach dann hilfreich, wenn bereits ein gewisses Grundwissen vorhanden ist: wenn dir zum Beispiel schon bewusst ist, dass deine Hyperaktivität zu Problemen führt, oder wenn du erkennst, dass deine Selbstkritik deine energetische Ausstrahlung verändert.</p>
+
+          <div class="bew-highlight bew-highlight-alt">
+            <span class="bew-highlight-label">Auch andere Wege</span>
+            <ul>
+              <li>Geführte esoterische Meditationen sind übrigens nicht der einzige Weg, um direkt mit der Energie eines bestimmten Gefühls zu arbeiten.</li>
+              <li>Körperliche Übungen wie Klopfakupressur, Atemübungen, Yoga oder somatische Übungen verändern ebenfalls den Energiefluss.</li>
+              <li>Dazu kommt das klassische energetische Arbeiten – Handauflegen, Aurachirurgie, Cranio-Sakrale-Arbeit, Kinesiologie und vieles mehr.</li>
+            </ul>
+          </div>
+
+          <p class="kern-text">Wenn du auf einer Reise bist, um zum Beispiel besser mit deiner Hyperaktivität umzugehen, ist es von Vorteil, unterschiedliche Techniken kennenzulernen – um am Ende jene zu finden, die <strong>du selbstständig und allein anwenden kannst</strong>. Denn Veränderung braucht meiner Erfahrung nach zwei Dinge: <strong>Zeit</strong>, und <strong>einen Gewohnheitsaufbau</strong> mit genau jenen Übungen und Methoden, die für dich hilfreich sind.</p>
+
+          <p class="kern-text">Ich bin entschieden gegen die Vorstellung, dass sich schwierige, langwierige Probleme mit einem Schlag in nichts auflösen. <strong>Probleme sind oft Lehrer, die dir etwas beibringen wollen.</strong> Selbstverständlich nicht bei allen Problemen, aber bei vielen geht es um die Entwicklung von Mitgefühl, Achtsamkeit und einer regelmäßigen körperlichen oder spirituellen Praxis.</p>
+
+          <div class="bew-highlight">
+            <span class="bew-highlight-label">Vier Wege der täglichen Praxis</span>
+            <div class="bew-praxis-grid">
+              <div class="bew-praxis-item">
+                <p class="bew-praxis-heading">Körperliche Praxis</p>
+                <ul>
+                  <li>Bewegung</li>
+                  <li>Zeit in der Natur</li>
+                  <li>Atemübungen und mehr</li>
+                </ul>
+              </div>
+              <div class="bew-praxis-item">
+                <p class="bew-praxis-heading">Energetische Praxis</p>
+                <ul>
+                  <li>Meditationen</li>
+                  <li>Körperübungen wie die Klopfakupressur</li>
+                  <li>Atemübungen und Yoga-Übungen</li>
+                  <li>Somatische Übungen und vieles mehr</li>
+                </ul>
+              </div>
+              <div class="bew-praxis-item">
+                <p class="bew-praxis-heading">Spirituelle Praxis</p>
+                <ul>
+                  <li>Schweigemeditation</li>
+                  <li>Beten</li>
+                  <li>Das Lesen spiritueller Texte</li>
+                  <li>Gespräche über Spiritualität oder Religion</li>
+                </ul>
+              </div>
+              <div class="bew-praxis-item">
+                <p class="bew-praxis-heading">Emotionale und mentale Praxis</p>
+                <ul>
+                  <li>Tägliches Schreiben über die Innenwelt</li>
+                  <li>Künstlerisches Arbeiten wie Malen</li>
+                  <li>Gespräche mit guten Vertrauten</li>
+                  <li>Innehalten und die eigene Innenwelt wahrnehmen</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <p class="kern-text">Was diese täglichen Übungen alle gemeinsam haben: <strong>Du kannst sie ohne viel Aufwand, ohne äußere Hilfe und vor allem kostengünstig in dein Leben integrieren.</strong> Nachdem dir jemand Atemübungen gezeigt hat, sind Gruppen und Seminare zur Vertiefung zwar weiterhin interessant – doch nicht unbedingt nötig. Das Gleiche gilt für meine geführten esoterischen Meditationen: <strong>Du brauchst mich nicht mehr</strong>, sobald ich dir gezeigt habe, wie du zum Beispiel die Energieform der Wut ausdehnen kannst. Danach kannst du das selbstständig anwenden, wenn du es brauchst.</p>
+
+          <p class="kern-text">Der Weg zu einem gesunden Leben besteht – von wenigen Ausnahmen abgesehen – aus Wissen, das <strong>sich jeder Mensch aneignen kann</strong>, und aus täglichen Übungen, die <strong>jeder Mensch anwenden kann</strong>: unabhängig von Gesundheitszustand, unabhängig von finanziellen Mitteln.</p>
+
+          <div class="priv-infobox reveal">
+            <h3 class="priv-subtitle">Ablauf</h3>
+            <div class="priv-infobox-row">
+              <ul class="priv-steps">
+                <li>Ankunft</li>
+                <li>Gespräch darüber, welchen Bereich du bewegen möchtest</li>
+                <li>Ich öffne die Tür für dich, um in einen meditativen Zustand zu gelangen</li>
+                <li>Du sitzt dabei mit aufrechtem Rücken – das ist für den meditativen Zustand wichtig</li>
+                <li>Du erhältst die Aufnahme danach als Audiodatei zum erneuten Anhören</li>
+              </ul>
+
+              <div class="priv-infobox-cta">
+                <div class="priv-price-box">
+                  <span class="priv-price">80 €</span>
+                  <span class="priv-price-unit">pro Stunde</span>
+                </div>
+
+                <a href="#kontakt" class="priv-cta">Termin anfragen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KONTAKT ── -->
+  <section class="kontakt-section" id="kontakt">
+    <div class="kontakt-section-inner">
+
+      <div class="reveal">
+        <div class="kontakt-profile">
+          <img src="Image/verenapolzhofer.webp" alt="Verena Johanna Polzhofer" class="kontakt-photo">
+          <p class="kontakt-name">Verena Johanna Polzhofer</p>
+        </div>
+
+        <span class="kontakt-label">Kontakt</span>
+        <p class="kontakt-intro">Du kannst mich auch auf WhatsApp, Signal oder Telegram erreichen. Schicke mir eine kurze Nachricht und einen guten Zeitpunkt, um dich zurückzurufen.</p>
+
+        <a href="tel:004367764771171" class="kontakt-phone">
+          <div class="phone-icon">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72c0 11.2-6.1 21.6-16 27L439.9 165c-9.9 5.4-22 5.3-31.8-.1l-60.1-34.3c-8.3-4.7-18.9-3.4-25.8 3.1L288 166.2c-9.9 9-23.4 12.5-36.1 9.2L208 166.1c-13-3.4-26.7-.4-36.9 7.9L131.2 205c-6.9 6.5-17.5 7.8-25.8 3.1L45.3 174c-9.9-5.4-16-15.8-16-27V75c0-10.1 4.8-19.7 12.9-25.7l64-48C115.9.5 126.3-1.5 136 2.2L213.9 34c15.3 6.1 28.5 16.2 38.5 29.1L320 48l52-13c9.7-2.4 19.9-.6 28.3 4.8l96 64z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="phone-num">0680 222 3014</span>
+            <span class="phone-sub">Anrufen oder WhatsApp</span>
+          </div>
+        </a>
+
+        <div class="socials">
+          <a href="https://www.instagram.com/verenajohannapolzhofer/" class="social-pill" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61578514234077" class="social-pill" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://t.me/verenajp" class="social-pill" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://www.whatsapp.com/channel/0029VaJsfjt6buMB2hWeBb3M" class="social-pill" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="kontakt-form-wrap reveal">
+        <p class="form-note">Schreib mir eine Nachricht</p>
+        <form action="https://formspree.io/f/xeedzbwa" method="POST" id="kontaktForm">
+          <div class="form-group">
+            <label for="vorname">Vorname *</label>
+            <input type="text" id="vorname" name="vorname" placeholder="Dein Vorname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="deine@email.com">
+          </div>
+          <div class="form-group">
+            <label for="nachricht">Nachricht *</label>
+            <textarea id="nachricht" name="nachricht" placeholder="Füge hier deine Nachricht an mich ein" required></textarea>
+          </div>
+          <input type="hidden" name="_subject" value="Neue Anfrage von der Website">
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="form-submit">Senden</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          ✓ Deine Nachricht wurde erfolgreich gesendet!
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <div id="footer-placeholder" data-component="footer"></div>
+
+  <script src="global.js"></script>
+</body>
+</html>
