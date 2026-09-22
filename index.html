@@ -1577,6 +1577,108 @@
     </div>
   </section>
 
+  <!-- ══ SINNFUNK WEBRADIO ══ -->
+  <!-- Zum Selbst-Bearbeiten: Titel, Einleitungstext, Beschreibung und die
+       Bunny-URL sind unten jeweils mit einem Kommentar markiert. -->
+  <section class="sf-radio" id="sinnfunk">
+    <div class="sf-radio__inner">
+
+      <span class="eyebrow">Sinnfunk</span>
+
+      <!-- TITEL – hier bei einer neuen Sendung ändern -->
+      <h2 class="sf-radio__title">Livesendung 20. Sept. 2026 auf Sinnfunk</h2>
+
+      <!-- EINLEITUNGSTEXT – hier kannst du frei Text einfügen.
+           Für einen weiteren Absatz einfach ein zweites <p>…</p> ergänzen. -->
+      <div class="sf-radio__intro">
+        <p>Ich spreche über das astrale Zeitalter.</p>
+      </div>
+
+      <div class="sf-radio__card">
+        <!-- BESCHREIBUNG direkt über dem Player – hier ändern -->
+        <p class="sf-radio__desc">Livesendung vom 20. September 2026</p>
+
+        <!-- AUDIO – bei einer neuen Folge die URL an BEIDEN Stellen tauschen
+             (einmal im src, einmal im „Herunterladen“-Link darunter) -->
+        <audio class="sf-radio__player" controls preload="none"
+               src="https://sinnfunk.b-cdn.net/sinnfunker/cefd74f8-6547-4d8d-8529-7b45bb5078fd/episodes/1789895879473_LivesendungSept20.mp3">
+          Dein Browser kann diese Audiodatei nicht abspielen.
+          <a href="https://sinnfunk.b-cdn.net/sinnfunker/cefd74f8-6547-4d8d-8529-7b45bb5078fd/episodes/1789895879473_LivesendungSept20.mp3">Folge herunterladen</a>
+        </audio>
+
+        <a href="https://sinnfunk.live" target="_blank" rel="noopener" class="sf-radio__link">
+          Mehr auf Sinnfunk hören
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM5 5h5V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-5h-2v5H5V5z" fill="currentColor"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .sf-radio {
+      background: linear-gradient(to bottom, #f0ebf0, var(--rose-bg));
+      padding: 80px 20px;
+    }
+    .sf-radio__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .sf-radio__title {
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 700;
+      color: var(--purple-dark);
+      margin: 8px 0 20px;
+    }
+    .sf-radio__intro {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-bottom: 36px;
+    }
+    .sf-radio__intro p { margin-bottom: 1rem; }
+    .sf-radio__intro p:last-child { margin-bottom: 0; }
+    .sf-radio__card {
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 16px;
+      padding: 32px 36px 36px;
+      box-shadow: 0 8px 32px rgba(44,43,63,0.06);
+    }
+    .sf-radio__desc {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      margin-bottom: 18px;
+    }
+    .sf-radio__player {
+      width: 100%;
+      height: 44px;
+      margin-bottom: 24px;
+    }
+    .sf-radio__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple-dark);
+      color: #ffffff !important;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 13px 24px;
+      border-radius: 30px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .sf-radio__link:hover { background: var(--purple-mid); transform: translateY(-1px); }
+    .sf-radio__link svg { width: 15px; height: 15px; flex-shrink: 0; }
+    @media (max-width: 700px) {
+      .sf-radio { padding: 60px 16px; }
+      .sf-radio__card { padding: 24px 20px 28px; }
+    }
+  </style>
+
   <!-- ── WEBSHOP ── -->
   <section class="webshop-section books-bg" id="buecher">
     <div class="buecher-inner">
