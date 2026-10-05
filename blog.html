@@ -44,6 +44,25 @@
       margin: 0 auto;
     }
 
+    /* ── SUBSTACK-BUTTON ── */
+    .vj-substack-btn {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 14px 28px;
+      border: 1px solid var(--rose-light);
+      border-radius: 40px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffffff;
+      transition: background 0.25s, color 0.25s;
+    }
+    .vj-substack-btn:hover {
+      background: var(--rose-light);
+      color: var(--purple-dark);
+    }
+
     /* ── ARTIKEL-LISTE ── */
     .vj-blog-list {
       max-width: 1080px;
@@ -122,19 +141,29 @@
     <span class="vj-blog-eyebrow">Blog</span>
     <h1>Gedanken zur modernen Spiritualität</h1>
     <p>Über Meditation, Energetik und die Frage, was davon in unserer Zeit noch trägt.</p>
+    <!-- SUBSTACK-LINK -->
+    <a href="https://pragmatischeesoterik.substack.com/" class="vj-substack-btn" target="_blank" rel="noopener">Auch auf Substack lesen &amp; abonnieren →</a>
   </header>
 
   <!-- ══ ARTIKEL-LISTE ══
        NEUEN ARTIKEL HINZUFÜGEN:
        1. Den ganzen Block von <a class="vj-card" …> bis </a> kopieren.
        2. Die Kopie GANZ OBEN in die Liste einfügen (neueste Artikel zuerst).
-       3. Link (href), Bild, Datum, Titel und Kurztext anpassen. -->
+       3. Link (href), Bild, Titel und Kurztext anpassen. -->
   <main class="vj-blog-list">
+
+    <a class="vj-card" href="blog-woher-kommen-deine-gedanken.html">
+      <img src="Image/AbstraktesEsoterischesBild.webp" alt="">
+      <div class="vj-card-body">
+        <h2>Woher kommen deine Gedanken?</h2>
+        <p>Gedanken entstehen nicht in deinem Kopf. Eine esoterische Antwort – und warum wirklich Neues fast nie im Alleingang entsteht.</p>
+        <span class="vj-card-more">Weiterlesen →</span>
+      </div>
+    </a>
 
     <a class="vj-card" href="blog-die-kraft-des-einzigen-angebots.html">
       <img src="Image/nurdieruhe.webp" alt="">
       <div class="vj-card-body">
-        <span class="vj-card-date">29. September 2026</span>
         <h2>Die Kraft des einzigen Angebots</h2>
         <p>Warum ein Webradio in einer Welt des Überangebots guttut.</p>
         <span class="vj-card-more">Weiterlesen →</span>
@@ -144,7 +173,6 @@
     <a class="vj-card" href="blog-seelenweg-oder-resonanzweg.html">
       <img src="Image/Meditieren-Wald-quer-Verena.webp" alt="">
       <div class="vj-card-body">
-        <span class="vj-card-date">29. September 2026</span>
         <h2>Seelenweg oder Resonanzweg?</h2>
         <p>Warum ich zum ersten Mal in meinem Leben einem Weg folge, der leicht geht, obwohl alle Zahlen dagegen sprechen.</p>
         <span class="vj-card-more">Weiterlesen →</span>
