@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#3d2b4e">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Verena Johanna Polzhofer – Bücher &amp; geführte Meditationen</title>
-  <meta name="description" content="Verena Johanna Polzhofer. Bücher und geführte Meditationen.">
+  <title>Verena Johanna Polzhofer – Pragmatische Meditationslehrerin in Pöllau</title>
+  <meta name="description" content="Verena Johanna Polzhofer, pragmatische Meditationslehrerin in Pöllau: Meditationsgruppen, Meditation für Meditierende und für alle, die Meditation selbst anbieten möchten.">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Lexend:wght@200;300;400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -1559,6 +1559,84 @@
     @media (max-width: 380px) {
       .hero-title { font-size: 2.1rem; }
     }
+
+    /* ── PRAGMATISCHE MEDITATION: neue Abschnitte ── */
+    .vj-white-bg { background: #ffffff; }
+    .kern-inner .eyebrow { margin-bottom: 0.5rem; }
+    .vj-prag-list { margin: 0 0 2rem; padding: 0; }
+    .vj-prag-list li {
+      position: relative;
+      padding: 1rem 0 1rem 1.75rem;
+      border-bottom: 1px solid var(--ink-border);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-mid);
+    }
+    .vj-prag-list li:last-child { border-bottom: none; }
+    .vj-prag-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.75rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .vj-prag-list strong { color: var(--purple-dark); font-weight: 600; }
+    .vj-angebote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .vj-angebot-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 16px;
+      padding: 36px 30px;
+      box-shadow: 0 8px 32px rgba(44,43,63,0.06);
+    }
+    .vj-angebot-nr {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .vj-angebot-card h3 {
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 700;
+      font-size: 1.45rem;
+      color: var(--purple-dark);
+      margin-bottom: 1rem;
+    }
+    .vj-angebot-card p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink-mid);
+      margin-bottom: 1.25rem;
+    }
+    .vj-angebot-meta {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-bottom: 1.5rem;
+    }
+    .vj-angebot-card .btn-primary {
+      margin-top: auto;
+      align-self: flex-start;
+      padding: 0.8rem 1.8rem;
+    }
+    @media (max-width: 900px) {
+      .vj-angebote-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .vj-angebot-card { padding: 28px 22px; }
+      .vj-angebot-card .btn-primary { align-self: stretch; justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -1572,10 +1650,10 @@
       </a>
       <div class="nav-links">
         <a href="#home">Home</a>
-        <a href="#buecher">Shop</a>
+        <a href="#angebote">Angebote</a>
         <a href="meditation-poellau.html">Meditationsgruppe</a>
-        <a href="8-wochen-kurs.html">8-Wochen-Kurs</a>
         <a href="blog.html">Blog</a>
+        <a href="#buecher">Shop</a>
         <a href="#kontakt">Kontakt</a>
         <a href="https://sinnfunk.live/" target="_blank" rel="noopener" class="nav-cta">Sinnfunk</a>
       </div>
@@ -1585,10 +1663,10 @@
     </div>
     <div class="nav-mobile" id="navMobile" role="menu">
       <a href="#home">Home</a>
-      <a href="#buecher">Shop</a>
+      <a href="#angebote">Angebote</a>
       <a href="meditation-poellau.html">Meditationsgruppe</a>
-      <a href="8-wochen-kurs.html">8-Wochen-Kurs</a>
       <a href="blog.html">Blog</a>
+      <a href="#buecher">Shop</a>
       <a href="#kontakt">Kontakt</a>
       <a href="https://sinnfunk.live/" target="_blank" rel="noopener">Sinnfunk</a>
     </div>
@@ -1601,18 +1679,102 @@
       <div class="hero-card">
         <div class="hero-eyebrow">
           <span class="hero-eyebrow-line"></span>
-          <span class="hero-eyebrow-text">Freiheit</span>
+          <span class="hero-eyebrow-text">Pragmatische Meditation</span>
         </div>
-        <h2 class="hero-title">Steckst du seit Jahren fest?</h2>
+        <h2 class="hero-title">Meditation, die im Alltag trägt</h2>
         <hr class="hero-divider">
         <p class="hero-text">
-          Vielleicht hast du schon vieles versucht, und trotzdem bewegt sich kaum etwas. In meinen Büchern und geführten Meditationen lernst du energetische Werkzeuge kennen, mit denen du selbstständig an dir arbeiten kannst – geerdet, verständlich und ohne falsche Versprechen. Veränderung braucht Zeit, aber sie ist möglich.
+          Ich bin pragmatische Meditationslehrerin in Pöllau. An der Meditation interessiert mich vor allem eines: ob sie dir im Leben tatsächlich hilft. Deshalb lehre ich sie ohne Dogmen und ohne Glaubenszwang – in einer offenen Meditationsgruppe, in der Vertiefung für Menschen, die bereits meditieren, und für alle, die Meditation selbst anbieten möchten.
         </p>
         <div class="hero-buttons">
-          <a href="meditation-poellau.html" class="btn-primary">Meditationsgruppe Pöllau</a>
-          <a href="#ueber" class="btn-outline">Der Kern meiner Arbeit</a>
+          <a href="#angebote" class="btn-primary">Meine Angebote</a>
+          <a href="#pragmatisch" class="btn-outline">Was heißt pragmatisch?</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ══ WAS IST EINE PRAGMATISCHE MEDITATIONSLEHRERIN ══ -->
+  <section class="webshop-section vj-white-bg" id="pragmatisch">
+    <div class="kern-inner reveal">
+      <span class="eyebrow">Mein Ansatz</span>
+      <h2 class="kern-title">Was ist eine pragmatische Meditationslehrerin?</h2>
+
+      <p class="kern-text">Mit dem Begriff „pragmatisch“ versuche ich zu vermitteln, dass Meditation nicht immer zu einem entspannten, gar erleuchteten Menschen führt. Ich möchte auch vermitteln, dass
+        es natürlich ist, wenn eine Meditation nicht klappen will; wenn man es keine fünf Minuten mit sich selbst aushält. Vor allem möchte ich die Idee entkräften, dass die Meditation ein Allheilmittel sei.
+        Meditationen – egal ob die Schweigemeditation oder geführte Meditationen – sind wichtige Wegbegleiter. Sie sind ein Anker in stürmischer See. Sie helfen dir, zu dir zurückzufinden. Abhängig von der 
+        Meditationstechnik können sie dir helfen, im Chaos des Alltags zur Ruhe zu kommen.
+      </p>
+
+      <p class="kern-text">Hier sind die wichtigsten Merkmale eines pragmatischen Ansatzes:</p>
+
+      <ul class="vj-prag-list">
+        <li><strong>Wirkung:</strong> Unterschiedliche Techniken haben eine unterschiedliche Wirkung. Nicht jede Meditation ist entspannend – gelegentlich ist das Ziel Selbstwahrnehmung und Bewusstseinserweiterung.</li>
+        <li><strong>Alltagstauglichkeit:</strong> Die Übungen werden so gestaltet, dass sie in ein modernes, ausgefülltes Leben passen (z.&nbsp;B. kurze 5-Minuten-Übungen statt stundenlangem Sitzen).</li>
+        <li><strong>Einflüsse unterschiedlicher Richtungen:</strong> Ich habe mich sehr lange mit der Zen-Meditation auseinandergesetzt, aber gleichzeitig auch mit esoterischen Arbeitsmeditationen, reinen Wohlfühlmeditationen, Atemtechniken und schamanischen Reisen. Mein Zugang zur Meditation zeigt die Vielfalt meiner Erfahrung.</li>
+        <li><strong>Kein spiritueller Zwang:</strong> Ich bin Esoterikerin. Viele meiner geführten Meditationen arbeiten mit Ideen aus der Esoterik – wie der Seelenebene, dem Mentalkörper und Ähnlichem. 
+        Trotzdem sind meine Meditationen so aufgebaut, dass du weder esoterisches Wissen noch Interesse brauchst, um sie genießen zu können.</li>
+        <li><strong>Mehr als ein Weg:</strong> In meinen Meditationsgruppen biete ich die Schweigemeditation, aber auch geführte esoterische Arbeitsmeditationen sowie Wohlfühlmeditationen an. Jede hat ihren Platz.</li>
+      </ul>
+
+      <p class="kern-text">Genau so verstehe ich meine Arbeit. Ob du gerade erst anfängst, schon länger meditierst oder Meditation selbst weitergeben möchtest – die Frage ist immer dieselbe: Was hilft dir wirklich, und wie bekommt es einen festen Platz in deinem Leben?</p>
+    </div>
+  </section>
+
+  <!-- ══ ANGEBOTE ══ -->
+  <section class="webshop-section ueber-bg" id="angebote">
+    <div class="buecher-inner">
+      <div class="buecher-head reveal">
+        <span class="eyebrow">Angebote</span>
+        <h2>Drei Wege, mit mir zu meditieren</h2>
+        <p>Je nachdem, wo du gerade stehst, begleite ich dich auf unterschiedliche Weise – in der Gruppe, in der Vertiefung deiner eigenen Praxis oder auf dem Weg dorthin, Meditation selbst anzuleiten.</p>
+      </div>
+
+      <div class="vj-angebote-grid">
+
+        <article class="vj-angebot-card reveal">
+          <span class="vj-angebot-nr">01</span>
+          <h3>Meditationsgruppe in Pöllau</h3>
+          <p>Jeden Donnerstag meditieren wir gemeinsam in meinem Seminarraum in Pöllau. Die Gruppe ist offen, du kannst jederzeit dazukommen – auch ohne Vorerfahrung. Ich leite dich Schritt für Schritt an, sodass du nicht selbst wissen musst, wie es weitergeht.</p>
+          <span class="vj-angebot-meta">Donnerstag, 15 Uhr · 15 € pro Einheit</span>
+          <a href="meditation-poellau.html" class="btn-primary">Zur Meditationsgruppe</a>
+        </article>
+
+        <article class="vj-angebot-card reveal">
+          <span class="vj-angebot-nr">02</span>
+          <h3>Meditation für Meditierende</h3>
+          <p>Du meditierst bereits, doch deine Praxis ist eingeschlafen, die Wirkung bleibt aus, oder es tauchen Fragen auf, auf die du allein keine Antwort findest. Gemeinsam schauen wir, was deine Praxis braucht, damit sie wieder lebendig wird und in deinem Alltag ankommt.</p>
+          <span class="vj-angebot-meta">Für Menschen mit Meditationserfahrung</span>
+          <a href="#kontakt" class="btn-primary">Anfrage senden</a>
+        </article>
+
+        <article class="vj-angebot-card reveal">
+          <span class="vj-angebot-nr">03</span>
+          <h3>Meditation lehren</h3>
+          <p>Für alle, die Meditation selbst anbieten möchten – in Gruppen, im Einzelunterricht oder als Ergänzung zu ihrer bisherigen Arbeit. Du lernst, Meditationen verständlich anzuleiten, eine Gruppe zu halten und mit dem umzugehen, was bei deinen Teilnehmern auftaucht.</p>
+          <span class="vj-angebot-meta">Für angehende Meditationsanbieter</span>
+          <a href="#kontakt" class="btn-primary">Anfrage senden</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UEBER MICH / MEIN ZUGANG ── -->
+  <section class="webshop-section vj-white-bg" id="ueber">
+    <div class="kern-inner reveal">
+      <span class="eyebrow">Über mich</span>
+      <h2 class="kern-title">Mein Zugang zur Meditation</h2>
+
+      <p class="kern-text">Ich habe bei verschiedenen spirituellen Lehrern gelernt, und vieles davon hat mich geprägt. Trotzdem übernehme ich ihr Wissen nicht ungeprüft. Mich treibt die Frage an, was davon in unserer Zeit noch trägt und was sich in einem modernen, ausgefüllten Leben tatsächlich bewährt.</p>
+
+      <img src="Image/Meditieren-Wald-quer-Verena.webp" alt="Verena Johanna Polzhofer beim Meditieren im Wald" class="kern-image" loading="lazy">
+
+      <p class="kern-text">Diese Haltung prägt auch meinen Unterricht. Ich erkläre dir, warum eine Übung so aufgebaut ist, wie sie aufgebaut ist, und lade dich ein, sie an deinem eigenen Erleben zu überprüfen. Nicht jede Methode passt zu jedem Menschen, und nicht jedes Versprechen, das rund um Meditation gemacht wird, hält einer ehrlichen Prüfung stand. Darüber spreche ich offen.</p>
+
+      <p class="kern-text">Meditation muss nicht perfekt sein, um zu wirken. Oft genügen wenige Minuten, regelmäßig geübt, damit sich im Alltag etwas verändert: Du wirst ruhiger, bleibst eher bei der Sache und findest leichter zu dir zurück, wenn dich etwas aus der Bahn wirft.</p>
+
+      <p class="kern-text">Wenn du mich vorab ein wenig kennenlernen möchtest, hör gern in eine meiner Livesendungen auf Sinnfunk hinein.</p>
     </div>
   </section>
 
@@ -1722,9 +1884,9 @@
   <section class="webshop-section books-bg" id="buecher">
     <div class="buecher-inner">
       <div class="buecher-head reveal">
-        <span class="eyebrow">Bücher</span>
+        <span class="eyebrow">Shop · Bücher</span>
         <h2>Zum Lesen &amp; Nachschlagen</h2>
-        <p>Meine Bücher zu Achtsamkeit, Energie und dem bewussten Umgang mit deinen Gefühlen.</p>
+        <p>Aus meiner bisherigen Arbeit sind Bücher und geführte Meditationen entstanden, die du hier weiterhin bekommst. Die Bücher widmen sich der Achtsamkeit, der Energie und dem bewussten Umgang mit deinen Gefühlen.</p>
       </div>
       <div class="books-grid reveal">
 
@@ -1769,7 +1931,7 @@
   <section class="webshop-section meditations-bg" id="meditationen">
     <div class="buecher-inner">
       <div class="buecher-head reveal">
-        <span class="eyebrow">Digitale Downloads</span>
+        <span class="eyebrow">Shop · Digitale Downloads</span>
         <h2>Geführte esoterische Arbeitsmeditationen</h2>
       </div>
 
@@ -1952,34 +2114,6 @@
     </div>
   </section>
 
-  <!-- ── UEBER MICH ── -->
-  <section class="webshop-section ueber-bg" id="ueber">
-    <div class="kern-inner">
-      <h2 class="kern-title">Der Kern meiner Arbeit</h2>
-
-      <p class="kern-text">Wer seit Jahren feststeckt, hat meist schon vieles versucht: Bücher gelesen, Kurse besucht, Meditationen ausprobiert. 
-        Und trotzdem kehren dieselben Muster zurück – dieselbe Erschöpfung, dieselbe Wut, dieselben Konflikte. 
-        Daraus entsteht leicht der Gedanke, man sei selbst das Problem. 
-        Ich sehe das anders. </p>
-
-      <img src="Image/FeststeckenFrau.webp" alt="Eine Frau, die im Leben feststeckt" class="kern-image" width="1368" height="768" loading="lazy">
-
-      <p class="kern-text">Feststecken kann zwei Ursachen haben. Der erste Grund: Du versuchst vielleicht ein Ziel zu erreichen, das - aus unterschiedlichen Gründen - nicht erreichbar ist. 
-        Der zweite Grund: Veränderung braucht Zeit. Wir sind mehrdimensionale Wesen. Nur weil dein Denken sich angepasst hat, muss das nicht auch für 
-        deinen Energiekörper, deine Gefühle oder andere Lebensbereiche gelten. Jede Ebene deines Seins braucht seine Zeit. Was sich als Feststecken zeigt, ist ganz oft Wachstum, 
-        das noch nicht sichtbar ist.
-      </p>
-
-      <p class="kern-text">In meinen Büchern, geführten Meditationen und Seminaren ist es mir wichtig, dir energetisch-esoterische Techniken zu vermitteln, 
-        die du selbstständig anwenden kannst – ohne dass du dafür ein teures Coaching oder regelmäßige Sitzungen brauchst. Es ist mir aber auch wichtig, 
-      dich auf die Grenzen des energetisch-esoterischen Arbeitens hinzuweisen. Nicht alles ist immer erreichbar. Muss es auch nicht. Gelegentlich ist es
-    hilfreicher, loszulassen und den gegenwärtigen Augenblick anzunehmen. Auch wenn er nicht perfekt ist. </p>
-
-      <p class="kern-text">Wenn du diesen Weg nicht nur allein gehen möchtest: Ab 2027 biete ich wieder Seminare in Pöllau an, 
-        in denen wir gemeinsam üben und die Techniken vertiefen.</p>
-    </div>
-  </section>
-
   <!-- ══ UDEMY KURSE ══ -->
   <section class="webshop-section udemy-bg" id="kurse">
     <div class="buecher-inner">
@@ -2073,15 +2207,14 @@
       <div class="footer-grid">
         <div>
           <div class="footer-name">Verena Johanna Polzhofer</div>
-          <div class="footer-sub">Bücher &amp; geführte Meditationen</div>
-          <p class="footer-tagline">Meditation · Seelenlicht · Selbstregulierung.<br>Pöllau, Steiermark.</p>
+          <div class="footer-sub">Pragmatische Meditationslehrerin</div>
+          <p class="footer-tagline">Meditationsgruppen · Meditation vertiefen · Meditation lehren.<br>Pöllau, Steiermark.</p>
         </div>
         <div>
           <span class="footer-col-title">Seiten</span>
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Homepage</a></li>
             <li><a href="meditation-poellau.html" class="footer-link">Meditationsgruppe Pöllau</a></li>
-            <li><a href="8-wochen-kurs.html" class="footer-link">8-Wochen-Kurs</a></li>
             <li><a href="blog.html" class="footer-link">Blog</a></li>
             <li><a href="#kontakt" class="footer-link">Kontakt</a></li>
           </ul>
