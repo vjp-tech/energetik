@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="icon" type="image/webp" href="Image/icon-vjp.webp">
+  <link rel="apple-touch-icon" href="Image/icon-vjp.webp">
+  <meta name="theme-color" content="#3d2b4e">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mentale Filter: Weshalb wir die Welt nicht sehen, wie sie ist – Verena Johanna Polzhofer</title>
+  <meta name="description" content="Mentale Filter bestimmen, wie du dich selbst und die Welt siehst. Wie sie entstehen, warum du sie bei dir selbst kaum bemerkst und was dir hilft, sie zu erkennen.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Lexend:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style>
+    /* ══════════════════════════════════════════════
+       BLOG-ARTIKEL – alle Klassen mit Präfix vj-
+       ══════════════════════════════════════════════ */
+
+    /* ── KOPFBEREICH ── */
+    .vj-post-header {
+      background: var(--purple-dark);
+      padding: 140px 24px 150px;
+      text-align: center;
+    }
+    .vj-post-eyebrow {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rose-light);
+      margin-bottom: 20px;
+    }
+    .vj-post-header h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      color: #ffffff;
+      max-width: 820px;
+      margin: 0 auto 22px;
+    }
+    .vj-post-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(20px, 2.4vw, 26px);
+      line-height: 1.45;
+      color: rgba(255,255,255,0.78);
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+    a.vj-post-eyebrow:hover { color: #ffffff; }
+    .vj-post-back {
+      display: inline-block;
+      margin-top: 8px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+    .vj-post-back:hover { color: var(--accent); }
+    .vj-post-meta {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.5);
+    }
+    .vj-post-meta span + span::before { content: "·"; margin: 0 10px; }
+
+    /* ── TITELBILD (ragt in den Kopfbereich) ── */
+    .vj-post-cover {
+      max-width: 960px;
+      margin: -100px auto 0;
+      padding: 0 24px;
+    }
+    .vj-post-cover img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 24px 60px rgba(44,43,63,0.22);
+    }
+
+    /* ── ARTIKELTEXT ── */
+    .vj-post {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 24px 40px;
+    }
+    .vj-post p {
+      font-size: 18px;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 26px;
+    }
+    .vj-post .vj-lead {
+      font-size: 21px;
+      line-height: 1.75;
+    }
+    .vj-post .vj-lead::first-letter {
+      float: left;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 84px;
+      line-height: 0.8;
+      padding: 8px 12px 0 0;
+      color: var(--accent);
+    }
+    .vj-post h2 {
+      font-size: clamp(28px, 3.4vw, 36px);
+      margin: 64px 0 22px;
+    }
+    .vj-post h2::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    /* ── BILDER IM TEXT ── */
+    .vj-figure { margin: 44px 0; }
+    .vj-figure img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .vj-figure--narrow img { max-width: 420px; margin: 0 auto; }
+    .vj-figure--square img { max-width: 520px; margin: 0 auto; }
+    .vj-figure figcaption {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* ── LIVESENDUNG ZUM ARTIKEL ── */
+    .vj-live {
+      background: var(--purple-dark);
+      border-radius: 6px;
+      padding: 30px 32px 28px;
+      margin: 8px 0 48px;
+      color: #ffffff;
+    }
+    .vj-live-eyebrow {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rose-light);
+      margin-bottom: 10px;
+    }
+    .vj-post .vj-live-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      line-height: 1.3;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .vj-post .vj-live-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+    }
+    .vj-live audio {
+      width: 100%;
+      display: block;
+      margin-bottom: 18px;
+    }
+    .vj-live-links a {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rose-light);
+      margin-right: 22px;
+    }
+    .vj-live-links a:hover { color: #ffffff; }
+
+    /* ── HERVORGEHOBENES ZITAT ── */
+    .vj-pullquote {
+      margin: 48px 0;
+      padding: 8px 0 8px 28px;
+      border-left: 3px solid var(--rose);
+    }
+    .vj-pullquote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(26px, 3.2vw, 32px);
+      line-height: 1.35;
+      color: var(--purple-dark);
+      margin: 0;
+    }
+
+    /* ── ABSCHLUSSFRAGE ── */
+    .vj-question {
+      background: var(--rose-bg);
+      border-radius: 6px;
+      padding: 40px 36px;
+      margin: 56px 0 24px;
+      text-align: center;
+    }
+    .vj-question span {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .vj-question p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3vw, 30px);
+      line-height: 1.4;
+      color: var(--purple-dark);
+      margin: 0;
+    }
+
+    /* ── AUTORINNEN-KASTEN ── */
+    .vj-author {
+      max-width: 680px;
+      margin: 0 auto 96px;
+      padding: 32px 24px 0;
+      border-top: 1px solid var(--ink-border);
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .vj-author img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+    }
+    .vj-author-name {
+      font-weight: 500;
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+    .vj-author p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink-mid);
+      margin-bottom: 12px;
+    }
+    .vj-author-links a {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-right: 20px;
+    }
+    .vj-author-links a:hover { text-decoration: underline; }
+
+    /* ── HANDY ── */
+    @media (max-width: 600px) {
+      .vj-post-header { padding: 110px 20px 110px; }
+      .vj-post-cover { margin-top: -70px; padding: 0 16px; }
+      .vj-post { padding: 48px 20px 32px; }
+      .vj-post p { font-size: 17px; }
+      .vj-post .vj-lead { font-size: 19px; }
+      .vj-question { padding: 32px 22px; }
+      .vj-live { padding: 26px 20px 24px; }
+      .vj-author { flex-direction: column; text-align: center; padding: 32px 20px 0; }
+    }
+
+    /* ── NUMMERIERTE LISTEN IM TEXT ── */
+    .vj-post .vj-list {
+      margin: 0 0 30px 24px;
+      padding: 0;
+    }
+    .vj-post .vj-list li {
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 12px;
+      padding-left: 6px;
+    }
+    .vj-post .vj-list li::marker {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--accent);
+    }
+
+    /* ── ZUSAMMENFASSUNG ── */
+    .vj-takeaway {
+      background: var(--rose-bg);
+      border-radius: 6px;
+      padding: 36px 36px 22px;
+      margin: 56px 0 32px;
+    }
+    .vj-takeaway span {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .vj-takeaway ul { margin: 0; padding-left: 20px; list-style: disc; }
+    .vj-takeaway li::marker { color: var(--accent); }
+    .vj-takeaway li {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--purple-dark);
+      margin-bottom: 14px;
+    }
+    .vj-post .vj-takeaway-text {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--purple-dark);
+      margin-bottom: 14px;
+    }
+    .vj-takeaway-text a { color: var(--accent); text-decoration: underline; }
+    .vj-post .vj-list strong { font-weight: 600; }
+    @media (max-width: 600px) {
+      .vj-takeaway { padding: 30px 22px 16px; }
+      .vj-post .vj-list li { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <div id="nav-placeholder" data-component="nav" data-page="blog" data-solid="true"></div>
+
+  <!-- ══ KOPFBEREICH ══ -->
+  <header class="vj-post-header">
+    <a href="blog.html" class="vj-post-eyebrow">← Blog · Die Grenzen des Denkens</a>
+    <h1>Mentale Filter</h1>
+    <p class="vj-post-sub">Weshalb wir die Welt nicht sehen, wie sie ist</p>
+    <div class="vj-post-meta">
+      <span>6 Minuten Lesezeit</span>
+    </div>
+  </header>
+
+  <!-- TITELBILD – Datei hier austauschen -->
+  <div class="vj-post-cover">
+    <img src="Image/Brille3.webp" alt="Brille vor einem Waldweg, durch deren Gläser der Wald scharf zu sehen ist">
+  </div>
+
+  <!-- ══ ARTIKEL ══ -->
+  <article class="vj-post">
+
+    <p class="vj-lead">Wenn du in der Schweigemeditation sitzt und dich beobachtest, wirst du merken, dass Gedanken auftauchen und ebenso schnell wieder verschwinden. Belanglose Gedanken, verrückte Gedanken, Gedanken, bei denen du dich fragst, wo sie überhaupt herkommen. Das gilt für die große Mehrheit unserer Gedanken.</p>
+
+    <p>Doch manche Gedanken kehren immer wieder. Es sind Gedanken, die du selbst oder eine Gruppe, zu der du gehörst, genährt hat. Nähren bedeutet, einem Gedanken Aufmerksamkeit und Zeit zu widmen. Dadurch fließt deine Energie zu ihm. Gedanken, die du nicht nährst, verschwinden wieder. Gedanken, die lange genug genährt wurden, gewinnen dagegen irgendwann eine gewisse Festigkeit. Sie bleiben, selbst wenn du ihnen keine Aufmerksamkeit mehr schenkst, und du musst schon aktiv daran arbeiten, damit sie wieder gehen.</p>
+
+    <!-- LIVESENDUNG, aus der dieser Artikel stammt – Datum, Text und MP3-Adresse hier ändern -->
+    <div class="vj-live">
+      <span class="vj-live-eyebrow">Zum Nachhören auf Sinnfunk</span>
+      <p class="vj-live-title">Livesendung vom Sonntag, 25. Oktober 2026, 10 Uhr</p>
+      <p class="vj-live-text">„Das Problem mit mentalen Filtern“ – aus dieser Sendung ist der Artikel entstanden.</p>
+      <audio controls preload="none" src="https://sinnfunk.b-cdn.net/sinnfunker/cefd74f8-6547-4d8d-8529-7b45bb5078fd/episodes/1792931761204_Das_Problem_mit_mentalen_Filtern.mp3"></audio>
+      <div class="vj-live-links">
+        <a href="https://sinnfunk.live/" target="_blank" rel="noopener">Sinnfunk live hören →</a>
+        <a href="https://sinnfunk.b-cdn.net/sinnfunker/cefd74f8-6547-4d8d-8529-7b45bb5078fd/episodes/1792931761204_Das_Problem_mit_mentalen_Filtern.mp3" download>Sendung herunterladen</a>
+      </div>
+    </div>
+
+    <p>Aus solchen gefestigten Gedanken entsteht ein mentaler Filter. Er bildet sich rund um eine bestimmte Kategorie, etwa „Das Ich“, „Was ist eine gute Familie?“, „Wie sollte eine Gesellschaft funktionieren?“ oder „Das ist mein Glaube“. Die gefestigten Gedanken erklären dir diese Kategorie: wer du bist, woran du glaubst, was eine gute Beziehung und was ein gutes und gerechtes Leben ist. Ein mentaler Filter erklärt dir aber nicht nur die Welt. Du siehst dich selbst, deine Mitmenschen und die gesamte Welt durch ihn hindurch.</p>
+
+    <p>Bei mentalen Filtern geht es jedoch nicht nur um Gedanken, die dir die Welt erklären. Aus energetischer Sicht haben sie noch eine weitere Auswirkung.</p>
+
+    <h2>Ein Filter klingt</h2>
+
+    <p>Jeder Gedanke hat eine kleine Schwingung. Durch sie kann er ähnliche Gedanken, aber auch Gefühle anziehen, und er kann dein Energiefeld verändern. Gedanken des Hasses erzeugen ein anderes Energiefeld als Gedanken der Liebe.</p>
+
+    <p>Einzelne Gedanken sind in ihrer Wirkung allerdings nicht besonders stark – Filter hingegen schon.</p>
+
+    <p>Nehmen wir an, du bist dir selbst gegenüber sehr kritisch. Dein Ich-Filter ist voller Gedanken wie: „Ich bin faul. Ich kriege nichts hin. Die Menschen mögen mich nicht.“</p>
+
+    <p>Triffst du nun neue Menschen, wirst du eher erwarten, dass sie dich ablehnen. Diese innere Ablehnung zeigt sich nicht nur in deinen Handlungen und in deiner Sprache, sondern – aus energetischer Sicht – auch in deiner Ausstrahlung.</p>
+
+    <h2>Weshalb dein Inneres nicht die ganze Welt erschafft</h2>
+
+    <p>Genau hier setzt die Grundidee der modernen Esoterik an: Wenn du es denkst, wird es wirklich. Deine Gedanken erzeugen eine bestimmte Ausstrahlung, und diese Ausstrahlung zieht wiederum bestimmte Menschen und Situationen an.</p>
+
+    <p>Wenn du Gedanken der Liebe denkst, werden liebende Menschen in dein Leben kommen. Wenn du Gedanken des Erfolgs denkst, wird Erfolg in dein Leben kommen. Wenn du jedoch Selbstzweifel nährst, wirst du Selbstzweifel ernten.</p>
+
+    <p>Dieser Idee widerspreche ich. Meiner Meinung nach wirken deine Gedanken durchaus auf deine Gefühle, dein Energiefeld und damit auch auf deine Ausstrahlung. Doch deine Ausstrahlung ist nicht der einzige Grund, weshalb bestimmte Situationen entstehen und bestimmte Menschen in dein Leben kommen.</p>
+
+    <p>Weshalb? Weil deine Ausstrahlung nicht die einzige ist. Würde alles, was du aussendest, immer zu einer Resonanz führen, dann wärst du eigentlich der einzige Mensch auf der Welt. Du begegnest jedoch ständig Menschen mit anderen Schwingungen. Du lebst in Gruppenenergiefeldern, und diese sind immer stärker als das Energiefeld eines Einzelnen. Ganz gleich, was du über die moderne westliche Welt denkst: Durch dein Denken allein wirst du ihr Gruppenenergiefeld nicht verändern. Es gibt karmische Kräfte. Und es gibt den Zufall, der gern übersehen wird. Du bist nicht Gott über diese Welt.</p>
+
+    <figure class="vj-figure">
+      <img src="Image/Brille1.webp" alt="Drei Schimpansen in Nadelstreifenanzügen mit dunklen Sonnenbrillen">
+      <figcaption>Gruppen teilen ihre Filter – und ihr Energiefeld ist stärker als das eines Einzelnen.</figcaption>
+    </figure>
+
+    <p>Scheitern gehört deshalb zu jedem Leben, ganz gleich, wie du denkst. Der Unterschied zwischen einem selbstbewussten und einem selbstkritischen Menschen liegt weniger darin, wie oft sie scheitern, als darin, wie sie es wahrnehmen. Der Selbstbewusste akzeptiert Misserfolge als Teil des Lebens. Der Selbstkritische nimmt jedes Scheitern als Beweis, dass er ein schlechter Mensch ist – und übersieht, was ihm gelingt.</p>
+
+    <blockquote class="vj-pullquote">
+      <p>Der Filter bestätigt sich selbst.</p>
+    </blockquote>
+
+    <h2>Die Angst hinter der Härte</h2>
+
+    <p>Das gilt nicht nur für selbstkritische Filter, sondern ebenso für scheinbar positive. Ich habe in meinem Leben viele Menschen in der esoterischen Szene getroffen, die Sätze sagten wie: „Ich habe immer Kunden. Ich habe immer Erfolg. Das Geld kommt zu mir.“</p>
+
+    <p>Doch sie sagten diese Sätze mit einer gewissen inneren Härte, mit einem harten Feuer hinter den Augen.</p>
+
+    <p>Hinter dieser Härte, hinter dem krampfhaften Wiederholen von „Ich bin wohlhabend“ oder „Ich bin gesund“, steckt in meiner Wahrnehmung sehr viel Angst. Angst, machtlos zu sein. Angst, trotz harter Arbeit zu scheitern. Angst, allein in der Welt zu sein, ohne dass einem jemand hilft.</p>
+
+    <figure class="vj-figure">
+      <img src="Image/Brille2rosa.webp" alt="Frau mit herzförmiger rosa Sonnenbrille vor bunten Leuchtreklamen">
+      <figcaption>Auch eine rosarote Brille ist ein Filter.</figcaption>
+    </figure>
+
+    <p>Je mehr Energie man in diesen Filter investiert, desto stärker wird er. Und je stärker er wird, desto mehr verändert er die Wahrnehmung der eigenen Wirklichkeit. Diese Verschiebung kann so weit gehen, dass man selbst wirkliche Ereignisse, die einem zeigen, dass man auf dem falschen Weg ist, übersieht, weil sie nicht zum mentalen Filter passen.</p>
+
+    <p>Wie fest ein Filter sitzen kann, zeigen manche Teilnehmer von Castingshows. Sie singen schlecht, die Jury sagt es ihnen klar – und sie antworten, die Juroren seien nur eifersüchtig. Einige spielen das für die Kamera. Andere leben tatsächlich in ihrer eigenen Welt. Das ist ein mentaler Filter in Reinform: Man kann sich selbst nicht hören und die Kritik anderer auch nicht. Die Wirklichkeit belehrt einen wieder und wieder eines Besseren, und trotzdem bleibt man im Filter gefangen.</p>
+
+    <h2>Wie ändert man mentale Filter?</h2>
+
+    <p>Das Tückische an mentalen Filtern ist: Wir sehen sie nicht. Intellektuell verstehen wir zwar, dass andere Menschen die Welt anders sehen, wirklich begreifen tun wir es aber nicht. Dieses Begreifen kommt in meiner Erfahrung nur durch eine Zäsur, also einen tiefen Einschnitt in unser bisheriges Weltbild. Dabei unterscheide ich zwischen einer kleinen und einer großen Zäsur.</p>
+
+    <p>Eine kleine Zäsur erleben viele Menschen. Man verändert zum Beispiel seine politischen Ansichten, und dabei sind beide Richtungen möglich: Man wird gelassener – oder extremer. Viele Menschen ändern im Laufe ihres Lebens ihre Ansichten über sich selbst, über das ideale Familienleben, über Religion und Gesellschaft. Das ist nicht nur normal, sondern auch gesund. Doch bei dieser Verschiebung bleibt der mentale Filter am Leben – er hat sich nur verändert.</p>
+
+    <p>Bei einer großen Zäsur zerbricht ein Filter dagegen vollständig. Danach nimmt man die Welt auf mentaler, emotionaler, energetischer und körperlicher Ebene völlig anders wahr. Man blickt auf Menschen, mit denen man früher harmonisch befreundet war, und fragt sich: „Was redest du da?“ Es ist wie das Aufwachen aus einem Rausch.</p>
+
+    <h2>Was mir die Augen geöffnet hat</h2>
+
+    <p>Beide Formen habe ich selbst erlebt. Meine erste, kleine Zäsur erlebte ich in London. Ich war Anfang zwanzig und arbeitete in einfachen Jobs, unter anderem jahrelang mit vielen Männern zusammen, die aus Pakistan, der Türkei, Marokko, Syrien oder Algerien kamen und ihren muslimischen Glauben sehr ernst nahmen. Ich war damals nicht gerade die diplomatischste Person, und wir hatten durchaus Konflikte miteinander.</p>
+
+    <p>Beeindruckt hat mich trotzdem etwas, das mich bis heute begleitet: Die große Mehrheit von ihnen lebte ihren Glauben ehrlich. Sie beteten fünfmal am Tag, fuhren nach der Arbeit direkt nach Hause zu ihrer Familie und tranken keinen Alkohol. Diese Disziplin habe ich in meinem eigenen spirituellen Leben bis heute nicht erreicht.</p>
+
+    <p>Es gab nicht das eine Gespräch, das alles verändert hat. Vier Jahre lang stieß ich immer wieder an dieselben Wände. Die Zäsur kam erst danach, als Nachwirkung: Ich musste erkennen, dass diese Menschen nicht lügen und nichts vorspielen. Sie sehen die Wirklichkeit anders als ich. Und auch wenn ich ihren Glauben niemals annehmen würde, musste ich mir eingestehen, dass mich einige von ihnen beeindruckten. Es war das erste Mal, dass ich aus meinem Schwarz-Weiß-Denken heraustrat. Das erste Mal, dass ich mich innerlich umdrehte und mich fragte: Was denke ich da eigentlich? Was ist wahr für mich? Und ist das, was ich als Wahrheit annehme, überhaupt wahr?</p>
+
+    <p>Die große Zäsur kam später. Jahrelang war ich davon überzeugt, dass ich meine äußere Wirklichkeit durch mein inneres Handeln formen kann. Ich glaubte, durch Denken und bewusstes Manifestieren alle Ziele erreichen zu können. Kleiner Hinweis vorweg: Ich konnte es nicht. Ich scheiterte spektakulär mit all meinen Vorhaben. Irgendwann zerbrach der mentale Filter namens „Die esoterische Wahrheit über das Leben“.</p>
+
+    <h2>Was du tun kannst</h2>
+
+    <p>Auf eine Zäsur musst du aber nicht warten. Der schwierigste Schritt ist, anzuerkennen, dass du überhaupt durch einen Filter blickst. Es gibt viele Tipps, wie man mentale Filter erkennen kann. Doch die meisten stoßen an dieselbe Grenze: Bei anderen sehen wir mentale Filter sehr leicht, bei uns selbst kaum.</p>
+
+    <p>In meiner Erfahrung gibt es deshalb nur zwei gute Wege:</p>
+
+    <ol class="vj-list">
+      <li><strong>Verbringe Zeit mit anderen Menschen.</strong> Nicht nur online, sondern auch im Alltag – und gerade mit solchen, die die Welt anders sehen als du.</li>
+      <li><strong>Hinterfrage deine Deutung der Wirklichkeit.</strong> „Stimmt das wirklich?“ ist eine wichtige Frage.</li>
+    </ol>
+
+    <p>Mentale Filter sind schwer zu überwinden, denn sie fühlen sich wahr im Sinne von wirklich an. Doch genau darin liegt das Problem, über das ich schon in meinem <a href="blog-deine-gedanken-sind-nicht-der-wirklichkeit-verpflichtet.html" style="color:var(--accent);text-decoration:underline">letzten Artikel</a> geschrieben habe: Nicht alles, was wahr ist, ist auch wirklich.</p>
+
+    <!-- HINWEIS AUF SINNFUNK -->
+    <div class="vj-takeaway">
+      <span>Mehr auf Sinnfunk</span>
+      <p class="vj-takeaway-text">Dieser Artikel beruht auf meiner Livesendung vom 25. Oktober 2026. Im Oktober beschäftige ich mich mit der Kraft des Denkens – und ihren Grenzen. Alle Sendungen findest du auf <a href="https://sinnfunk.live/" target="_blank" rel="noopener">sinnfunk.live</a> unter „Nachhören“.</p>
+    </div>
+
+    <a href="blog.html" class="vj-post-back">← Alle Blog-Artikel</a>
+
+  </article>
+
+  <!-- ══ ÜBER DIE AUTORIN ══ -->
+  <aside class="vj-author">
+    <img src="Image/verenapolzhofer.webp" alt="Verena Johanna Polzhofer">
+    <div>
+      <div class="vj-author-name">Verena Johanna Polzhofer</div>
+      <p>Autorin und Gründerin des Webradios Sinnfunk. Ich schreibe über Meditation, Energetik und eine moderne Spiritualität, die ihre Grenzen kennt.</p>
+      <div class="vj-author-links">
+        <a href="index.html#buecher">Meine Bücher</a>
+        <a href="https://sinnfunk.live/" target="_blank" rel="noopener">Sinnfunk hören</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══ FOOTER ══ -->
+  <div id="footer-placeholder" data-component="footer"></div>
+
+  <script src="global.js"></script>
+</body>
+</html>
