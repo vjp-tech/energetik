@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="icon" type="image/webp" href="Image/icon-vjp.webp">
+  <link rel="apple-touch-icon" href="Image/icon-vjp.webp">
+  <meta name="theme-color" content="#3d2b4e">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wut – Verena Johanna Polzhofer</title>
+  <meta name="description" content="Die Wut aus energetischer Sicht: Resonanzwut und Chakrawut, das Wutspektrum, die Signalfunktion der Wut, Videos, das Wutbuch und die Wutmeditation.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Lexend:wght@200;300;400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style>
+
+    /* ═══════════════════════════════════════════
+       WUT – seitenspezifisch
+       Präfix: vj-
+       ═══════════════════════════════════════════ */
+
+    .vj-eyebrow {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    /* ── HERO ── */
+    .vj-wut-hero {
+      background: linear-gradient(to bottom, #eeeaf1, #f5ecee);
+      padding: 128px 24px 88px;
+    }
+    .vj-wut-hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .vj-wut-hero h1 {
+      font-size: clamp(36px, 4.6vw, 58px);
+      color: var(--purple-dark);
+      margin-bottom: 20px;
+    }
+    .vj-wut-hero-lead {
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .vj-hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .vj-wut-hero-img {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(61,43,78,0.12);
+    }
+    .vj-wut-hero-img img { width: 100%; height: auto; }
+
+    /* ── FLIESSTEXT ── */
+    .vj-section { padding: 88px 24px; }
+    .vj-section-white { background: #ffffff; }
+    .vj-section-rose  { background: var(--rose-bg); }
+
+    .vj-prose {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .vj-prose h2 {
+      font-size: clamp(28px, 3.4vw, 40px);
+      color: var(--purple-dark);
+      margin-bottom: 28px;
+    }
+    .vj-prose h3 {
+      font-size: 22px;
+      color: var(--purple-dark);
+      margin: 36px 0 16px;
+    }
+    .vj-prose p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+    .vj-prose p:last-child { margin-bottom: 0; }
+    .vj-prose em { color: var(--accent); font-style: italic; }
+
+    .vj-highlight {
+      background: var(--rose-bg);
+      border-left: 3px solid var(--rose);
+      border-radius: 8px;
+      padding: 22px 26px;
+      margin: 32px 0;
+    }
+    .vj-section-rose .vj-highlight { background: #ffffff; }
+    .vj-highlight p { margin-bottom: 0; }
+
+    /* ── FÜNF ZUSTÄNDE ── */
+    .vj-states {
+      list-style: none;
+      margin: 8px 0 32px;
+      display: grid;
+      gap: 14px;
+    }
+    .vj-states li {
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+      display: flex;
+      gap: 16px;
+    }
+    .vj-states li .n {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      color: var(--accent);
+      flex-shrink: 0;
+      padding-top: 3px;
+    }
+
+    /* ── ANLEITUNG ── */
+    .vj-steps {
+      list-style: none;
+      margin: 8px 0 32px;
+      counter-reset: vjstep;
+    }
+    .vj-steps li {
+      counter-increment: vjstep;
+      position: relative;
+      padding: 0 0 22px 56px;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+    .vj-steps li::before {
+      content: counter(vjstep);
+      position: absolute;
+      left: 0; top: 0;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--purple-dark);
+      color: #ffffff;
+      font-family: var(--font-ui);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── SINNFUNK ── */
+    .sf-radio {
+      background: linear-gradient(to bottom, #f0ebf0, var(--rose-bg));
+      padding: 80px 20px;
+    }
+    .sf-radio__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .sf-radio__title {
+      font-size: clamp(28px, 3.4vw, 40px);
+      color: var(--purple-dark);
+      margin: 8px 0 20px;
+    }
+    .sf-radio__intro {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-bottom: 36px;
+    }
+    .sf-radio__intro p { margin-bottom: 1rem; }
+    .sf-radio__intro p:last-child { margin-bottom: 0; }
+    .sf-radio__card {
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 16px;
+      padding: 32px 36px 36px;
+      box-shadow: 0 8px 32px rgba(44,43,63,0.06);
+    }
+    .sf-radio__desc {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      margin-bottom: 18px;
+    }
+    .sf-radio__player {
+      width: 100%;
+      height: 44px;
+      margin-bottom: 24px;
+    }
+    .sf-radio__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple-dark);
+      color: #ffffff !important;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 13px 24px;
+      border-radius: 30px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .sf-radio__link:hover { background: var(--purple-mid); transform: translateY(-1px); }
+    .sf-radio__link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* ── BUCH & MEDITATION (wie Startseite) ── */
+    .webshop-section { padding: 80px 0; }
+    .books-bg { background: linear-gradient(to bottom, #f0ebf0, #f3ebef); }
+    .meditations-bg { background: #ffffff; }
+    .buecher-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .buecher-head {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .buecher-head h2 {
+      margin-top: 8px;
+      font-size: clamp(28px, 3.4vw, 40px);
+      color: var(--purple-dark);
+    }
+    .buecher-head p {
+      max-width: 560px;
+      margin: 12px auto 0;
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+
+    .vj-book-single { max-width: 720px; margin: 0 auto; }
+    .book-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+      align-items: start;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 32px;
+      transition: box-shadow 0.25s;
+    }
+    .book-card:hover { box-shadow: 0 8px 32px rgba(61,43,78,0.10); }
+    .book-cover-wrap img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 4px 6px 20px rgba(0,0,0,0.18);
+      display: block;
+    }
+    .book-content { display: flex; flex-direction: column; gap: 12px; }
+    .book-badge {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--purple-dark);
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 3px;
+      align-self: flex-start;
+    }
+    .book-title {
+      font-family: var(--font-h);
+      font-size: clamp(18px, 1.8vw, 22px);
+      font-weight: 400;
+      color: var(--purple-dark);
+      line-height: 1.3;
+    }
+    .book-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--ink-mid);
+    }
+    .book-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 13px 22px;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.2s;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+    .book-cta:hover { background: #8f4e28; transform: translateY(-1px); }
+    .book-cta svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+    .amazon-note {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .med-intro {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      background: var(--bg-warm);
+      border-radius: 14px;
+      padding: 28px 32px;
+    }
+    .med-intro strong { color: var(--purple-dark); font-weight: 500; }
+    .med-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 400px);
+      justify-content: center;
+      gap: 28px;
+    }
+    .med-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(44,43,63,0.04);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .med-card:hover {
+      box-shadow: 0 14px 36px rgba(61,43,78,0.12);
+      transform: translateY(-3px);
+    }
+    .med-card-img { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; }
+    .med-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .med-card-body {
+      padding: 24px 26px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex-grow: 1;
+    }
+    .med-title {
+      font-family: var(--font-h);
+      font-size: 1.35rem;
+      color: var(--purple-dark);
+      line-height: 1.25;
+    }
+    .med-price {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--purple-dark);
+    }
+    .med-price-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      background: var(--rose-bg);
+      border-radius: 10px;
+      padding: 10px 0 12px;
+    }
+    .med-price-note {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      color: var(--ink-muted);
+      text-align: center;
+      padding: 0 10px;
+    }
+    .med-text { font-size: 14px; line-height: 1.7; color: var(--ink-mid); }
+    .med-tracklist-label {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+    .med-tracklist { list-style: none; border-top: 1px solid var(--ink-border); }
+    .med-tracklist li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--ink-mid);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--ink-border);
+      display: flex;
+      gap: 8px;
+    }
+    .med-tracklist li span.n {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+      width: 14px;
+    }
+    .med-audio { width: 100%; height: 38px; }
+    .med-audio-label {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .med-buy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--purple-dark);
+      color: #ffffff !important;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 13px 22px;
+      border-radius: 30px;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 4px;
+    }
+    .med-buy:hover { background: var(--purple-mid); transform: translateY(-1px); }
+
+    /* ── BUCH & MEDITATION NEBENEINANDER ── */
+    .vj-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 880px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    .vj-duo .book-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      border: 1px solid var(--ink-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(44,43,63,0.04);
+    }
+    .vj-duo .book-cover-wrap {
+      background: var(--rose-bg);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .vj-duo .book-cover-wrap img { width: auto; max-height: 100%; max-width: 70%; }
+    .vj-duo .book-content { padding: 24px 26px 28px; flex-grow: 1; }
+    .vj-duo .book-text { flex-grow: 1; }
+    .vj-med-intro-below { margin: 48px auto 0; }
+    @media (max-width: 700px) {
+      .vj-duo { grid-template-columns: 1fr; max-width: 420px; }
+    }
+
+    /* ── VIDEO-PLAYLIST ── */
+    .vj-videos { background: var(--rose-bg); padding: 80px 0; }
+    .vj-pl {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) 2fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .vj-pl-list {
+      list-style: none;
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 14px;
+      overflow: hidden;
+      counter-reset: vjvid;
+    }
+    .vj-pl-item {
+      counter-increment: vjvid;
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--ink-border);
+      padding: 18px 22px;
+      font-family: var(--font-b);
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .vj-pl-list li:last-child .vj-pl-item { border-bottom: none; }
+    .vj-pl-item::before {
+      content: counter(vjvid, decimal-leading-zero);
+      font-family: var(--font-ui);
+      font-size: 12px;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+    }
+    .vj-pl-item:hover { background: var(--bg-warm); }
+    .vj-pl-item.is-active {
+      background: var(--purple-dark);
+      color: #ffffff;
+    }
+    .vj-pl-item.is-active::before { color: var(--rose-light); }
+    .vj-pl-player {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--purple-dark);
+      box-shadow: 0 12px 40px rgba(61,43,78,0.15);
+    }
+    .vj-pl-player iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .vj-pl-start {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 24px;
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple-mid));
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      text-align: center;
+    }
+    .vj-pl-play {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .vj-pl-start:hover .vj-pl-play { background: rgba(255,255,255,0.28); transform: scale(1.05); }
+    .vj-pl-play svg { width: 30px; height: 30px; fill: #ffffff; margin-left: 4px; }
+    .vj-pl-start-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: clamp(20px, 2.2vw, 26px);
+      font-weight: 700;
+    }
+    .vj-pl-note {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      max-width: 420px;
+      line-height: 1.6;
+    }
+    @media (max-width: 700px) {
+      .vj-videos { padding: 60px 0; }
+      .vj-pl { grid-template-columns: 1fr; padding: 0 20px; }
+      .vj-videos .buecher-head { padding: 0 20px; }
+      .vj-pl-player { order: -1; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .vj-wut-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 700px) {
+      .med-intro { padding: 22px 20px; }
+      .sf-radio { padding: 60px 16px; }
+      .sf-radio__card { padding: 24px 20px 28px; }
+      .book-title { font-size: 1.3rem; }
+      .book-text { font-size: 17px; color: var(--ink); }
+      .med-text { font-size: 16px; color: var(--ink); }
+      .med-tracklist li { font-size: 15px; color: var(--ink); }
+      .buecher-head { text-align: left; }
+      .buecher-head p { margin: 12px 0 0; font-size: 1.125rem; color: var(--ink); }
+    }
+    @media (max-width: 600px) {
+      .vj-wut-hero { padding: 100px 20px 64px; }
+      .vj-section { padding: 64px 20px; }
+      .vj-hero-buttons { flex-direction: column; align-items: flex-start; }
+      .vj-states li { padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <div id="nav-placeholder" data-component="nav" data-page="wut" data-solid="true"></div>
+
+  <!-- ══ HERO ══ -->
+  <header class="vj-wut-hero">
+    <div class="vj-wut-hero-inner">
+      <div class="reveal">
+        <span class="vj-eyebrow">Wut</span>
+        <h1>Die Kraft der Wut</h1>
+        <p class="vj-wut-hero-lead">Die Wut steht wie kaum ein anderes Gefühl für Kontrollverlust und Gewalt. Trotzdem ist sie ein wichtiges Gefühl in deinem Leben – vielleicht sogar das wichtigste überhaupt.</p>
+        <p class="vj-wut-hero-lead">Deine Wut ist nämlich eine Verteidigungskraft. Sie kommt in dein Leben, wenn jemand deine Grenzen überschreitet.</p>
+        <div class="vj-hero-buttons">
+          <a href="#videos" class="btn-primary">Zu den Videos</a>
+        </div>
+      </div>
+      <div class="vj-wut-hero-img reveal">
+        <!-- BILD: hier kannst du ein anderes Bild aus dem Image-Ordner eintragen -->
+        <img src="Image/Deine-Wut-Reihe-Einfuehrung.webp" alt="Deine Wut: dein bester Freund und dein schlimmster Feind" loading="eager">
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══ BUCH & MEDITATION ══ -->
+    <section class="webshop-section meditations-bg" id="buch-meditation">
+      <div class="buecher-inner">
+        <div class="buecher-head reveal">
+          <span class="vj-eyebrow">Buch &amp; Meditation</span>
+          <h2>Zum Lesen und Üben</h2>
+        </div>
+        <div class="vj-duo">
+          <article class="book-card reveal">
+            <div class="book-cover-wrap">
+              <img src="Image/Wutbuch-cover.webp" alt="Buchcover: Die Kraft der Wut">
+            </div>
+            <div class="book-content">
+              <span class="book-badge">Buch</span>
+              <h3 class="book-title">Die Kraft der Wut</h3>
+              <p class="book-text">Oft wütend? Keine Sorge, du bist nicht allein. Die Wut gilt oft als etwas Bedrohliches oder Verbotenes. Doch hinter dieser missverstandenen Energie liegt ein Schatz verborgen: der Schutz deiner Grenzen. Dieses Buch lädt dich ein, die Wut aus einem völlig neuen Blickwinkel zu betrachten – aus einer esoterisch-energetischen Perspektive.</p>
+              <a href="https://www.amazon.de/dp/B0FS7JDQ9D" target="_blank" rel="noopener" class="book-cta">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+                Buch auf Amazon ansehen
+              </a>
+              <span class="amazon-note">↗ Externer Link zu amazon.de</span>
+            </div>
+          </article>
+          <article class="med-card reveal">
+            <div class="med-card-img">
+              <img src="Image/Wut-Meditation.webp" alt="Wut">
+            </div>
+            <div class="med-card-body">
+              <h3 class="med-title">Wut</h3>
+              <p class="med-text">Wut gilt oft als etwas, das wir unterdrücken sollten, dabei schützt sie in Wahrheit deine Grenzen. Diese Meditation begleitet dich dabei, die Kraft deiner Wut energetisch zu verstehen und bewusst zu nutzen, statt sie wegzudrücken. Bewusst ohne Hintergrundmusik, damit du ganz bei dir und deiner Wut bleiben kannst.</p>
+              <span class="med-tracklist-label">Enthält 5 Meditationen</span>
+              <ul class="med-tracklist">
+                <li><span class="n">01</span>Wut wahrnehmen</li>
+                <li><span class="n">02</span>Dehne deine Wut aus</li>
+                <li><span class="n">03</span>Wut und Atmung</li>
+                <li><span class="n">04</span>Wut und Seelenlicht</li>
+                <li><span class="n">05</span>Das Wutobjekt loslassen</li>
+              </ul>
+              <span class="med-audio-label">Hineinschnuppern</span>
+              <audio class="med-audio" controls preload="none" src="https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Wut%20Hineinschnuppern.mp3"></audio>
+              <div class="med-price-box">
+                <span class="med-price">25 €</span>
+                <span class="med-price-note">Enthält keine Mehrwertsteuer (Kleinunternehmerregelung gem. § 6 UStG)</span>
+              </div>
+              <a href="https://payment-links.mollie.com/payment/pyqRj33wh2tMA6R8reSwK" class="med-buy">Jetzt kaufen</a>
+            </div>
+          </article>
+        </div>
+        <p class="med-intro vj-med-intro-below reveal">Die Meditationen sind keine Wohlfühlmeditationen zum Entspannen und Abschalten. Es sind <strong>Arbeitsmeditationen</strong> – das heißt, du gehst darin aktiv mit einem bestimmten Thema in Kontakt. Genau deshalb verzichten sie bewusst auf Hintergrundmusik: Sie würde dich eher ablenken, als dich in der Arbeit mit dir selbst zu unterstützen. Aus demselben Grund empfehle ich dir, beim Meditieren zu sitzen statt dich hinzulegen. Im Sitzen bleibst du wach und aktiv bei der Sache, während du im Liegen schnell in einen passiveren, schläfrigeren Zustand rutschst.</p>
+      </div>
+    </section>
+
+    <!-- ══ VIDEOS (PLAYLIST) ══ -->
+    <section class="vj-videos" id="videos">
+      <div class="buecher-head reveal">
+        <span class="vj-eyebrow">Videos</span>
+        <h2>Videos über die Wut</h2>
+      </div>
+      <div class="vj-pl reveal">
+
+        <!-- VIDEOLISTE
+             Neues Video hinzufügen: eine ganze <li>…</li>-Zeile kopieren, darunter einfügen
+             und zwei Dinge ändern:
+             1. data-video="…" = die ID aus dem YouTube-Link
+                (bei https://youtu.be/oBBR6p9Ge8I ist die ID: oBBR6p9Ge8I)
+             2. den Titel zwischen > und </button>
+             Die Nummerierung entsteht automatisch. -->
+        <ul class="vj-pl-list">
+          <li><button type="button" class="vj-pl-item is-active" data-video="oBBR6p9Ge8I">TITEL VIDEO 1</button></li>
+          <li><button type="button" class="vj-pl-item" data-video="q3am4id1ohs">TITEL VIDEO 2</button></li>
+          <li><button type="button" class="vj-pl-item" data-video="9ZS7jtkyM90">TITEL VIDEO 3</button></li>
+        </ul>
+
+        <div class="vj-pl-player" id="vjPlayer">
+          <button type="button" class="vj-pl-start" id="vjPlayerStart">
+            <span class="vj-pl-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="vj-pl-start-title" id="vjPlayerTitle">TITEL VIDEO 1</span>
+            <span class="vj-pl-note">Mit dem Klick wird das Video von YouTube geladen. Dabei werden Daten an YouTube übertragen.</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ RESONANZWUT UND CHAKRAWUT ══ -->
+    <section class="vj-section vj-section-white" id="zwei-arten">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Worum es geht</span>
+        <h2>Resonanzwut und Chakrawut</h2>
+        <p>Die wahre Aufgabe der Wut ist die Verteidigung deiner Grenzen: Sie kommt nur in dein Leben, wenn du dich bedroht fühlst. Sie gibt dir die Kraft, dich gegenüber jemandem zu verteidigen, der größer, stärker und mächtiger ist als du.</p>
+        <p>Gleichzeitig kann die problematische Wut nicht verschwiegen werden. Wenn ihre dunkle Seite in dir die Oberhand gewinnt, verwandelst du dich in einen Menschen, der Freude am Leid anderer empfindet, dessen Fähigkeit zu Mitgefühl versiegt und der nur noch für seine Wut lebt. Um diese Dualität zu verstehen, müssen wir uns die zwei Arten der Wut ansehen.</p>
+        <p>Innerhalb meiner energetischen Wahrnehmung gibt es zwei Formen der Wut. Die erste Wut kommt nur in dein Leben, wenn ein auslösender Umstand sie anzieht. Das ist vor allem bei einer Grenzverletzung der Fall. Diese Form der Wut verschwindet jedoch, sobald das auslösende Problem gelöst ist. Das ist die <em>Resonanzwut</em>.</p>
+        <p>Stell dir vor, jemand schneidet dich im frühmorgendlichen Arbeitsverkehr. Du zeigst dem anderen Autofahrer deine Wut. Dieser entschuldigt sich, indem er die Warnblinkanlage einschaltet. Außerdem fährt er nun vorsichtiger. Du hast deine Grenzen geschützt. Die Wut löst sich auf.</p>
+        <p>Neben der Resonanzwut gibt es aber auch die <em>Chakrawut</em>. Diese Wut trägst du tagein und tagaus mit dir herum – unabhängig von äußeren und inneren Umständen. Bei einer Chakrawut wirst du auch wütend, wenn dich jemand schneidet. Doch die Wut löst sich nicht auf, wenn der Autofahrer sich entschuldigt. Du bleibst wütend.</p>
+        <div class="vj-highlight">
+          <p>Eine Resonanzwut ist ein gelegentlicher Besucher, der dir hilft, bestimmte Probleme zu lösen – deine Chakrawut ist hingegen das eigentliche Problem in deinem Leben.</p>
+        </div>
+        <p>Wenn es um die Auflösung geht, verlangt deine Resonanzwut von dir, dass du dich mit dem Objekt deiner Wut beschäftigst. Bei deiner Chakrawut musst du dich hingegen mit der Wutenergie selbst beschäftigen.</p>
+      </div>
+    </section>
+
+    <!-- ══ WUTSPEKTRUM ══ -->
+    <section class="vj-section vj-section-rose" id="spektrum">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Sanft oder heftig</span>
+        <h2>Das Wutspektrum</h2>
+        <p>Wenn wir über die Wut in unserer Gesellschaft sprechen, dann häufig über die Wut des oberen Spektrums. Das ist die Wut der Grenzüberschreitung, des Wutausbruchs und der Gewalt. Meine persönliche Vermutung ist, dass wir die Wut nur in ihrer extremen Form als Wut beschreiben und deshalb oft nicht die sanfte Gestalt erkennen, die viel häufiger in unser Leben tritt.</p>
+        <p>Denn die Wut des unteren energetischen Spektrums ist ruhiger, flexibler, offener. Sie ist weder gewalttätig noch grenzüberschreitend, sondern selbstbewusst. Sie kann tief durchatmen und auch einmal eine Sache ruhen lassen. Sie ist sogar zur Vergebung fähig.</p>
+        <div class="vj-highlight">
+          <p>Das große Problem mit der Wut ist, dass wir sie gerne ignorieren – bis sie nicht länger ignoriert werden kann!</p>
+        </div>
+        <p>Die Wut im oberen Spektrum ist hingegen unfähig, zuzuhören. Sie besitzt eine Energie der Dringlichkeit. Sie erlaubt dir nicht, tief durchzuatmen, über eine Situation nachzudenken und einige Schritte zurückzugehen, um dich im gegenwärtigen Augenblick zu verankern.</p>
+        <p>Der Übergang von der milden zur starken Wut hängt nicht so sehr von der eigentlichen Bedrohung ab, obwohl diese durchaus eine Rolle spielen kann, sondern häufiger von deinem Umgang mit der Wut: Je länger du deine Wut ignorierst und unterdrückst, desto stärker wird sie.</p>
+      </div>
+    </section>
+
+    <!-- ══ SINNFUNK ══ -->
+    <!-- Zum Selbst-Bearbeiten: Titel, Einleitungstext, Beschreibung und die
+         Audio-URL sind unten jeweils mit einem Kommentar markiert. -->
+    <section class="sf-radio" id="sinnfunk">
+      <div class="sf-radio__inner reveal">
+
+        <span class="vj-eyebrow">Sinnfunk</span>
+
+        <!-- TITEL – hier den Titel deiner Sendung eintragen -->
+        <h2 class="sf-radio__title">Meine Sendung über die Wut</h2>
+
+        <!-- EINLEITUNGSTEXT – hier kannst du frei Text einfügen -->
+        <div class="sf-radio__intro">
+          <p>In meiner Autorenstunde auf Sinnfunk spreche ich über mein Buch „Die Kraft der Wut“ – und darüber, warum die Wut dich schützt.</p>
+        </div>
+
+        <div class="sf-radio__card">
+          <!-- BESCHREIBUNG direkt über dem Player – hier ändern (z. B. Datum der Sendung) -->
+          <p class="sf-radio__desc">Autorenstunde: Das Wutbuch</p>
+
+          <!-- AUDIO – die URL deiner Folge an BEIDEN Stellen eintragen
+               (einmal im src, einmal im „Herunterladen“-Link darunter) -->
+          <audio class="sf-radio__player" controls preload="none"
+                 src="https://sinnfunk.b-cdn.net/episoden/589e02fc-3f9c-4307-a09d-63779f5d03f2/1783663460516_02_autorenstunde_wutbuch.mp3">
+            Dein Browser kann diese Audiodatei nicht abspielen.
+            <a href="https://sinnfunk.b-cdn.net/episoden/589e02fc-3f9c-4307-a09d-63779f5d03f2/1783663460516_02_autorenstunde_wutbuch.mp3">Folge herunterladen</a>
+          </audio>
+
+          <a href="https://sinnfunk.live" target="_blank" rel="noopener" class="sf-radio__link">
+            Mehr auf Sinnfunk hören
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM5 5h5V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-5h-2v5H5V5z" fill="currentColor"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ SIGNAL UND SCHUTZ ══ -->
+    <section class="vj-section vj-section-white" id="signal">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Die Signalfunktion</span>
+        <h2>Achtung, hier stimmt etwas nicht!</h2>
+        <p>Es gibt, grob gesagt, zwei Arten von Grenzen: physische und nichtphysische. Physische Grenzverletzungen betreffen deinen Körper, deinen materiellen Besitz und dein unmittelbares physisches Umfeld – sie sind daher leicht zu erkennen. Doch was ist, wenn du ständig für eine Bekannte Dinge erledigen musst, sie aber nie etwas für dich tut?</p>
+        <p>In der modernen Welt gibt es eine Vielzahl nichtphysischer Grenzverletzungen, die zwar nicht deinen Körper oder Besitz betreffen, die aber dennoch eine Bedrohung darstellen. Bei dieser Form der Grenzverletzung hat deine Wut eine Signalfunktion: Wenn du wütend wirst, gibt es ein Problem in deinem Leben! Jemand oder etwas überschreitet gerade deine Grenzen.</p>
+        <p>Die Signalwirkung ist aber nicht nur für dich selbst bedeutend, sondern auch für dein Umfeld. Stell dir zwei Kollegen vor: Der eine ist ständig wütend. Am Montag erzählt er dir über das eine Problem, am Dienstag über das nächste und am Freitag gibt es schon wieder eine andere Bedrohung. Wie ernst wirst du seine Wut nehmen? Stell dir nun einen Kollegen vor, der kaum wütend ist. Eines Tages steht er wütend in deinem Büro. Wie ernst nimmst du seine Wut?</p>
+        <div class="vj-highlight">
+          <p>Wenn du selten wütend wirst, signalisiert deine Wut deinem Umfeld, dass eine bestimmte Angelegenheit für dich wichtig ist. Wenn du aber häufig wütend bist, verliert die Wut ihre Signalfunktion für dein Umfeld.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PRAXIS: IN DIE STILLE GEHEN ══ -->
+    <section class="vj-section vj-section-rose" id="praxis">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Zum Ausprobieren</span>
+        <h2>Gehe in die Stille</h2>
+        <p>Du hast ein Recht darauf, deine Grenzen zu schützen. Du hast ein Recht darauf, einen Grenzverletzer auf seine Handlung anzusprechen. Kurzum: Du hast ein Recht darauf, wütend zu sein. Doch auch wenn die Wut dich fokussiert, bedeutet das nicht immer, dass du genau erkennst, was dich wütend macht.</p>
+        <p>Wir neigen dazu, sofort ins Grübeln zu verfallen oder mit anderen über unsere Probleme zu sprechen. Beides kann hilfreich sein. Doch es gibt ein Werkzeug, das ebenso hilfreich sein kann: in die Stille gehen. Stille bedeutet dabei nicht so sehr äußere, sondern innere Stille.</p>
+        <ol class="vj-steps">
+          <li>Stell dir eine Frage wie: Weshalb werde ich in Gegenwart dieser Person immer wütend?</li>
+          <li>Fokussiere dich auf deine Körpermitte.</li>
+          <li>Suche nicht sofort nach einer Antwort – sondern gehe in die Stille. Schnelle Antworten sind oft falsche Antworten.</li>
+          <li>Lasse dir Zeit. Antworten kommen oft erst Stunden, Tage oder sogar Wochen später.</li>
+          <li>Die richtige Antwort löst häufig ein körperlich-energetisches Gefühl aus: So als würde ein inneres Licht angehen und dein Körper damit erfüllt werden.</li>
+        </ol>
+        <div class="vj-highlight">
+          <p>Du musst nicht alles immer sofort verstehen, um dich selbst zu beschützen. Wenn du keine Klarheit findest, sind Abstand und ein klares Nein ausreichend.</p>
+        </div>
+        <p><strong>Eine Warnung:</strong> Mit wenigen Ausnahmen wird die Wut mit der Zeit immer stärker! Wenn du das Gefühl hast, dass deine Wut dich kontrolliert, anstatt dass du sie kontrollierst, solltest du dir unbedingt professionelle Hilfe suchen.</p>
+      </div>
+    </section>
+
+    <!-- ══ KURS ZUR RUHE KOMMEN ══ -->
+    <section class="vj-section vj-section-white" id="kurs">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Kurs in Pöllau</span>
+        <h2>Zur Ruhe kommen durch Meditation</h2>
+        <p>An drei Montagabenden in Pöllau lernst du, wie du mit Meditation selbstständig zur Ruhe kommst – mit einer soliden Grundlage aus Schweigemeditation und geführten Meditationen.</p>
+        <div class="vj-hero-buttons">
+          <a href="kurs-zur-ruhe.html" class="btn-primary">Zum Kurs „Zur Ruhe kommen“</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <div id="footer-placeholder" data-component="footer"></div>
+
+  <script src="global.js"></script>
+  <script>
+    // ── VIDEO-PLAYLIST ──
+    (function () {
+      var player = document.getElementById('vjPlayer');
+      var items  = document.querySelectorAll('.vj-pl-item');
+      if (!player || !items.length) return;
+
+      function loadVideo(id) {
+        player.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+          '?autoplay=1&rel=0" title="YouTube-Video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      }
+      function setActive(btn) {
+        items.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+      }
+
+      // Startbild: Titel des ersten Videos übernehmen
+      var title = document.getElementById('vjPlayerTitle');
+      if (title) title.textContent = items[0].textContent;
+
+      document.getElementById('vjPlayerStart').addEventListener('click', function () {
+        var active = document.querySelector('.vj-pl-item.is-active') || items[0];
+        loadVideo(active.dataset.video);
+      });
+      items.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          setActive(btn);
+          loadVideo(btn.dataset.video);
+          if (window.innerWidth <= 700) player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

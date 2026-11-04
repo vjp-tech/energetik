@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="icon" type="image/webp" href="Image/icon-vjp.webp">
+  <link rel="apple-touch-icon" href="Image/icon-vjp.webp">
+  <meta name="theme-color" content="#3d2b4e">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anwesenheit – Verena Johanna Polzhofer</title>
+  <meta name="description" content="Anwesenheit aus energetischer Sicht: Was Anwesenheit ist, warum Energie deiner Aufmerksamkeit folgt, eine einfache Anleitung, das Anwesenheitsbuch und die Anwesenheitsmeditation.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Lexend:wght@200;300;400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style>
+
+    /* ═══════════════════════════════════════════
+       ANWESENHEIT – seitenspezifisch
+       Präfix: vj-
+       ═══════════════════════════════════════════ */
+
+    .vj-eyebrow {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    /* ── HERO ── */
+    .vj-anw-hero {
+      background: linear-gradient(to bottom, #eeeaf1, #f5ecee);
+      padding: 128px 24px 88px;
+    }
+    .vj-anw-hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .vj-anw-hero h1 {
+      font-size: clamp(36px, 4.6vw, 58px);
+      color: var(--purple-dark);
+      margin-bottom: 20px;
+    }
+    .vj-anw-hero-lead {
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .vj-hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .vj-anw-hero-img {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(61,43,78,0.12);
+    }
+    .vj-anw-hero-img img { width: 100%; height: auto; }
+
+    /* ── FLIESSTEXT ── */
+    .vj-section { padding: 88px 24px; }
+    .vj-section-white { background: #ffffff; }
+    .vj-section-rose  { background: var(--rose-bg); }
+
+    .vj-prose {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .vj-prose h2 {
+      font-size: clamp(28px, 3.4vw, 40px);
+      color: var(--purple-dark);
+      margin-bottom: 28px;
+    }
+    .vj-prose h3 {
+      font-size: 22px;
+      color: var(--purple-dark);
+      margin: 36px 0 16px;
+    }
+    .vj-prose p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+    .vj-prose p:last-child { margin-bottom: 0; }
+    .vj-prose em { color: var(--accent); font-style: italic; }
+
+    .vj-highlight {
+      background: var(--rose-bg);
+      border-left: 3px solid var(--rose);
+      border-radius: 8px;
+      padding: 22px 26px;
+      margin: 32px 0;
+    }
+    .vj-section-rose .vj-highlight { background: #ffffff; }
+    .vj-highlight p { margin-bottom: 0; }
+
+    /* ── FÜNF ZUSTÄNDE ── */
+    .vj-states {
+      list-style: none;
+      margin: 8px 0 32px;
+      display: grid;
+      gap: 14px;
+    }
+    .vj-states li {
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 12px;
+      padding: 18px 22px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+      display: flex;
+      gap: 16px;
+    }
+    .vj-states li .n {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      color: var(--accent);
+      flex-shrink: 0;
+      padding-top: 3px;
+    }
+
+    /* ── ANLEITUNG ── */
+    .vj-steps {
+      list-style: none;
+      margin: 8px 0 32px;
+      counter-reset: vjstep;
+    }
+    .vj-steps li {
+      counter-increment: vjstep;
+      position: relative;
+      padding: 0 0 22px 56px;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+    .vj-steps li::before {
+      content: counter(vjstep);
+      position: absolute;
+      left: 0; top: 0;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--purple-dark);
+      color: #ffffff;
+      font-family: var(--font-ui);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── SINNFUNK ── */
+    .sf-radio {
+      background: linear-gradient(to bottom, #f0ebf0, var(--rose-bg));
+      padding: 80px 20px;
+    }
+    .sf-radio__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .sf-radio__title {
+      font-size: clamp(28px, 3.4vw, 40px);
+      color: var(--purple-dark);
+      margin: 8px 0 20px;
+    }
+    .sf-radio__intro {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-bottom: 36px;
+    }
+    .sf-radio__intro p { margin-bottom: 1rem; }
+    .sf-radio__intro p:last-child { margin-bottom: 0; }
+    .sf-radio__card {
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 16px;
+      padding: 32px 36px 36px;
+      box-shadow: 0 8px 32px rgba(44,43,63,0.06);
+    }
+    .sf-radio__desc {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      margin-bottom: 18px;
+    }
+    .sf-radio__player {
+      width: 100%;
+      height: 44px;
+      margin-bottom: 24px;
+    }
+    .sf-radio__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple-dark);
+      color: #ffffff !important;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 13px 24px;
+      border-radius: 30px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .sf-radio__link:hover { background: var(--purple-mid); transform: translateY(-1px); }
+    .sf-radio__link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* ── BUCH & MEDITATION (wie Startseite) ── */
+    .webshop-section { padding: 80px 0; }
+    .books-bg { background: linear-gradient(to bottom, #f0ebf0, #f3ebef); }
+    .meditations-bg { background: #ffffff; }
+    .buecher-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .buecher-head {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .buecher-head h2 {
+      margin-top: 8px;
+      font-size: clamp(28px, 3.4vw, 40px);
+      color: var(--purple-dark);
+    }
+    .buecher-head p {
+      max-width: 560px;
+      margin: 12px auto 0;
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.75;
+    }
+
+    .vj-book-single { max-width: 720px; margin: 0 auto; }
+    .book-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+      align-items: start;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 32px;
+      transition: box-shadow 0.25s;
+    }
+    .book-card:hover { box-shadow: 0 8px 32px rgba(61,43,78,0.10); }
+    .book-cover-wrap img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 4px 6px 20px rgba(0,0,0,0.18);
+      display: block;
+    }
+    .book-content { display: flex; flex-direction: column; gap: 12px; }
+    .book-badge {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--purple-dark);
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 3px;
+      align-self: flex-start;
+    }
+    .book-title {
+      font-family: var(--font-h);
+      font-size: clamp(18px, 1.8vw, 22px);
+      font-weight: 400;
+      color: var(--purple-dark);
+      line-height: 1.3;
+    }
+    .book-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--ink-mid);
+    }
+    .book-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 13px 22px;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.2s;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+    .book-cta:hover { background: #8f4e28; transform: translateY(-1px); }
+    .book-cta svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+    .amazon-note {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .med-intro {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      background: var(--bg-warm);
+      border-radius: 14px;
+      padding: 28px 32px;
+    }
+    .med-intro strong { color: var(--purple-dark); font-weight: 500; }
+    .med-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 400px);
+      justify-content: center;
+      gap: 28px;
+    }
+    .med-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid var(--ink-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(44,43,63,0.04);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .med-card:hover {
+      box-shadow: 0 14px 36px rgba(61,43,78,0.12);
+      transform: translateY(-3px);
+    }
+    .med-card-img { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; }
+    .med-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .med-card-body {
+      padding: 24px 26px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex-grow: 1;
+    }
+    .med-title {
+      font-family: var(--font-h);
+      font-size: 1.35rem;
+      color: var(--purple-dark);
+      line-height: 1.25;
+    }
+    .med-price {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--purple-dark);
+    }
+    .med-price-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      background: var(--rose-bg);
+      border-radius: 10px;
+      padding: 10px 0 12px;
+    }
+    .med-price-note {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      color: var(--ink-muted);
+      text-align: center;
+      padding: 0 10px;
+    }
+    .med-text { font-size: 14px; line-height: 1.7; color: var(--ink-mid); }
+    .med-tracklist-label {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+    .med-tracklist { list-style: none; border-top: 1px solid var(--ink-border); }
+    .med-tracklist li {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--ink-mid);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--ink-border);
+      display: flex;
+      gap: 8px;
+    }
+    .med-tracklist li span.n {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+      width: 14px;
+    }
+    .med-audio { width: 100%; height: 38px; }
+    .med-audio-label {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .med-buy {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--purple-dark);
+      color: #ffffff !important;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 13px 22px;
+      border-radius: 30px;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 4px;
+    }
+    .med-buy:hover { background: var(--purple-mid); transform: translateY(-1px); }
+
+    /* ── BUCH & MEDITATION NEBENEINANDER ── */
+    .vj-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 880px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    .vj-duo .book-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      border: 1px solid var(--ink-border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(44,43,63,0.04);
+    }
+    .vj-duo .book-cover-wrap {
+      background: var(--rose-bg);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .vj-duo .book-cover-wrap img { width: auto; max-height: 100%; max-width: 70%; }
+    .vj-duo .book-content { padding: 24px 26px 28px; flex-grow: 1; }
+    .vj-duo .book-text { flex-grow: 1; }
+    .vj-med-intro-below { margin: 48px auto 0; }
+    @media (max-width: 700px) {
+      .vj-duo { grid-template-columns: 1fr; max-width: 420px; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .vj-anw-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 700px) {
+      .med-intro { padding: 22px 20px; }
+      .sf-radio { padding: 60px 16px; }
+      .sf-radio__card { padding: 24px 20px 28px; }
+      .book-title { font-size: 1.3rem; }
+      .book-text { font-size: 17px; color: var(--ink); }
+      .med-text { font-size: 16px; color: var(--ink); }
+      .med-tracklist li { font-size: 15px; color: var(--ink); }
+      .buecher-head { text-align: left; }
+      .buecher-head p { margin: 12px 0 0; font-size: 1.125rem; color: var(--ink); }
+    }
+    @media (max-width: 600px) {
+      .vj-anw-hero { padding: 100px 20px 64px; }
+      .vj-section { padding: 64px 20px; }
+      .vj-hero-buttons { flex-direction: column; align-items: flex-start; }
+      .vj-states li { padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══ -->
+  <div id="nav-placeholder" data-component="nav" data-page="anwesenheit" data-solid="true"></div>
+
+  <!-- ══ HERO ══ -->
+  <header class="vj-anw-hero">
+    <div class="vj-anw-hero-inner">
+      <div class="reveal">
+        <span class="vj-eyebrow">Anwesenheit</span>
+        <h1>Anwesend im eigenen Leben</h1>
+        <p class="vj-anw-hero-lead">Es gibt zwei Arten der Anwesenheit: diejenige an einem bestimmten Ort und diejenige im eigenen Leben. Hier geht es um die zweite Art.</p>
+        <p class="vj-anw-hero-lead">Mein Zugang zu diesem Thema ist esoterisch-energetischer Natur. Anwesenheit, Aufmerksamkeit, Konzentration und Achtsamkeit sind dabei keine Schritte zur spirituellen Weiterentwicklung, sondern wichtige Werkzeuge für deine energetische Gesundheit.</p>
+        <div class="vj-hero-buttons">
+          <a href="#was-ist" class="btn-primary">Was ist Anwesenheit?</a>
+        </div>
+      </div>
+      <div class="vj-anw-hero-img reveal">
+        <!-- BILD: hier kannst du ein anderes Bild aus dem Image-Ordner eintragen -->
+        <img src="Image/Meditieren-Wald-quer-Verena.webp" alt="Verena Johanna Polzhofer meditiert im Wald" loading="eager">
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══ BUCH & MEDITATION ══ -->
+    <section class="webshop-section meditations-bg" id="buch-meditation">
+      <div class="buecher-inner">
+        <div class="buecher-head reveal">
+          <span class="vj-eyebrow">Buch &amp; Meditation</span>
+          <h2>Zum Lesen und Üben</h2>
+        </div>
+        <div class="vj-duo">
+          <article class="book-card reveal">
+            <div class="book-cover-wrap">
+              <img src="Image/Anwesenheitsbuch-Cover.webp" alt="Buchcover: Wie du mit Anwesenheit deine energetische Gesundheit stärkst">
+            </div>
+            <div class="book-content">
+              <span class="book-badge">Buch</span>
+              <h3 class="book-title">Wie du mit Anwesenheit, Aufmerksamkeit, Konzentration und Achtsamkeit deine energetische Gesundheit stärkst</h3>
+              <p class="book-text">Ständig müde, abwesend und unkonzentriert? Dieser Ratgeber zeigt dir, wie du deinen Energiehaushalt durch deine Anwesenheit und mithilfe deiner Konzentration und Aufmerksamkeit verbessern kannst – sodass deine Lebenskraft in deinem Leben bleibt und du deine Ziele verwirklichen kannst.</p>
+              <a href="https://www.amazon.de/dp/B0FPG98XW2" target="_blank" rel="noopener" class="book-cta">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+                Buch auf Amazon ansehen
+              </a>
+              <span class="amazon-note">↗ Externer Link zu amazon.de</span>
+            </div>
+          </article>
+          <article class="med-card reveal">
+            <div class="med-card-img">
+              <img src="Image/Anwesenheitsmeditation.webp" alt="Anwesenheitsmeditation">
+            </div>
+            <div class="med-card-body">
+              <h3 class="med-title">Anwesenheitsmeditation</h3>
+              <p class="med-text">Diese Meditation führt dich Schritt für Schritt zurück in deine Anwesenheit – dorthin, wo deine Aufmerksamkeit wieder bei dir selbst ankommt. Eine ruhige Übung für alle, die spüren, dass ihre Konzentration und Energie gerade woanders verweilen. Bewusst ohne Hintergrundmusik, damit du ganz bei deiner eigenen Wahrnehmung bleiben kannst.</p>
+              <span class="med-tracklist-label">Enthält 6 Meditationen</span>
+              <ul class="med-tracklist">
+                <li><span class="n">01</span>Erste Beruhigungsmeditation</li>
+                <li><span class="n">02</span>Anwesenheit – Konzentration auf das Kraftzentrum</li>
+                <li><span class="n">03</span>Konzentration durch die Atmung</li>
+                <li><span class="n">04</span>Komme zur Ruhe</li>
+                <li><span class="n">05</span>Anwesenheit – Aufmerksamkeit</li>
+                <li><span class="n">06</span>Dritte Beruhigungsmeditation – mithilfe von Anwesenheit und Energiefeld</li>
+              </ul>
+              <span class="med-audio-label">Hineinschnuppern</span>
+              <audio class="med-audio" controls preload="none" src="https://pub-a741c311658c4c44b12fea4387b938af.r2.dev/Anwesenheitsmeditation%20Hineinschnuppern.mp3"></audio>
+              <div class="med-price-box">
+                <span class="med-price">30 €</span>
+                <span class="med-price-note">Enthält keine Mehrwertsteuer (Kleinunternehmerregelung gem. § 6 UStG)</span>
+              </div>
+              <a href="https://payment-links.mollie.com/payment/jMM68mXGqDwtL89cmtwGH" class="med-buy">Jetzt kaufen</a>
+            </div>
+          </article>
+        </div>
+        <p class="med-intro vj-med-intro-below reveal">Diese Meditationen sind keine Wohlfühlmeditationen zum Entspannen und Abschalten. Es sind <strong>Arbeitsmeditationen</strong> – das heißt, du gehst darin aktiv mit einem bestimmten Thema in Kontakt. Genau deshalb verzichten sie bewusst auf Hintergrundmusik: Sie würde dich eher ablenken, als dich in der Arbeit mit dir selbst zu unterstützen. Aus demselben Grund empfehle ich dir, beim Meditieren zu sitzen statt dich hinzulegen. Im Sitzen bleibst du wach und aktiv bei der Sache, während du im Liegen schnell in einen passiveren, schläfrigeren Zustand rutschst.</p>
+      </div>
+    </section>
+
+    <!-- ══ WAS IST ANWESENHEIT ══ -->
+    <section class="vj-section vj-section-rose" id="was-ist">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Worum es geht</span>
+        <h2>Warum du dein Leben verschläfst, obwohl du wach bist</h2>
+        <p>Kennst du das Gefühl, dass die letzten zehn Jahre in einem einzigen Augenblick vergangen sind?</p>
+        <p>Du blickst auf Entscheidungen zurück und weißt nicht mehr genau, warum du sie getroffen hast. Wichtige Begegnungen verschwimmen in deiner Erinnerung. Die Fotos auf deinem Smartphone wirken, als würden sie das Leben eines anderen Menschen zeigen. Und wenn du versuchst, auf die vergangenen Jahre zurückzublicken, erscheint vieles wie durch einen Nebel.</p>
+        <p>Dieser Eindruck entsteht meist nicht deshalb, weil dein Gedächtnis versagt. Viel häufiger fehlt etwas anderes: deine Anwesenheit. Denn wir verbringen einen erstaunlich großen Teil unseres Lebens außerhalb von uns selbst. Die eigene Aufmerksamkeit ist überall, nur nicht im eigenen Körper: Sie folgt Geschichten, Problemen, Erinnerungen, Plänen, Sorgen, Menschen, Bildschirmen und Gedanken.</p>
+        <p>Anwesenheit bedeutet etwas sehr Konkretes: Deine Aufmerksamkeit ist in deinem eigenen Körper verankert. In der Anwesenheit werden dein physischer Körper, deine fünf Sinne – Hören, Riechen, Schmecken, Fühlen, Sehen – und dein Umfeld zum Zentrum deiner Wahrnehmung.</p>
+        <div class="vj-highlight">
+          <p>Es gibt mehrere Gründe, weshalb das wichtig ist. Zum einen nimmst du dich selbst und dein Umfeld nur vollständig wahr, wenn du anwesend bist, aber noch wichtiger, für mich als Energetikerin: <em>Energie folgt Aufmerksamkeit.</em></p>
+        </div>
+        <p>Wohin du deine Aufmerksamkeit richtest, dorthin fließt auch deine Lebenskraft. Ruht deine Aufmerksamkeit in deinem Körper, bleibt deine Energie bei dir. Verlierst du dich über Stunden in Sorgen, Tagträumen oder digitalen Welten, dann fließt deine Energie in diese Bereiche.</p>
+        <p>Die Frage „Wo bin ich?“ bekommt in diesem Zusammenhang eine viel tiefere Bedeutung. Denn aus energetischer Sicht geht es nicht nur darum, wo sich dein Körper befindet. Entscheidend ist, wo sich deine Aufmerksamkeit aufhält.</p>
+      </div>
+    </section>
+
+    <!-- ══ AUFMERKSAMKEITSZUSTÄNDE ══ -->
+    <section class="vj-section vj-section-white" id="aufmerksamkeit">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Deine wunderbare Aufmerksamkeit</span>
+        <h2>Fünf Zustände deiner Aufmerksamkeit</h2>
+        <p>Setz dich aufrecht hin, schließ die Augen und nimm deinen gesamten Körper wahr: von deinem Kopf bis zu deinen Füßen. Richte deine Aufmerksamkeit dabei auf nichts Bestimmtes. Spüre deine Atmung, die Wärme oder Kühle des Raumes, das Kribbeln in den Füßen, die leichte Spannung in den Schultern.</p>
+        <p>Was du gerade erlebt hast, war Anwesenheit. Sie entsteht, wenn du deine Aufmerksamkeit in deinem Körper verankerst.</p>
+        <p>Deine Aufmerksamkeit hat in ihrem natürlichen Zustand in etwa die Form eines Balls. Du kannst diesen Ball zu einem schmalen Strahl bündeln und auf einen einzigen Punkt richten: Das ist Konzentration. Du kannst den Ball aber auch ausdehnen. In dieser Form nimmst du mehr Raum wahr als üblich. Aus dieser Beweglichkeit und Verformbarkeit ergeben sich fünf Aufmerksamkeitszustände:</p>
+        <ul class="vj-states">
+          <li><span class="n">01</span><span>In der <strong>Anwesenheit</strong> ist die Aufmerksamkeit in deinem Körper verankert und nicht verformt. Anwesenheit ist der natürliche Zustand deiner Aufmerksamkeit.</span></li>
+          <li><span class="n">02</span><span>In der <strong>Konzentration</strong> verengst du den Aufmerksamkeitsball zu einem Strahl. Du wählst ein einziges Objekt – deinen Atem, einen Gegenstand, einen Gedanken – und nimmst nur dieses wahr.</span></li>
+          <li><span class="n">03</span><span>In der <strong>entfernten Aufmerksamkeit</strong> verlässt deine Aufmerksamkeit deinen Körper: Du nimmst Facebook oder einen Tagtraum sehr intensiv wahr – nicht aber deinen Körper.</span></li>
+          <li><span class="n">04</span><span>In der <strong>ausgedehnten Aufmerksamkeit</strong> dehnt sie sich weit aus: Du kannst nun mehr von dem wahrnehmen, was dich umgibt.</span></li>
+          <li><span class="n">05</span><span>In der <strong>Achtsamkeit</strong> weitet sich deine Aufmerksamkeit ins Geistige aus. Sie verbindet sich mit deinem Bewusstsein. Du bist dir nun dessen bewusst, was du wahrnimmst.</span></li>
+        </ul>
+        <p>Es geht nicht darum, Konzentration zu meiden oder ständig achtsam zu sein. Es geht darum zu verstehen, welche Auswirkungen die einzelnen Zustände haben und welcher von ihnen in einem bestimmten Augenblick der sinnvollste ist.</p>
+      </div>
+    </section>
+
+    <!-- ══ SINNFUNK ══ -->
+    <!-- Zum Selbst-Bearbeiten: Titel, Einleitungstext, Beschreibung und die
+         Audio-URL sind unten jeweils mit einem Kommentar markiert. -->
+    <section class="sf-radio" id="sinnfunk">
+      <div class="sf-radio__inner reveal">
+
+        <span class="vj-eyebrow">Sinnfunk</span>
+
+        <!-- TITEL – hier den Titel deiner Sendung eintragen -->
+        <h2 class="sf-radio__title">Meine Sendung über die Anwesenheit</h2>
+
+        <!-- EINLEITUNGSTEXT – hier kannst du frei Text einfügen -->
+        <div class="sf-radio__intro">
+          <p>Auf Sinnfunk spreche ich über die Anwesenheit – darüber, wohin deine Aufmerksamkeit wandert und wie du wieder in deinem eigenen Leben ankommst.</p>
+        </div>
+
+        <div class="sf-radio__card">
+          <!-- BESCHREIBUNG direkt über dem Player – hier ändern (z. B. Datum der Sendung) -->
+          <p class="sf-radio__desc">Autorenstunde: Einführung in die Anwesenheit</p>
+
+          <!-- AUDIO – die URL deiner Folge an BEIDEN Stellen eintragen
+               (einmal im src, einmal im „Herunterladen“-Link darunter) -->
+          <audio class="sf-radio__player" controls preload="none"
+                 src="https://sinnfunk.b-cdn.net/episoden/589e02fc-3f9c-4307-a09d-63779f5d03f2/1783663558707_01_Autorenstunde_Einf%C3%BChrung_in_die_Anwesenheit.mp3">
+            Dein Browser kann diese Audiodatei nicht abspielen.
+            <a href="https://sinnfunk.b-cdn.net/episoden/589e02fc-3f9c-4307-a09d-63779f5d03f2/1783663558707_01_Autorenstunde_Einf%C3%BChrung_in_die_Anwesenheit.mp3">Folge herunterladen</a>
+          </audio>
+
+          <a href="https://sinnfunk.live" target="_blank" rel="noopener" class="sf-radio__link">
+            Mehr auf Sinnfunk hören
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 3v2h3.59l-9.3 9.29 1.42 1.42L19 6.41V10h2V3h-7zM5 5h5V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-5h-2v5H5V5z" fill="currentColor"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ ENERGETISCHE GRENZE ══ -->
+    <section class="vj-section vj-section-white" id="grenze">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Anwesenheit als energetische Grenze</span>
+        <h2>Ein Haus ohne Wände</h2>
+        <p>Nicht alles, was du denkst und fühlst, gehört zu dir. Teilweise übernimmst du die Ideen, Glaubenssätze und Gefühle anderer durch Gespräche, Bücher oder andere Medien. Teilweise aber auch, weil sie im Äther deines Umfelds vorhanden sind. Unsichtbar, unhörbar, doch zugleich spürbar.</p>
+        <p>Am besten kann man sich das wie Musik vorstellen. An Orten, die frei von starken Gedanken und Gefühlen sind, ist die Luft still. Dort, wo intensive Emotionen herrschen, fließen die Klangwellen durch den Raum. Ob du es willst oder nicht: Du hörst mit.</p>
+        <p>Wenn dein Energiefeld schwach ist, bist du wie ein Haus ohne Wände. Dein Nachbar kann bestimmen, welche Musik du hörst. Er kann bestimmen, ob du in Ruhe einschlafen kannst oder nicht.</p>
+        <h3>Dein gestärktes Haus</h3>
+        <p>Die Frage lautet also: Wie stärkst du dein Energiefeld? Hier kommt die wenig überraschende Antwort: Anwesenheit.</p>
+        <p>Anwesenheit stärkt dein Energiefeld deshalb, weil sie deinen Energiefluss ankurbelt. Wenn du anwesend bist, durchströmt Energie alle Bereiche deines physisch-energetischen Körpers – auch dein Energiefeld.</p>
+        <div class="vj-highlight">
+          <p>Aber – und der nächste Punkt ist sehr wichtig: Anwesenheit ist kein Allheilmittel, wenn es um deine Grenzen geht. Sie kann kein Nein erzeugen, wo keines vorhanden ist.</p>
+        </div>
+        <p>Deine Anwesenheit stärkt dich auf der einen Seite darin, nicht alles aus deinem Umfeld wahrnehmen zu müssen, und zum anderen darin, genauer zu erkennen, was in dir vorgeht.</p>
+      </div>
+    </section>
+
+    <!-- ══ EINFACHE ANLEITUNG ══ -->
+    <section class="vj-section vj-section-rose" id="anleitung">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Zum Ausprobieren</span>
+        <h2>Einfache Anleitung zur Anwesenheit</h2>
+        <p>Anwesenheit ist ein sehr gewöhnlicher Seinszustand. Es braucht keine besondere Sitzhaltung, kein besonderes Umfeld und keine besondere Technik.</p>
+        <p>Das wohl schönste Beispiel für Anwesenheit sind jene älteren Mitbürger, die am offenen Fenster ihrer Wohnung sitzen und die Straße beobachten. Keine Ablenkung, kein besonderer meditativer Zustand, kein Ziel, das erreicht werden will, sondern nur der Genuss des gegenwärtigen Augenblicks. Genau dorthin wollen wir.</p>
+        <p>Deshalb würde ich dir auch raten, mit geöffneten Augen zu üben. Deine Augen verbinden dich mit der physischen Wirklichkeit. Sobald du sie schließt, entfernst du dich ein kleines Stück von der Gegenwart.</p>
+        <p>Die einfache Anleitung beginnt mit der Konzentration. Die Konzentration soll dir helfen, deine Aufmerksamkeit in deinen Körper zurückzuholen. Mehr nicht.</p>
+        <ol class="vj-steps">
+          <li>Konzentriere dich auf dein Konzentrationsobjekt – zum Beispiel deinen Atem.</li>
+          <li>Dehne deine Konzentration auf deinen gesamten Körper aus. Nimm deinen Kopf und deine Füße gleichzeitig wahr. Spüre die Temperatur im Raum. Fühle deinen Atem.</li>
+          <li>Sobald du deinen ganzen Körper gleichmäßig wahrnimmst, bist du anwesend. Bleibe so lange in der Anwesenheit, wie es sich für dich gut anfühlt.</li>
+        </ol>
+        <div class="vj-highlight">
+          <p>Wie bei der Konzentration reichen sehr kurze Einheiten – wenn du sie regelmäßig ausführst. Fünf Minuten täglich sind besser als zwanzig Minuten gelegentlich.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ KURS ZUR RUHE KOMMEN ══ -->
+    <section class="vj-section vj-section-white" id="kurs">
+      <div class="vj-prose reveal">
+        <span class="vj-eyebrow">Kurs in Pöllau</span>
+        <h2>Anwesenheit im Kurs „Zur Ruhe kommen“</h2>
+        <p>Teile der Anwesenheit, die du auf dieser Seite kennengelernt hast, begegnen dir auch in meinem Kurs „Zur Ruhe kommen durch Meditation“. An drei Montagabenden in Pöllau übst du gemeinsam mit anderen – und das Anwesenheitsbuch ist im Kursbeitrag bereits enthalten.</p>
+        <div class="vj-hero-buttons">
+          <a href="kurs-zur-ruhe.html" class="btn-primary">Zum Kurs „Zur Ruhe kommen“</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <div id="footer-placeholder" data-component="footer"></div>
+
+  <script src="global.js"></script>
+</body>
+</html>

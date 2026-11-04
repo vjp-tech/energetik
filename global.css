@@ -646,3 +646,82 @@ h1, h2, h3, h4, h5 {
     bottom: 12px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   ZWEIZEILIGE NAVIGATION (Nov 2026)
+   Zeile 1: Logo · Kontakt · Sinnfunk   Zeile 2: Seiten
+   ═══════════════════════════════════════════════════════════ */
+.nav {
+  background: rgba(255,255,255,0.86);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(44,43,63,0.06);
+}
+.nav.scrolled,
+.nav.nav-solid {
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 1px 20px rgba(44,43,63,0.08);
+}
+.nav-inner { height: 60px; }
+.nav .nav-logo-text { color: var(--ink-mid); }
+.nav .nav-burger span { background: var(--ink); }
+
+.nav-top-right {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+.nav-top-link {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+.nav-top-link:hover { color: var(--purple-mid); }
+
+.nav-sub { border-top: 1px solid var(--ink-border); }
+.nav-sub .nav-links {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 44px;
+  justify-content: center;
+  gap: 2.4rem;
+}
+.nav .nav-sub .nav-links a {
+  position: relative;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  padding: 6px 0;
+}
+.nav .nav-sub .nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.nav .nav-sub .nav-links a:hover { color: var(--purple-mid); }
+.nav .nav-sub .nav-links a:hover::after,
+.nav .nav-sub .nav-links a.active::after { transform: scaleX(1); }
+.nav .nav-sub .nav-links a.active,
+.nav-top-link.active { color: var(--purple-dark) !important; font-weight: 400; }
+.nav-mobile a.active { color: var(--accent); }
+
+@media (max-width: 1024px) {
+  .nav-sub,
+  .nav-top-right { display: none; }
+  .nav-burger { display: flex; }
+}
+
+/* Platz für die zweite Menüzeile: Inhalt beginnt 44px tiefer */
+@media (min-width: 1025px) {
+  body > .nav + * { margin-top: 44px; }
+}
