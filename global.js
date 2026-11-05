@@ -82,6 +82,8 @@
       if (!isSolid) {
         nav.classList.toggle('scrolled', window.scrollY > 20);
       }
+      // Violettes Themenband beim Scrollen ausblenden
+      nav.classList.toggle('band-hidden', window.scrollY > 80);
       const scrollBtn = document.getElementById('scrollTop');
       if (scrollBtn) {
         scrollBtn.classList.toggle('show', window.scrollY > 400);
